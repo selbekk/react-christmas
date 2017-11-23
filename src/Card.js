@@ -5,6 +5,7 @@ import * as breakpoints from './breakpoints';
 
 const OuterContainer = styled.li`
   background: linear-gradient(to right, #f00, #d00);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   flex: 0 0 calc(50% - 6px);
   margin: 0 0 12px 0;
