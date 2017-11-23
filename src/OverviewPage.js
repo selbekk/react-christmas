@@ -22,7 +22,7 @@ const todaysDate = new Date().getDate();
 const OverviewPage = () => (
   <CardList>
     {posts.map((post, idx) => (
-      <Card date={idx + 1} notYetAvailable={todaysDate < idx + 1} />
+      <Card key={idx} date={idx + 1} notYetAvailable={todaysDate < idx + 1} />
     ))}
   </CardList>
 );
