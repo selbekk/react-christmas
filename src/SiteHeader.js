@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const OuterContainer = styled.header`
-  background: #fafafa;
+  background: #f3f3f3;
   border-top: 4px solid #a00;
   color: #666;
 `;
