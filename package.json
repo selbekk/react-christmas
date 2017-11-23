@@ -1,0 +1,21 @@
+{
+  "name": "reactchristmas",
+  "description": "A Christmas calendar for React",
+  "version": "0.0.110",
+  "dependencies": {
+    "styled-components": "2.2.3",
+    "react-router-dom": "4.2.2",
+    "react-dom": "16.0.0",
+    "react": "16.0.0",
+    "marked": "0.3.6"
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
