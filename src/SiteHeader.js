@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const OuterContainer = styled.header`
   background: #fafafa;
-  border-top: 3px solid #a00;
+  border-top: 4px solid #a00;
   color: #666;
 `;
 
