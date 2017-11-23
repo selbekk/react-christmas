@@ -4,6 +4,7 @@ import { injectGlobal } from "styled-components";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import SiteHeader from "./SiteHeader";
+import SiteFooter from "./SiteFooter";
 
 injectGlobal`
   @import url('https://fonts.googleapis.com/css?family=Covered+By+Your+Grace');
@@ -26,6 +27,7 @@ const Root = () => (
     <div>
       <SiteHeader />
       <App />
+      <SiteFooter />
     </div>
   </BrowserRouter>
 );
