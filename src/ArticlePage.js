@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import styled from 'styled-components';
-import marked from 'marked';
-import posts from './posts';
 import * as breakpoints from './breakpoints'
 
 const DateBadge = styled.div`
@@ -11,17 +9,18 @@ const DateBadge = styled.div`
   border-radius: 50%;
   color: white;
   display: flex;
-  height: 50px;
+  font-size: 32px;
+  height: 75px;
   justify-content: center;
-  margin: 0 auto;
-  width: 50px;
+  margin: 50px auto;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  width: 75px;
 `;
 
 const Title = styled.h1`
   font-size: 3em;
   hyphens: auto;
   margin-top: 0;
-  word-break: break-all;
 
   ${breakpoints.mediumUp} {
     text-align: center;
@@ -30,6 +29,7 @@ const Title = styled.h1`
 
 const LeadParagraph = styled.p`
   font-size: 1.5em;
+  font-weight: 100;
   line-height: 1.6;
 `;
 
@@ -45,7 +45,7 @@ class ArticlePage extends Component {
 
     this.state = {
       postId: postId,
-      validPost: !Number.isNaN(postId) || postId < 1 || postid > 24,
+      validPost: !Number.isNaN(postId) || postId < 1 || postId > 24,
     };
   }
 
@@ -57,7 +57,7 @@ class ArticlePage extends Component {
       const post = await import(`./posts/post-${this.state.postId}`);
       this.setState({ post: post.default });
     } catch (e) {
-      this.setState({ validPost: false }); 
+      this.setState({ validPost: false });
     }
   }
 
@@ -83,7 +83,7 @@ class ArticlePage extends Component {
         <DateBadge>{postId}</DateBadge>
         <Title>{post.title}</Title>
         <LeadParagraph>{post.lead}</LeadParagraph>
-        <Markdown dangerouslySetInnerHTML={{ __html: marked(post.body) }} />
+        <Markdown dangerouslySetInnerHTML={{ __html: post.body }} />
       </article>
     );
   }
