@@ -36,11 +36,16 @@ const Paragraph = styled.p`
 
 const Columns = styled.div`
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 `;
 
 const Column = styled.div`
-    flex-basis: calc(50% - 12px);
+    flex-basis: 100%;
+
+    ${breakpoints.mediumUp} {
+        flex-basis: calc(50% - 12px);
+    }
 `;
 
 const SiteFooter = () => (
@@ -69,7 +74,10 @@ const SiteFooter = () => (
         </TopSection>
         <BottomSection>
             <PageContainer>
-                Made with <span>🎅</span> by <Link href="https://www.twitter.com/selbekk">@selbekk</Link>
+                Made with <span
+                    aria-label="christmas spirit"
+                    role="img"
+                >🎅</span> by <Link href="https://www.twitter.com/selbekk">@selbekk</Link>
             </PageContainer>
         </BottomSection>
     </OuterContainer>
