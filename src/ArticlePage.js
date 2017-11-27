@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import styled from 'styled-components';
-import * as breakpoints from './breakpoints'
+import Spinner from './Spinner';
+import * as breakpoints from './breakpoints';
 
 const DateBadge = styled.div`
   align-items: center;
@@ -72,9 +73,8 @@ class ArticlePage extends Component {
     }
 
     if (!post) {
-      // TODO: Add a real spinner
       return (
-        <p>Loading</p>
+        <Spinner>Loading</Spinner>
       );
     }
 
