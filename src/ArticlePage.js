@@ -40,18 +40,18 @@ const Markdown = styled.div`
 
 class ArticlePage extends Component {
   constructor(props) {
-    super();
+    super(props);
 
-    const postId = Number(props.match.params.date);
+    const postId = this.getPostId();
 
     this.state = {
-      postId: postId,
-      validPost: !Number.isNaN(postId) || postId < 1 || postId > 24,
+      postId,
+      validPost: this.isValidPost(),
     };
   }
 
   async componentDidMount() {
-    if (!this.state.validPost) {
+    if (!this.isValidPost()) {
       return; // Will be redirected
     }
     try {
@@ -62,12 +62,30 @@ class ArticlePage extends Component {
     }
   }
 
+  getPostId() {
+    return Number(this.props.match.params.date);
+  }
+
+  isValidPost() {
+    const postId = Number(this.props.match.params.date);
+    const now = new Date();
+    return !Number.isNaN(postId)
+      && postId > 0
+      && postId < 25
+      && (
+        (now.getYear() === 2017 && now.getMonth() === 11)
+        || now.getYear() > 2017
+        || process.env.NODE_ENV !== 'PRODUCTION' // for testing
+      );
+  }
+
   render() {
     const {
       post,
       postId,
       validPost,
     } = this.state;
+
     if (!validPost) {
       return <Redirect to="/" />;
     }
