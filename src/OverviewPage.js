@@ -17,12 +17,17 @@ const CardList = styled.ul`
   }
 `;
 
-const todaysDate = new Date().getDate();
+const now = new Date();
+const isAvailable = (
+  (now.getYear() === 2017 && now.getMonth() === 11)
+  || now.getYear() > 2017
+  || process.env.NODE_ENV !== 'PRODUCTION' // for testing
+);
 
 const OverviewPage = () => (
   <CardList>
     {posts.map((post, idx) => (
-      <Card key={idx} date={idx + 1} notYetAvailable={todaysDate < idx + 1} />
+      <Card key={idx} date={idx + 1} notYetAvailable={now.getDate() < idx + 1 && !isAvailable} />
     ))}
   </CardList>
 );
