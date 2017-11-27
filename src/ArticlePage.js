@@ -37,6 +37,13 @@ const LeadParagraph = styled.p`
 
 const Markdown = styled.div`
   line-height: 1.6;
+
+  pre {
+    background-color: #333;
+    color: #fff;
+    overflow-x: scroll;
+    padding: 12px;
+  }
 `;
 
 class ArticlePage extends Component {
