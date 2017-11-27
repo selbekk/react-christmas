@@ -82,12 +82,22 @@ structure as you go.
 There are people that love co-locating tests with the components / logic they test, and there are people that will never
 see a piece of test code outside a dedicated \`test/\` folder. Both approaches are fine, and come with their own
 benefits. To be honest, it's mostly up to taste - so I'm not going to push you either way.
-
-## Some great resources!
-
-There are tons of great resources on this topic, going into way more details than I could ever do in these small
-article snippets. Here are my favorites:
-
-
     `),
+    resources: [
+        {
+            title: 'Component folder structure',
+            link: 'https://medium.com/styled-components/component-folder-pattern-ee42df37ec68',
+            body: 'The component folder pattern can be a great approach for keeping everything related to your component inside a single folder',
+        },
+        {
+            title: 'The 100 % correct way',
+            link: 'https://hackernoon.com/the-100-correct-way-to-structure-a-react-app-or-why-theres-no-such-thing-3ede534ef1ed',
+            body: '...or why there\'s no such thing. Great article exploring several different patterns',
+        },
+        {
+            title: 'A slightly different approach',
+            link: 'https://daveceddia.com/react-project-structure/',
+            body: 'Another great article on structuring your application',
+        },
+    ],
 }

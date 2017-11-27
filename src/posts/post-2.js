@@ -11,13 +11,22 @@ Unit testing your code is important to avoid introducing bugs whenever you are w
 When you do it right, you can feel comfortable that edge cases are covered and mission critical components work as they
 were intended.
 
-Although there are many test frameworks to choose from, [\`jest\`]() have risen up as a very attractive candidate.
-Unlike most test frameworks, there is no setup required, and you can get straight to writing your unit tests.
+Although there are many test frameworks to choose from, [\`jest\`](https://facebook.github.io/jest/) have risen up as a
+very attractive candidate. Unlike most test frameworks, there is no setup required, and you can get straight to writing
+your unit tests.
+
+## But didn't Jest suck?
+
+Jest didn't enjoy it's current popularity ratings in its first iterations. However, in 2016 it was totally rewritten to
+provide a top notch developer experience, focusing on speed, stability and a super well designed CLI. So you can rest
+assured - it's nothing like the bad things you might have heard anymore. And Christmas is about forgiveness and all
+that, right?
 
 ## Setup? Done.
 
 As mentioned in [yesterday's article](/1), Jest is included with \`create-react-app\`. If you have an existing
-application, however, setting up Jest is easy as peas. Add the following to your \`package.json\`:
+application, however, setting up Jest is easy as peas. Run \`npm i --save-dev jest\` and add the following to your
+\`package.json\` file:
 
 \`\`\`javascript
 "scripts": {
@@ -25,14 +34,23 @@ application, however, setting up Jest is easy as peas. Add the following to your
     "test": "jest",
     // Start an iterative test watcher
     "test:watch": "jest --watch",
-    // Run tests, outputing a test coverage overview
+    // Run tests, outputting a test coverage overview
     "test:coverage", "jest --coverage"
 }
 \`\`\`
 
+That's it! There's no cumbersome setup (although
+[you can tweak it](https://facebook.github.io/jest/docs/en/configuration.html#content) to fit your needs), and you can
+get straight to writing your tests. Boom!
+
 ## Snapshots
 
-A huge feature that puts Jest apart from the rest is something called snapshot testing.
+A huge feature that puts Jest apart from the rest is something called snapshot testing. Simply put it's a way to record
+a snapshot of the React component tree currently being tested, and then check future tests against the saved result.
+
+In other words - you no longer have to write endless assertions or expects, and instead can check two complete rendering
+results against each other. Huge time saver! You can read more about snapshot testing
+[here](http://facebook.github.io/jest/docs/en/snapshot-testing.html#content).
 `),
     resources: [
         {
