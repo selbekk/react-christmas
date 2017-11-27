@@ -21,22 +21,34 @@ application, however, setting up Jest is easy as peas. Add the following to your
 
 \`\`\`javascript
 "scripts": {
-    "test": "jest",                     // Run your test suite
-    "test:watch": "jest --watch",       // Start an iterative test watcher
-    "test:coverage", "jest --coverage"  // Run tests, outputing a test coverage overview
+    // Run your test suite
+    "test": "jest",
+    // Start an iterative test watcher
+    "test:watch": "jest --watch",
+    // Run tests, outputing a test coverage overview
+    "test:coverage", "jest --coverage"
 }
 \`\`\`
 
 ## Snapshots
 
 A huge feature that puts Jest apart from the rest is something called snapshot testing.
-
-## Learn more about Jest!
-
-There are tons of resources about Jest online. Here's my favorites:
-
-- [Documentation]()
-- [A nice getting started guide]()
-- [Some really cool advanced features]()
 `),
+    resources: [
+        {
+            title: 'Official site for Jest',
+            link: 'https://facebook.github.io/jest/',
+            body: 'The offical web site of Jest has a ton of great tutorials, docs and videos!',
+        },
+        {
+            title: 'From Mocha to Jest',
+            link: 'https://medium.com/airbnb-engineering/unlocking-test-performance-migrating-from-mocha-to-jest-2796c508ec50',
+            body: 'A very well written article from Gary Borton @ AirBnB about their migration from Mocha to Jest, and what benefits it brought',
+        },
+        {
+            title: 'Snapshot testing',
+            link: 'https://blog.callstack.io/unit-testing-react-native-with-the-new-jest-i-snapshots-come-into-play-68ba19b1b9fe',
+            body: 'Using snapshots might give your tests tons of more value, especially if you\'re into react-native. This is a great article series about just that.',
+        },
+    ],
 };
