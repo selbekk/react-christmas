@@ -32,12 +32,22 @@ non-breaking patch or minor releases.
 
 In addition, \`create-react-app\` only sets up a very basic React app - no routing, state management or
 fancy server side rendering. You get the setup, testing and a service worker - that's it.
-
-## Get started with getting started!
-
-So enough fluff - let's get you into today's resources! Here's a few articles and links to get you started creating
-your own React apps!
-
-- [\`create-react-app\`](https://github.com/facebookincubator/create-react-app/):
 `),
+  resources: [
+    {
+      title: 'Official site of create-react-app',
+      link: 'https://github.com/facebookincubator/create-react-app/',
+      body: 'The offical web site of create-react-app'
+    },
+    {
+      title: 'Learning React with create-react-app',
+      link: 'https://medium.com/in-the-weeds/learning-react-with-create-react-app-part-1-a12e1833fdc',
+      body: 'A 4-part series introducing the basics of React, based on create-react-app'
+    },
+    {
+      title: 'Automation without config',
+      link: 'https://blog.kentcdodds.com/automation-without-config-412ab5e47229',
+      body: 'A great article discussing how to create your own create-react-app to suit your own needs',
+    },
+  ],
 };
