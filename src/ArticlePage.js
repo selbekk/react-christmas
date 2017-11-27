@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import styled from 'styled-components';
 import Spinner from './Spinner';
+import Resources from './Resources';
 import * as breakpoints from './breakpoints';
 
 const DateBadge = styled.div`
@@ -102,6 +103,7 @@ class ArticlePage extends Component {
         <Title>{post.title}</Title>
         <LeadParagraph>{post.lead}</LeadParagraph>
         <Markdown dangerouslySetInnerHTML={{ __html: post.body }} />
+        <Resources resources={post.resources} />
       </article>
     );
   }
