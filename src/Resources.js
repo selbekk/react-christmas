@@ -78,7 +78,7 @@ const Resources = (props) => {
 
     return (
         <Container>
-            <ListTitle>Resources</ListTitle>
+            <ListTitle>Here's some great articles!</ListTitle>
             <List>
                 {resources.map((resource, idx) => (
                     <ListItem key={idx}>

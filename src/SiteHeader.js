@@ -19,6 +19,7 @@ const InnerContainer = styled.div`
 const LogoLink = styled(Link)`
   color: inherit;
   font-family: 'Covered By Your Grace', cursive;
+  font-size: 1.5em;
   text-decoration: none;
 `;
 
@@ -26,7 +27,7 @@ const SiteHeader = () => (
   <OuterContainer>
     <InnerContainer>
       <LogoLink to="/">
-        24 days of React
+        A React Christmas
       </LogoLink>
     </InnerContainer>
   </OuterContainer>
