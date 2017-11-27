@@ -1,6 +1,15 @@
 import React from 'react';
 import { node } from 'prop-types';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const spin = keyframes`
+    from {
+        transform: 0;
+    }
+    to {
+        transform: rotate(360deg);
+    }
+`;
 
 const Container = styled.div`
     align-items: center;
@@ -11,6 +20,7 @@ const Container = styled.div`
 `;
 
 const Emoji = styled.div`
+    animation: 1s linear infinite ${spin};
     font-size: 3em;
 `;
 
