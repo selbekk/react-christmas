@@ -83,7 +83,7 @@ class ArticlePage extends Component {
       && (
         (now.getYear() === 2017 && now.getMonth() === 11)
         || now.getYear() > 2017
-        || process.env.NODE_ENV !== 'production' // for testing
+        || process.env.NODE_ENV !== 'production'
       );
   }
 

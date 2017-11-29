@@ -27,7 +27,7 @@ const isAvailable = (
 const OverviewPage = () => (
   <CardList>
     {posts.map((post, idx) => (
-      <Card key={idx} date={idx + 1} notYetAvailable={now.getDate() < idx + 1 && !isAvailable} />
+      <Card key={idx} date={idx + 1} notYetAvailable={now.getDate() < idx + 1 || !isAvailable} />
     ))}
   </CardList>
 );
