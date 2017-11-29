@@ -3,11 +3,11 @@
   "description": "A Christmas calendar for React",
   "version": "0.0.110",
   "dependencies": {
-    "styled-components": "2.2.3",
-    "react-router-dom": "4.2.2",
-    "react-dom": "16.0.0",
+    "marked": "0.3.6",
     "react": "16.0.0",
-    "marked": "0.3.6"
+    "react-dom": "16.0.0",
+    "react-router-dom": "4.2.2",
+    "styled-components": "2.2.3"
   },
   "devDependencies": {
     "react-scripts": "1.0.0"
