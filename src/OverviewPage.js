@@ -21,7 +21,7 @@ const now = new Date();
 const isAvailable = (
   (now.getYear() === 2017 && now.getMonth() === 11)
   || now.getYear() > 2017
-  || process.env.NODE_ENV !== 'PRODUCTION' // for testing
+  || process.env.NODE_ENV !== 'production' // for testing
 );
 
 const OverviewPage = () => (
