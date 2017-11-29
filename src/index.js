@@ -2,6 +2,7 @@ import React from "react";
 import { render } from "react-dom";
 import styled, { injectGlobal } from "styled-components";
 import { BrowserRouter } from "react-router-dom";
+import registerServiceWorker from './createServiceWorker';
 import App from "./App";
 import SiteHeader from "./SiteHeader";
 import SiteContent from "./SiteContent";
@@ -42,5 +43,7 @@ const Root = () => (
     </AppContainer>
   </BrowserRouter>
 );
+
+registerServiceWorker();
 
 render(<Root />, document.getElementById("root"));
