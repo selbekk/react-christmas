@@ -76,15 +76,12 @@ class ArticlePage extends Component {
 
   isValidPost() {
     const postId = Number(this.props.match.params.date);
+    const availableFrom = new Date(2017, 11, 1);
     const now = new Date();
     return !Number.isNaN(postId)
       && postId > 0
       && postId < 25
-      && (
-        (now.getYear() === 2017 && now.getMonth() === 11)
-        || now.getYear() > 2017
-        || process.env.NODE_ENV !== 'production'
-      );
+      && (availableFrom < now || process.env.NODE_ENV !== 'production');
   }
 
   render() {
