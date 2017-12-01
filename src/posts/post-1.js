@@ -32,6 +32,27 @@ non-breaking patch or minor releases.
 
 In addition, \`create-react-app\` only sets up a very basic React app - no routing, state management or
 fancy server side rendering. You get the setup, testing and a service worker - that's it.
+
+## What if my app grows?
+
+Hiding configuration might sound scary to projects that aims to grow to a certain size. If you're going to add features
+to your application for the foreseeable future, chances are that you might reach a point where you need some
+webpack configuration tweak that \`create-react-app\` doesn't provide. Luckily, there's an eject button!
+
+Whenever you run \`create-react-app\` in your CLI, the \`package.json\`-file already has an \`eject\` task. Whenever you
+run this, \`react-scripts\` are removed, and instead replaced with the barebones webpack- and babel config files. This
+will let you expand on whatever \`create-react-app\` already set up for you, so you don't have to start from scratch
+just to add hot reloading for example.
+
+One caveat of the eject task though - once you eject from \`create-react-app\`, you can't go back - so think thoroughly
+about whether that's what you want or not. Chances are, you'd be better off by forking the project on GitHub, changing
+whatever you need there, and switch out your \`react-scripts\` dependency with your own package. This way you can still
+sync your branch with the current master branch, and you'll get updates as they come along.
+
+## That's it for day one!
+
+I hope you enjoyed today's little introduction to \`create-react-app\` and how to get started with your next project.
+Hopefully you'll give it a try! And I hope to see you back tomorrow, for yet another article on something cool React.
 `),
   resources: [
     {
