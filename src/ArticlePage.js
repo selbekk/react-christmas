@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import styled from 'styled-components';
+import Helmet from 'react-helmet';
 import Spinner from './Spinner';
 import Resources from './Resources';
 import * as breakpoints from './breakpoints';
@@ -105,6 +106,12 @@ class ArticlePage extends Component {
 
     return (
       <article>
+        <Helmet>
+          <title>{post.title} - A React Christmas</title>
+          <meta property="og:title" content={post.title} />
+          <meta property="og:url" content={`https://react.christmas/${postId}`} />
+          <meta property="og:description" content={post.lead} />
+        </Helmet>
         <DateBadge>{postId}</DateBadge>
         <Title>{post.title}</Title>
         <LeadParagraph>{post.lead}</LeadParagraph>
