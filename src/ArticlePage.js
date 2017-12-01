@@ -81,6 +81,7 @@ class ArticlePage extends Component {
     return !Number.isNaN(postId)
       && postId > 0
       && postId < 25
+      && postId <= now.getDate()
       && (availableFrom < now || process.env.NODE_ENV !== 'production');
   }
 
@@ -94,6 +95,7 @@ class ArticlePage extends Component {
     if (!validPost) {
       return <Redirect to="/" />;
     }
+
 
     if (!post) {
       return (
