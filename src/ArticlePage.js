@@ -77,13 +77,11 @@ class ArticlePage extends Component {
 
   isValidPost() {
     const postId = Number(this.props.match.params.date);
-    const availableFrom = new Date(2017, 11, 1);
     const now = new Date();
     return !isNaN(postId)
       && postId > 0
       && postId < 25
-      && postId <= now.getDate()
-      && (availableFrom < now || process.env.NODE_ENV !== 'production');
+      && (postId <= now.getDate() || process.env.NODE_ENV !== 'production');
   }
 
   render() {
@@ -96,7 +94,6 @@ class ArticlePage extends Component {
     if (!validPost) {
       return <Redirect to="/" />;
     }
-
 
     if (!post) {
       return (
