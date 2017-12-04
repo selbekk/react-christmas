@@ -68,8 +68,8 @@ export the result of \`redux\`'s \`combineReducers\` function - so that I can cr
 
 ## The highway
 
-My way isn't necessarily the only one that'll work for you. Perhaps your projects reuire a different approach
-all together. That's totally fine! Luckily, there are several other approaches that let's you get away with
+My way isn't necessarily the only one that'll work for you. Perhaps your projects require a different approach
+all together. That's totally fine! Luckily, there are several other approaches that lets you get away with
 significantly less folders, files and navigation.
 
 For simple applications, a "no structure" approach is totally fine. This web app is structured like that, for instance
