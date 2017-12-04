@@ -56,9 +56,9 @@ const SiteFooter = () => (
                     <Column>
                         <Heading>What is this?</Heading>
                         <Paragraph>
-                            Just for future reference, when you're drinking wine from a box and have a bit too much time on your
-                            hands: don't buy domain names. I did that, and it kind of ballooned into this huge Christmas
-                            calendar adventure. Oh well.
+                            Just for future reference, when you're drinking bag-in-box wine and have a bit too much time
+                            on your hands: don't buy domain names. I did that, and it kind of ballooned into this huge
+                            Christmas calendar adventure. Oh well.
                         </Paragraph>
                     </Column>
                     <Column>
