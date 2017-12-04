@@ -29,7 +29,7 @@ and triggers a new render of your component.
 React is actually pretty clever when it comes to saving you render cycles. So instead of just setting the state right
 away, it tries to batch as many changes to state as possible into one single update call.
 
-Now this is all jolly good fun and all, but this has one pretty sketch downside. You can't count on state being set
+Now this is all jolly good fun and all, but this has one pretty sketchy downside. You can't count on state being set
 right away! Here's an example showing a common pitfall:
 
 \`\`\`javascript
