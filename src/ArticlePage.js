@@ -46,6 +46,28 @@ const Markdown = styled.div`
     overflow-x: scroll;
     padding: 12px;
   }
+
+  a {
+    color: #d00;
+    text-decoration: none;
+
+    &:focus,
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  code {
+    background-color: #eee;
+    border-radius: 2px;
+    display: inline-block;
+    padding: 0 2px;
+  }
+
+  pre > code {
+    background-color: transparent;
+    padding: 0;
+  }
 `;
 
 class ArticlePage extends Component {
