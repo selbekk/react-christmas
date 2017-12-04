@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Container = styled.nav`
     display: flex;
     justify-content: space-between;
-    padding: 24px 0;
+    padding: 24px 0 0;
 `;
 
 const ArticleLink = styled(Link)`
