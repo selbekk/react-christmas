@@ -4,6 +4,7 @@ import styled, { injectGlobal } from "styled-components";
 import { BrowserRouter } from "react-router-dom";
 import registerServiceWorker from './createServiceWorker';
 import App from "./App";
+import ScrollRestorer from "./ScrollRestorer";
 import SiteHeader from "./SiteHeader";
 import SiteContent from "./SiteContent";
 import SiteFooter from "./SiteFooter";
@@ -35,6 +36,7 @@ const AppContainer = styled.div`
 const Root = () => (
   <BrowserRouter>
     <AppContainer>
+      <ScrollRestorer />
       <SiteHeader />
       <SiteContent>
         <App />
