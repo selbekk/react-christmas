@@ -17,7 +17,7 @@ your unit tests.
 
 ## But didn't Jest suck?
 
-Jest didn't enjoy it's current popularity ratings in its first iterations. However, in 2016 it was totally rewritten to
+Jest didn't enjoy its current popularity ratings in its first iterations. However, in 2016 it was totally rewritten to
 provide a top notch developer experience, focusing on speed, stability and a super well designed CLI. So you can rest
 assured - it's nothing like the bad things you might have heard anymore. And Christmas is about forgiveness and all
 that, right?
