@@ -51,23 +51,27 @@ class ArticlePage extends Component {
   constructor(props) {
     super(props);
 
-    const postId = this.getPostId();
-
     this.state = {
-      postId,
-      validPost: this.isValidPost(),
+      post: undefined,
     };
   }
 
-  async componentDidMount() {
-    if (!this.isValidPost()) {
-      return; // Will be redirected
+  componentDidMount() {
+    this.getPost(this.getPostId());
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.match.params.date !== nextProps.match.params.date) {
+      this.getPost(Number(nextProps.match.params.date));
     }
+  }
+
+  async getPost(postId) {
     try {
-      const post = await import(`./posts/post-${this.state.postId}`);
+      const post = await import(`./posts/post-${postId}`);
       this.setState({ post: post.default });
     } catch (e) {
-      this.setState({ validPost: false });
+      this.setState({ post: undefined });
     }
   }
 
@@ -76,7 +80,7 @@ class ArticlePage extends Component {
   }
 
   isValidPost() {
-    const postId = Number(this.props.match.params.date);
+    const postId = this.getPostId();
     const now = new Date();
     return !isNaN(postId)
       && postId > 0
@@ -87,11 +91,9 @@ class ArticlePage extends Component {
   render() {
     const {
       post,
-      postId,
-      validPost,
     } = this.state;
 
-    if (!validPost) {
+    if (!this.isValidPost()) {
       return <Redirect to="/" />;
     }
 
@@ -100,6 +102,8 @@ class ArticlePage extends Component {
         <Spinner>Loading</Spinner>
       );
     }
+
+    const postId = this.getPostId();
 
     return (
       <article>
