@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom';
 import styled from 'styled-components';
 import Helmet from 'react-helmet';
 import Spinner from './Spinner';
+import ArticleNavigation from './ArticleNavigation';
 import Resources from './Resources';
 import * as breakpoints from './breakpoints';
 
@@ -53,6 +54,7 @@ class ArticlePage extends Component {
 
     this.state = {
       post: undefined,
+      postNotFound: false,
     };
   }
 
@@ -69,9 +71,9 @@ class ArticlePage extends Component {
   async getPost(postId) {
     try {
       const post = await import(`./posts/post-${postId}`);
-      this.setState({ post: post.default });
+      this.setState({ post: post.default, postNotFound: false });
     } catch (e) {
-      this.setState({ post: undefined });
+      this.setState({ post: undefined, postNotFound: true });
     }
   }
 
@@ -91,9 +93,10 @@ class ArticlePage extends Component {
   render() {
     const {
       post,
+      postNotFound,
     } = this.state;
 
-    if (!this.isValidPost()) {
+    if (!this.isValidPost() || postNotFound) {
       return <Redirect to="/" />;
     }
 
@@ -104,6 +107,7 @@ class ArticlePage extends Component {
     }
 
     const postId = this.getPostId();
+    const todaysDate = new Date().getDate();
 
     return (
       <article>
@@ -113,11 +117,21 @@ class ArticlePage extends Component {
           <meta property="og:url" content={`https://react.christmas/${postId}`} />
           <meta property="og:description" content={post.lead} />
         </Helmet>
+        <ArticleNavigation
+          previousId={postId - 1}
+          nextId={postId + 1}
+          hasNextPost={postId <= todaysDate}
+        />
         <DateBadge>{postId}</DateBadge>
         <Title>{post.title}</Title>
         <LeadParagraph>{post.lead}</LeadParagraph>
         <Markdown dangerouslySetInnerHTML={{ __html: post.body }} />
         <Resources resources={post.resources} />
+        <ArticleNavigation
+          previousId={postId - 1}
+          nextId={postId + 1}
+          hasNextPost={postId <= todaysDate}
+        />
       </article>
     );
   }
