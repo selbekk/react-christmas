@@ -130,7 +130,7 @@ class ArticlePage extends Component {
         <ArticleNavigation
           previousId={postId - 1}
           nextId={postId + 1}
-          hasNextPost={postId <= todaysDate}
+          hasNextPost={postId < todaysDate}
         />
       </article>
     );
