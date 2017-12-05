@@ -35,7 +35,7 @@ application, however, setting up Jest is easy as peas. Run \`npm i --save-dev je
     // Start an iterative test watcher
     "test:watch": "jest --watch",
     // Run tests, outputting a test coverage overview
-    "test:coverage", "jest --coverage"
+    "test:coverage": "jest --coverage"
 }
 \`\`\`
 
