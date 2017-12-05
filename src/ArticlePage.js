@@ -5,6 +5,7 @@ import Helmet from 'react-helmet';
 import Spinner from './Spinner';
 import ArticleNavigation from './ArticleNavigation';
 import Resources from './Resources';
+import SpectrumCallout from './SpectrumCallout';
 import * as breakpoints from './breakpoints';
 
 const DateBadge = styled.div`
@@ -154,6 +155,7 @@ class ArticlePage extends Component {
           nextId={postId + 1}
           hasNextPost={postId < todaysDate}
         />
+        <SpectrumCallout />
       </article>
     );
   }

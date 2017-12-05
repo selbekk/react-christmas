@@ -30,6 +30,7 @@ const OverviewPage = () => (
       <meta property="og:description" content="24 days of React tips and tricks to get in that declarative spirit" />
       <title>A React Christmas</title>
     </Helmet>
+
     <CardList>
       {posts.map((post, idx) => (
         <Card key={idx} date={idx + 1} notYetAvailable={now.getDate() < idx + 1 && isProduction} />
