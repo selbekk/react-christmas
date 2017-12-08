@@ -29,11 +29,11 @@ const Container = styled.li`
 `;
 
 const CardLink = styled(Link)`
-align-items: center;
-justify-content: center;
-display: flex;
-min-height: 120px;
-text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  min-height: 120px;
+  text-decoration: none;
 `;
 
 const Number = styled.div`
