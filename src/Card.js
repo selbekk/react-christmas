@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import * as breakpoints from './breakpoints';
 
-const OuterContainer = styled.li`
+const Container = styled.li`
   background: linear-gradient(to right, #f00, #d00);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
@@ -28,12 +28,12 @@ const OuterContainer = styled.li`
   `}
 `;
 
-const InnerContainer = styled(Link)`
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  min-height: 120px;
-  text-decoration: none;
+const CardLink = styled(Link)`
+align-items: center;
+justify-content: center;
+display: flex;
+min-height: 120px;
+text-decoration: none;
 `;
 
 const Number = styled.div`
@@ -41,12 +41,12 @@ const Number = styled.div`
   font-size: 5em;
 `;
 
-const Card = props => (
-  <OuterContainer notYetAvailable={props.notYetAvailable}>
-    <InnerContainer to={`/${props.date}`}>
-      <Number>{props.date}.</Number>
-    </InnerContainer>
-  </OuterContainer>
+const Card = ({ date, notYetAvailable }) => (
+  <Container notYetAvailable={notYetAvailable}>
+    <CardLink to={`/${notYetAvailable ? '' : date}`}>
+      <Number>{date}.</Number>
+    </CardLink>
+  </Container>
 );
 
 export default Card;
