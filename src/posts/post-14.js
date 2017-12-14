@@ -79,19 +79,25 @@ languages like Java or C#.
 ## Make a shift to TypeScript
 
 If you're serious about type safety, Microsoft's open source super set of JavaScript is one of the ways to go. It's a
-different language, and even though it compiles down to JavaScript, it's still a big buy-in for any project. That being
-said, a lot of large projects are running this in production with huge success, and it's proven a worthy investment for
-those who have tried it.
+different language all together, but looks and feels pretty much like writing annotations in Flow. One of the major
+differences between them, however, is that Typescript comes with its own compiler - so you don't need transpilers such as
+Babel.
 
-I'm not going to go into details about this language, but it's definitely something to investigate if you're starting a
-new project.
+Just like Flow, you can port existing code bases over to this incrementally. Simply rename your file to .ts, and it will
+be type checked as soon as you start to add annotations etc.
+
+Honestly - I don't have a lot of experience (or any, to be honest), but I know a lot of people love it, and I've never
+met a developer that has tried it and went back. Same goes for Flow, really.
+[Here's](https://medium.com/@ckoster22/migrating-from-flow-to-typescript-b065796797db) an article from a guy that made
+the shift from Flow to TypeScript - and it looks like it's been a good experience :)
 
 ## So what do you choose?
 
 If there's anything a few years of working with React has taught me, it's that type safety and predictable interfaces
 are important. You don't, however, have to go all in with a type safe language in order to reap the benefits of type
 safety. Consider your use case, the amount of legacy code to port and the importance of avoiding bugs in production.
-I tend to stick with simple prop types and a few too many unit tests for my code, but whatever floats your boat.
+I tend to stick with simple prop types and a few too many unit tests for my code, a partially type-checked code base
+might be a great fit for you!
 
 Please check out the resources for some great articles on type safety!
 `),
