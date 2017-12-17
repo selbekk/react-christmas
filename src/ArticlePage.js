@@ -58,6 +58,10 @@ const Markdown = styled.div`
     }
   }
 
+  p {
+    font-size: 16px;
+  }
+
   code {
     background-color: #eee;
     border-radius: 2px;
