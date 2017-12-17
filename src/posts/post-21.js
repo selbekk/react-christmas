@@ -1,0 +1,113 @@
+import marked from 'marked';
+export default {
+  title: 'Below the surface',
+  lead: `
+React is an amazing tool for many reasons. One of them is that it just works. Ever wondered about
+how exactly? Let's dive in for a quick look!
+  `,
+  body: marked(`
+Ever read online that React is declarative? Yeah, me too. Unfortunately, I had no idea what meant
+for the longest time. Simply put, React lets you state _what you want_, not _how you want it_.
+That means - instead of creating a DOM element and putting some content in it, you tell React that
+you want a certain type of element with a certain set of props at some point.
+
+Now, this might not seem like a good developer experience. That's a lot of indirection in order to
+add a simple \`<div />\` tag to the DOM? Truth is, adding stuff to the DOM is not the most exiting
+part of the job. We just want to make cool web apps - why care about the details about how stuff
+actually gets to the screen?
+
+That's the cool part of React - it does all of the heavy lifting for us, and gives us a great
+way of writing these cool UIs without thinking twice about performance or all the other hard stuff.
+So how does React do it?
+
+## \`React.createElement\`
+
+All of React's magic starts with this little function. You might not have seen it before, but
+you invoke it all of the time. How? With JSX! [As I explained in this article](/10), JSX is just
+a fancy way of writing \`React.createElement(elementName, props, children)\`. So when you write
+this snippet:
+
+\`\`\`javascript
+<button className="button">Clap</button>
+\`\`\`
+
+, you really write this:
+
+\`\`\`javascript
+React.createElement('button', { className: 'button' }, 'Clap');
+\`\`\`
+
+But what does this guy do? Well, simply put it creates a simple object - React calls them elements
+- that basically look like this:
+
+\`\`\`javascript
+{
+  type: 'button',
+  props: {
+    className: 'button',
+    children: 'Clap',
+  },
+}
+\`\`\`
+
+Don't believe me? Check out [this codepen!](https://codepen.io/selbekk/pen/NXGVrM)
+
+These "elements" are created for every single component you render, and is the base for what React
+calls reconciliation - also known as a "virtual DOM". They are collected, combined and passed to
+an algorithm that figures out how to translate the current state of the DOM to the next. That
+algorithm is what React calls Fiber.
+
+## How about that Fiber?
+
+Fiber is React's name of a concept it calls a reconciler. It takes an old element tree and a
+new element tree, and figures out the minimal amount of changes needed to transition one to the
+other. Thanks to some pretty nifty implementation details, this algorithm can even break up this
+process into prioritized units of work which can be paused, aborted and resumed at will. This leads
+to React being able to prioritize stuff you might notice, like animations, and defer stuff that
+doesn't matter as much (like displaying new data from a data store).
+
+This reconciliation process has nothing to do with rendering stuff to the screen. It simply figures
+out what elements need to change and how to change them in the smallest amount of operations. The
+thing that actually does the rendering is what you think of as \`react-dom\` or \`react-native\` -
+also known as renderers.
+
+## Finally, let's render stuff!
+
+Once React has figured out what needs to change, its result is passed to a renderer of choice.
+Web developers tend to choose \`react-dom\`, which renders to a browser DOM, while mobile developers
+use \`react-native\`, which renders to native iOS or Android views.
+
+The first time you run \`ReactDOM.render\`, React will create a completely new DOM tree and insert
+it into the browser. Whenever the React application changes (due to changes in state or props),
+ReactDOM (or a renderer of your choice) will make sure to figure out the smallest number of
+changes possible to update the existing DOM structure to the new one.
+
+## And that's it!
+
+Advanced? Heck yes! Luckily we don't have to deal with any of this - we can just write regular
+React and let the framework deal with the rest. That's the beauty of React - it hides all of this
+magic for the developer, and lets us focus on writing cool UIs :)
+
+If you didn't understand any of this - that's fine too. It doesn't really matter to you as a
+developer - it's just fun to know what this magic black box called React actually does whenever
+you call \`setState\`.
+
+  `),
+  resources: [
+    {
+      title: 'Elements and instances',
+      link: 'https://reactjs.org/blog/2015/12/18/react-components-elements-and-instances.html',
+      body: 'A great read about the concepts of React, and how stuff works!',
+    },
+    {
+      title: 'What is React Fiber?',
+      link: 'https://giamir.com/what-is-react-fiber',
+      body: 'A fairly advanced, but well written article explaining the cool computer sciency stuff behind Fiber',
+    },
+    {
+      title: 'Tiny React Renderer',
+      link: 'https://github.com/iamdustan/tiny-react-renderer',
+      body: 'A very thorouogh guide to how renderers work. Great read, even if you\'re never going to write one',
+    },
+  ],
+};
