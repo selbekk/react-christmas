@@ -2,8 +2,8 @@ import marked from 'marked';
 export default {
   title: 'Class property initializers',
   lead: `
-Although React specific, this technique has made our React code much simpler and easier to read. Say hello to class
-property initializers!
+Although not React specific, this technique has made our React code much simpler and easier to read. Say hello to
+class property initializers!
   `,
   body: marked(`
 Usually, when you create a class based React component, you end up with something like this at the top:
@@ -92,6 +92,8 @@ the \`this\` context very uncertain.
 
 To be honest, this is something you and your team need to discuss before you start using it. In my current team, we're
 only using this technique for specifying state and prop types - which is a huge improvement nonetheless.
+
+Either way - I hope you give these a try!
 `),
   resources: [
     {
