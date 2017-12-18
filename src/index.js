@@ -2,7 +2,7 @@ import React from "react";
 import { render } from "react-dom";
 import styled, { injectGlobal } from "styled-components";
 import { BrowserRouter } from "react-router-dom";
-import registerServiceWorker from './createServiceWorker';
+// import registerServiceWorker from './createServiceWorker';
 import App from "./App";
 import ScrollRestorer from "./ScrollRestorer";
 import SiteHeader from "./SiteHeader";
@@ -46,6 +46,7 @@ const Root = () => (
   </BrowserRouter>
 );
 
-registerServiceWorker();
+// Skip using service worker, because it caches the wrong things for now
+// registerServiceWorker();
 
 render(<Root />, document.getElementById("root"));
