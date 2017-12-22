@@ -5,7 +5,7 @@ export default {
     Fragments lets you return several root nodes from your components. Finally we can skip those pesky container divs!
   `,
   body: marked(`
-React 16.2.0 is fresh off the presses, and one of the major new features it ships with is something called fragments.
+React 16.2.0 is fresh off the presses, and one of the major new features it ships with is something called **fragments**.
 Simply put, a fragment is a "component" that only returns its children, without any new wrapper DOM node.
 
 Here's an example on how it can look:

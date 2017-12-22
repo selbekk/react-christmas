@@ -37,8 +37,7 @@ this snippet:
 React.createElement('button', { className: 'button' }, 'Clap');
 \`\`\`
 
-But what does this guy do? Well, simply put it creates a simple object - React calls them elements
-- that basically look like this:
+But what does this tool do? Well, simply put, it creates a simple object - React calls them elements - that basically look like this:
 
 \`\`\`javascript
 {
@@ -86,9 +85,9 @@ changes possible to update the existing DOM structure to the new one.
 
 Advanced? Heck yes! Luckily we don't have to deal with any of this - we can just write regular
 React and let the framework deal with the rest. That's the beauty of React - it hides all of this
-magic for the developer, and lets us focus on writing cool UIs :)
+magic for the developer, and lets us focus on writing cool UIs. :)
 
-If you didn't understand any of this - that's fine too. It doesn't really matter to you as a
+If you didn't understand any of this - that's fine, too. It doesn't really matter to you as a
 developer - it's just fun to know what this magic black box called React actually does whenever
 you call \`setState\`.
 

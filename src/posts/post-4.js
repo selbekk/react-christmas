@@ -5,10 +5,10 @@ export default {
     Although we hear a lot about MobX, Redux and other tools for handling state, React ships with its very own.
   `,
   body: marked(`
-Most applications deal with at least some type of state. Visual state, validation state, or even asynchronous state
+Most applications deal with at least some type of state: visual state, validation state, or even asynchronous state
 fetched from some API.
 
-I think I'll go out on a limb and say that state is actually one of the hardest part of application development! And
+I think I'll go out on a limb and say that state is actually one of the hardest parts of application development! And
 because it's something we as developers consider complex and hard to do, there's almost as many state management
 libraries out there as there are web sites on the internet. Well, I said almost.
 
@@ -16,7 +16,7 @@ Here's another gutsy statement - you probably don't need them.
 
 ## Nanananananana \`setState\`!
 
-As you may know, React ships with its own state management tool, namely what we call component state. Simply put, it's
+As you may know, React ships with its own state management tool, namely what we call **component state**. Simply put, it's
 state scoped to your component. React usually gets its data via props, but for data (state) that is local to a
 component, it often makes sense to keep that state internal to your component.
 

@@ -23,7 +23,7 @@ instead of worse. Perhaps... both the HTML and JS was parts of the same concern 
 
 Colocating the presentational part of this concern with the rest of the code kind of just made sense to me. Sure, there
 was a few WTFs the first time I saw somebody writing CSS rules in JavaScript - but that scare went away pretty fast.
-Because just as I quickly accepted the upsides of JSX, the immediate benefits of CSS-in-JS was pretty apparent to me:
+Because just as I quickly accepted the upsides of JSX, the immediate benefits of CSS-in-JS were pretty apparent to me:
 
 - You don't need a build step for your CSS
 - You have access to the full power of JavaScript to write your styles

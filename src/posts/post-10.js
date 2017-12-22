@@ -18,14 +18,14 @@ In layman's terms, however, JSX is simply syntactic sugar for \`React.createElem
 That means, the code above is transpiled (or translated) into the following:
 
 \`\`\`javascript
-React.createElement(SomeComponent, { someProp: someValue},
+React.createElement(SomeComponent, { someProp: someValue },
     React.createElement('h1', { className: 'heading' },
         'Hello world',
     );
 );
 \`\`\`
 
-Since the latter is neither very simple to read or particularly user friendly, Facebook came up with this XML-inspired
+Since the latter is neither very simple to read nor particularly user-friendly, Facebook came up with this XML-inspired
 syntax now known as JSX. You can play with this [babel compiler
 example](https://babeljs.io/repl/#?presets=react&code_lz=GYVwdgxgLglg9mABACwKYBt1wBQEpEDeAUIogE6pQhlIA8AJjAG4B8AEhlogO5xnr0AhLQD0jVgG4iAXyJA)
 to see how this works with your own code.
@@ -52,7 +52,7 @@ const ArticleCard = (props) = (
 \`\`\`
 
 Note that I just showed you two different ways of doing the same thing - both with something called logical short
-circuting (\`&&\`) and ternaries (\`a ? b : c\`). Both are valid and both works, but I tend to use the first approach
+circuting (\`&&\`) and ternaries (\`a ? b : c\`). Both are valid and both work, but I tend to use the first approach
 in my own projects.
 
 ## Props default to true!
@@ -116,12 +116,12 @@ just specify children as a regular prop, making the following two statements equ
 
 The latter approach is probably not something you'll see a lot in the real world, but the fact that children really just
 is a regular property (and not something magic) is great. If you've been following this calendar over the last few days,
-you probably remember [the article on HOCs and render props](/7) , which uses this fact to send in a function that
+then you probably remember [the article on HOCs and render props](/7) , which uses this fact to send in a function that
 renders JSX instead of plain JSX.
 
 ## JSX is yay!
 
-There is tons of more to learn about JSX, but as long as you remember the beginning of this article, you should be good:
+There is tons more to learn about JSX, but as long as you remember the beginning of this article, you should be good:
 JSX is just syntactic sugar for \`React.createElement\`. Now go make something cool!
 `),
   resources: [

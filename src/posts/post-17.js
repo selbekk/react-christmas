@@ -6,7 +6,7 @@ Although not React specific, this technique has made our React code much simpler
 class property initializers!
   `,
   body: marked(`
-Usually, when you create a class based React component, you end up with something like this at the top:
+Usually, when you create a class-based React component, you end up with something like this at the top:
 
 \`\`\`javascript
 class MyComponent extends React.Component {
@@ -59,9 +59,9 @@ See? There's no constructor anymore!
 
 Although the two examples above are functionally equivalent, I think the latter has a few very great upsides.
 
-First of all, you don't have to specify a constructur. That means you don't have a constructor to stuff other things
+First of all, you don't have to specify a constructor. That means you don't have a constructor to stuff other things
 into, and it's easier to do the right thing and use lifecycle methods instead. I've made several hard-to-track-down
-bugs this way the last couple of years, mostly because the way the constructor works is a bit counter intuitive (it's
+bugs this way the last couple of years, mostly because the way the constructor works is a bit counter-intuitive (it's
 called whenever the component is rendered, not declared) and hard to understand - especially for beginners.
 
 A second huge benefit is that you have to write less boilerplate to create class based components. You don't have to

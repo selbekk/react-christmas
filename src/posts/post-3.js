@@ -7,7 +7,7 @@ Structuring your React app is incredibly important for making your project maint
 the best way to do it?
     `,
     body: marked(`
-Whenever I start out a new app, I tend to ask myself the question: "How should I structure my files?"
+Whenever I start out a new app, I tend to ask myself the question, "How should I structure my files?"
 
 Truth is, this is a hard question to answer. There is no single right way to make sure the next developer understands
 where each file should be, and there are tons of alternatives. However, I have a way that has worked for me, and there
@@ -17,7 +17,7 @@ are several other ones that work just as well. This article is going to outline 
 
 I tend to split my app into two main topics - components and containers. Containers are basically one-off layout views
 for a particular route, while components tend to be (mostly) reusable pieces of code. In addition, I separate out state
-logic (like Redux' dispatchers, actions and reducers) and reusable logical containers. The last piece in the puzzle is
+logic (like Redux's dispatchers, actions and reducers) and reusable logical containers. The last piece in the puzzle is
 utilities.
 
 Whenever I bootstrap a new application, I use \`mkdir -p\` to create the following application structure:
@@ -35,7 +35,7 @@ src
 ### Components
 
 I tend to create a folder for each component. I add an \`index.js\` file in each of these to simplify importing each
-component. Inside this folder, I add potential styles, tests, and the component itself. If a component is a bit large,
+component. Inside this folder, I add potential styles, tests, and the component itself. If a component is a bit large
 and needs to be split into several distinct (but not reusable) components, each of these are also placed in here.
 Here's an example of how I'd structure a component:
 
@@ -49,16 +49,16 @@ some-component
   README.md
 \`\`\`
 
-Depending on the component, and the application itself, I consider adding a \`README.md\` file as well, explaining the
+Depending on the component, and the application itself, I consider adding a \`README.md\` file, as well, explaining the
 usage and use cases for that particular component. Naming can often only get you so far - sometimes the use case (and
 limitations) needs some explaining.
 
-The same rules goes for containers, really.
+The same rules go for containers, really.
 
 ### Redux folders
 
 Actions, dispatchers and reducers always get their own folders in my projects, each with their own \`index.js\` file.
-For actions and dispatchers, the \`index.js\` file work as an export aggregator, so that I can
+For actions and dispatchers, the \`index.js\` file works as an export aggregator, so that I can
 \`import * as actions from '../actions';\` instead of remembering which file my particular action (or dispatcher) is
 from. This practice also pushes me to create unique action (or dispatcher) names for each one - simplifying
 understanding the code later on.
@@ -69,7 +69,7 @@ export the result of \`redux\`'s \`combineReducers\` function - so that I can cr
 ## The highway
 
 My way isn't necessarily the only one that'll work for you. Perhaps your projects require a different approach
-all together. That's totally fine! Luckily, there are several other approaches that lets you get away with
+altogether. That's totally fine! Luckily, there are several other approaches that lets you get away with
 significantly less folders, files and navigation.
 
 For simple applications, a "no structure" approach is totally fine. This web app is structured like that, for instance

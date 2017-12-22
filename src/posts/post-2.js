@@ -8,17 +8,17 @@ export default {
     `,
     body: marked(`
 Unit testing your code is important to avoid introducing bugs whenever you are writing new code or refactoring legacy.
-When you do it right, you can feel comfortable that edge cases are covered and mission critical components work as they
+When you do it right, you can feel comfortable that edge cases are covered and mission-critical components work as they
 were intended.
 
-Although there are many test frameworks to choose from, [\`jest\`](https://facebook.github.io/jest/) have risen up as a
+Although there are many test frameworks to choose from, [\`jest\`](https://facebook.github.io/jest/) has risen up as a
 very attractive candidate. Unlike most test frameworks, there is no setup required, and you can get straight to writing
 your unit tests.
 
 ## But didn't Jest suck?
 
 Jest didn't enjoy its current popularity ratings in its first iterations. However, in 2016 it was totally rewritten to
-provide a top notch developer experience, focusing on speed, stability and a super well designed CLI. So you can rest
+provide a top-notch developer experience, focusing on speed, stability and a super well designed CLI. So you can rest
 assured - it's nothing like the bad things you might have heard anymore. And Christmas is about forgiveness and all
 that, right?
 
@@ -66,7 +66,7 @@ results against each other. Huge time saver! You can read more about snapshot te
         {
             title: 'Snapshot testing',
             link: 'https://blog.callstack.io/unit-testing-react-native-with-the-new-jest-i-snapshots-come-into-play-68ba19b1b9fe',
-            body: 'Using snapshots might give your tests tons of more value, especially if you\'re into react-native. This is a great article series about just that.',
+            body: 'Using snapshots might give your tests tons more value, especially if you\'re into react-native. This is a great article series about just that.',
         },
     ],
 };

@@ -34,7 +34,7 @@ milliseconds mentioned above. Luckily, React gives us a few tools to optimize th
 
 ## Skip the wait with \`shouldComponentUpdate\`!
 
-[A few days ago](/16) we learned about class based components and how they supply us with
+[A few days ago](/16) we learned about class-based components and how they supply us with
 some pretty powerful functions called "lifecycle methods". One of the most powerful is
 actually one you see used the least - \`shouldComponentUpdate\`.
 

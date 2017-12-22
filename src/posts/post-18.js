@@ -85,14 +85,14 @@ Third, and most importantly, context won't be updated whenever an intermediate c
 Turns out, a lot of libraries use context to pass information about stuff like state, internationalization and routing.
 \`react-redux\` does it, \`react-router\` does it, and tons of others do the same. As it turns out, using libraries
 who uses context below the surface is not such a bad thing. The library authors shield you from the complexities and
-quirks of the context API, and finds ways around the update blocking problem.
+quirks of the context API and find ways around the update blocking problem.
 
 Understanding how these libraries - which many developers look at like they're performing magic - is important. It's
 nothing more special than regular React, and creating your own almost-as-good version (or perhaps even better, given
 your use case) is far from impossible.
 
 I hope you learned a tiny bit about context in today's article, and that you have a look at the attached resources
-below. I've found some great articles that goes much further in explaining how this context thing works :)
+below. I've found some great articles that go much further in explaining how this context thing works :)
 `),
   resources: [
     {

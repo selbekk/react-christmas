@@ -2,7 +2,7 @@ import marked from 'marked';
 export default {
   title: 'Documenting your components',
   lead: `
-If you're writing components that's shared between different teams, or even different developers, documenting your
+If you're writing components that are shared between different teams, or even different developers, documenting your
 components is a must. And it's crazy simple!
   `,
   body: marked(`

@@ -5,7 +5,7 @@ export default {
     React 16 brought us a way to handle errors in a neat, declarative way
   `,
   body: marked(`
-A thing that has bothered me with React (or most declarative frameworks, really) is that dealing with errors are hard.
+A thing that has bothered me with React (or most declarative frameworks, really) is that dealing with errors is hard.
 Typically what happens is that some random error corrupts React's internal state, which in turn creates some very
 cryptic error messages on the following renders.
 

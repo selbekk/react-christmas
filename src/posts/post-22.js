@@ -185,7 +185,7 @@ pretty powerful stuff!
 ## What about functional components?
 
 As you can see, there are a lot of different lifecycle methods available for your consumption. That means you can make
-your components pretty powerful, but also very complex. If you don't need any of them - consider a functional component.
+your components pretty powerful but also very complex. If you don't need any of them - consider a functional component.
 They don't have lifecycle methods at all, which makes them incredibly easy to create, test and maintain. I wrote [a
 longer comparison between the two](/16) of them if you're interested in when you should use what.
 

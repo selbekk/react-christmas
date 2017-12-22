@@ -7,7 +7,7 @@ export default {
     with create-react-app.
   `,
   body: marked(`
-There has been many attempts at making starter-packs for your next
+There have been many attempts at making starter-packs for your next
 React project. There was
 [react-starter-pack](https://github.com/kriasoft/react-starter-kit),
 [react-boilerplate](https://github.com/react-boilerplate/react-boilerplate),
@@ -24,11 +24,11 @@ project.
 ## No configuration
 
 The main difference between this starter pack and most of the others is that the entire
-Webpack and Babel configuration (as well as most other config-related stuff) had been
+Webpack and Babel configuration (as well as most other config-related stuff) has been
 pulled out into its own maintained package -
 [\`react-scripts\`](https://github.com/facebookincubator/create-react-app/tree/master/packages/react-scripts).
 This allows the maintainers to keep every dependency up to date, and release updates as
-non-breaking patch or minor releases.
+non-breaking patches or minor releases.
 
 In addition, \`create-react-app\` only sets up a very basic React app - no routing, state management or
 fancy server side rendering. You get the setup, testing and a service worker - that's it.
@@ -42,12 +42,11 @@ webpack configuration tweak that \`create-react-app\` doesn't provide. Luckily, 
 Whenever you run \`create-react-app\` in your CLI, the \`package.json\`-file already has an \`eject\` task. Whenever you
 run this, \`react-scripts\` are removed, and instead replaced with the barebones webpack- and babel config files. This
 will let you expand on whatever \`create-react-app\` already set up for you, so you don't have to start from scratch
-just to add hot reloading for example.
+just to add hot reloading, for example.
 
-One caveat of the eject task though - once you eject from \`create-react-app\`, you can't go back - so think thoroughly
+One caveat of the eject task, though - once you eject from \`create-react-app\`, you can't go back - so think thoroughly
 about whether that's what you want or not. Chances are, you'd be better off by forking the project on GitHub, changing
-whatever you need there, and switch out your \`react-scripts\` dependency with your own package. This way you can still
-sync your branch with the current master branch, and you'll get updates as they come along.
+whatever you need there, and switching out your \`react-scripts\` dependency with your own package. This way you can still sync your branch with the current master branch, and you'll get updates as they come along.
 
 ## That's it for day one!
 

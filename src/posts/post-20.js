@@ -6,8 +6,8 @@ Most apps require some kind of build pipeline to bundle your application into do
 This article will give you a very simple overview over how to get started!
   `,
   body: marked(`
-Back in the days, most React tutorials started with a 2 hour course in how to set up a build
-pipeline that would support React apps. Then \`create-react-app\` showed up, and now tutorials
+Back in the day, most React tutorials started with a 2 hour course in how to set up a build
+pipeline that would support React apps. Then \`create-react-app\` showed up. Now tutorials
 are much easier to follow. However, it also had the unfortunate side-effect that many are
 afraid whenever they hear the words Webpack and Babel. We can't have that!
 
@@ -52,7 +52,7 @@ so that your code can run on older browsers. The \`react\` preset turns JSX into
 
 ## The grand finale - Babel and Webpack together!
 
-Now you have a tool that bundles your app together, and a tool that makes your code parseable by
+Now you have a tool that bundles your app together, and a tool that makes your code able to be parsed by
 most browsers. Let's make them work together!
 
 Webpack has this concept of loaders, which lets you run your code through other tools before it
@@ -71,14 +71,14 @@ bundles all the files into one. Let's set that up!
 }
 \`\`\`
 
-In layman's terms, this basically says "for each file that ends with .js, run it through Babel".
+In layman's terms, this basically says, "For each file that ends with \`.js\`, run it through Babel."
 We have already told Babel what to do in \`.babelrc\`, so there's not anything else to specify here.
 In other words - we're done! With ~10 lines of code, we're ready to write React without a single
 boilerplate in sight. Pretty cool, huh?
 
 ## Main takeaways
 
-There are much more you can do with both Webpack and Babel, but it doesn't mean you have to to get
+There is much more you can do with both Webpack and Babel, but it doesn't mean you need it to get
 started. The setup above (plus a few \`npm install\`s) will get you going in no time! So next time
 you see a webpack config, don't fret - just remember that it's an entry point, a place to put
 your bundled file(s) and some loaders that will trigger other tools. And that's it.

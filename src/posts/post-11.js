@@ -22,7 +22,7 @@ grades in social media and around the web. Consider them all, and use the API yo
 
 ## Bootstrap
 
-Bootstrap has been battle tested like few other libraries ever has, and of course there is a React component library
+Bootstrap has been battle tested like few other libraries ever have , and of course there is a React component library
 implementing it. The [react-bootstrap](https://react-bootstrap.github.io/) package contains pretty much all of
 Bootstrap, and even though it's still in a pre 1.0.0 release, it's being used by tons of projects online.
 

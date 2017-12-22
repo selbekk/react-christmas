@@ -22,7 +22,7 @@ to minimize the initial footprint of our application.
 
 One of the people behind Babel is [James Kyle](https://twitter.com/thejameskyle), and he is one of those guys that
 just keeps on producing incredible stuff for the open source community without thinking twice about it. One of those
-things are something called [\`react-loadable\`](https://github.com/thejameskyle/react-loadable).
+things is something called [\`react-loadable\`](https://github.com/thejameskyle/react-loadable).
 
 \`react-loadable\` is a higher order component loads the component you want, and renders it for you when it's done. If
 you want, you can give it a spinner component to show while loading, and even error handling and fallback strategies.

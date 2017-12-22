@@ -1,6 +1,6 @@
 import marked from 'marked';
 export default {
-  title: 'Some cool React tips and trick',
+  title: 'Some cool React tips and tricks',
   lead: `
 After spending some time with React, I've learned a few nice tips and tricks to make your app as
 composable, declarative and maintainable as possible.
@@ -104,9 +104,9 @@ const SomeComponent = props => (
 The callback inside the \`<button />\`'s \`onClick\` handler is an inline function. Every time you render this
 component, this function is re-created, which sounds inherently bad.
 
-In reality though, it's not a big deal. Ryan Florence, which co-authored React Router, wrote [this inspiring blog
-post](https://cdb.reacttraining.com/react-inline-functions-and-performance-bdff784f5578) explaining in laymans terms
-how ridiculous this fretting about inline functions are. I highly recommend you read that article - he explains it
+In reality though, it's not a big deal. Ryan Florence, who co-authored React Router, wrote [this inspiring blog
+post](https://cdb.reacttraining.com/react-inline-functions-and-performance-bdff784f5578) explaining in layman's terms
+how ridiculous this fretting about inline functions is. I highly recommend you read that article - he explains it
 much better than I ever could.
 
 ## Use DOM props when you can!

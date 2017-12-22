@@ -6,7 +6,7 @@ JavaScript is a dynamically typed language. That means you don't have types to h
 bugs. Here's a few ways to avoid just that in your React apps!
   `,
   body: marked(`
-When your React application grows, and used by real users for any period of time, you're going to stumble into the
+When your React application grows and gets used by real users for any period of time, you're going to stumble into the
 occasional bugs. Although I really love JavaScript, it's really easy to forget edge cases like when something is
 \`null\` or \`false\` instead of \`undefined\`, or if you forget to pass a property. This article will guide you through
 three different ways of trying to mitigate this problem.
@@ -15,7 +15,7 @@ three different ways of trying to mitigate this problem.
 
 The simplest way to get your props under control is to use what React comes with by default - prop types. \`propTypes\`
 is a static property you add to your components, which outlines your component's public API. You can specify that a
-particular prop is of a certain type, and whether or not it's required. This is how it looks like:
+particular prop is of a certain type, and whether or not it's required. This is how it looks:
 
 \`\`\`javascript
 import { oneOf, string } from 'prop-types';
@@ -43,7 +43,7 @@ in their own npm package (\`prop-types\`) - which makes them easy to destructure
 If you fail to adhere to this contract, you'll get warnings in your browser's console - which work great when
 developing. You can even use linting to warn you directly inside your editor.
 
-That being said, prop types have some pretty major short comings. First of all, they only work for components, which
+That being said, prop types have some pretty major shortcomings. First of all, they only work for components, which
 means any other part of your application (be it state management, server handlers or anything else, basically) is not
 secured in any way. This leads you down the road of a lot of unit testing, [which might not be what you
 want](https://blog.kentcdodds.com/write-tests-not-too-many-mostly-integration-5e8c7fff591c). In addition, there is
@@ -79,15 +79,13 @@ languages like Java or C#.
 ## Make a shift to TypeScript
 
 If you're serious about type safety, Microsoft's open source super set of JavaScript is one of the ways to go. It's a
-different language all together, but looks and feels pretty much like writing annotations in Flow. One of the major
+different language altogether, but it looks and feels pretty much like writing annotations in Flow. One of the major
 differences between them, however, is that Typescript comes with its own compiler - so you don't need transpilers such as
 Babel.
 
-Just like Flow, you can port existing code bases over to this incrementally. Simply rename your file to .ts, and it will
-be type checked as soon as you start to add annotations etc.
+Just like Flow, you can incrementally port existing code bases over to TypeScript. Simply rename your file with the \`.ts\` extension, and it will be type-checked as soon as you start to add annotations, etc.
 
-Honestly - I don't have a lot of experience (or any, to be honest), but I know a lot of people love it, and I've never
-met a developer that has tried it and went back. Same goes for Flow, really.
+Honestly - I don't have a lot of experience with TypeScript (or any, to be honest), but I know a lot of people love it, and I've never met a developer that has tried it and went back. Same goes for Flow, really.
 [Here's](https://medium.com/@ckoster22/migrating-from-flow-to-typescript-b065796797db) an article from a guy that made
 the shift from Flow to TypeScript - and it looks like it's been a good experience :)
 

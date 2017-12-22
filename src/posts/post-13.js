@@ -12,13 +12,13 @@ different routes.
 
 Although there are many frameworks for implementing routing in React ([or to create your
 own](https://medium.freecodecamp.org/you-might-not-need-react-router-38673620f3d)), most people end up using the amazing
-[React Router](https://github.com/ReactTraining/react-router) from Formidable. They have a declarative approach to
+[React Router](https://github.com/ReactTraining/react-router) from [React Training](https://reacttraining.com/). React Router has a declarative approach to
 defining routes, which means that everything is pretty much regular components.
 
 ## So let's get started!
 
 The first thing you need to do is to mount a \`<BrowserRouter />\` component. This component wraps your entire
-application, and uses the HTML5 History API to keep the URL and your application's UI in sync.
+application and uses the HTML5 History API to keep the URL and your application's UI in sync.
 
 \`\`\`javascript
 import { BrowserRouter } from 'react-router-dom';
@@ -31,14 +31,13 @@ const Root = () => (
 );
 \`\`\`
 
-The \`BrowserRouter\` component accepts a \`basename\` property which lets you set the... base path for your
-application. If you're writing an app that runs at some sub-path of a website (like /path/to/your/app), you can specify
-this here, and you won't need to re-write that part of the URL in every link throughout the app.
+The \`BrowserRouter\` component accepts a \`basename\` property which lets you set the base path for your
+application. If you're writing an app that runs at some sub-path of a website (like /path/to/your/app), then you can specify this here. You won't need to re-write that part of the URL in every link throughout the app.
 
 ## Specify your routes!
 
 Since \`react-router\`'s routes are regular components, you can render them wherever you want. As long as you keep them
-inside the \`<BrowserRouter />\` component, any \`<Route />\` will render whenever they matches the current route.
+inside the \`<BrowserRouter />\` component, any \`<Route />\` will render whenever it matches the current route.
 
 However, you typically want some top level routes to handle your application flow. This is the typical setup I use in
 my own applications:
@@ -60,7 +59,7 @@ const App = () => (
 
 Each \`<Route />\` component requires a \`path\` property (which specifies a route to match), an \`exact\` flag to
 specify whether you want the route to match any path that matches or only the exact string, and a \`component\` prop
-that specifies what to render whenever the route matches. Easy as pie right?
+that specifies what to render whenever the route matches. Easy as pie, right?
 
 ## Some bonus components
 
