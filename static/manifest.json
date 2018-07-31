@@ -1,0 +1,15 @@
+{
+  "short_name": "React Xmas",
+  "name": "React Christmas",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#f3f3f3",
+  "background_color": "#ff0000"
+}
