@@ -14,16 +14,22 @@ const ArticleBody = styled.article`
     margin: 1em 0 0.5em;
     word-wrap: break-word;
   }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: ${fonts.sansSerifFont};
+    font-weight: 300;
+  }
   h2 {
     font-size: 42px;
-    font-family: ${fonts.sansSerifFont};
   }
   h3,
   h4,
   h5,
   h6 {
     font-size: 34px;
-    font-family: ${fonts.sansSerifFont};
   }
   p {
     font-size: 21px;
