@@ -21,7 +21,7 @@ const SiteHeader = () => (
   <Container>
     <SiteTitle>
       <Link prefetch href="/">
-        <LinkText>react.christmas</LinkText>
+        <LinkText>react🎄christmas</LinkText>
       </Link>
     </SiteTitle>
   </Container>
