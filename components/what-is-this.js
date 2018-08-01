@@ -1,8 +1,7 @@
-import { Fragment } from 'react';
 import { SectionTitle, Paragraph, LinkText } from '../components/typography';
 
 const WhatIsThis = () => (
-  <Fragment>
+  <>
     <SectionTitle>What is React.Christmas?</SectionTitle>
     <Paragraph>
       This site aims to{' '}
@@ -22,7 +21,7 @@ const WhatIsThis = () => (
       </LinkText>, if you want to fix a typo or improve the article for other
       readers.
     </Paragraph>
-  </Fragment>
+  </>
 );
 
 export default WhatIsThis;
