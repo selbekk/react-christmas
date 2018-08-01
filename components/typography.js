@@ -54,6 +54,7 @@ export const LeadParagraph = styled(Paragraph)`
 // Links
 const StyledLink = styled.a`
   color: ${colors.primary};
+  text-decoration: underline;
 `;
 export const LinkText = ({ href, prefetch, ...rest }) => (
   <Link href={href} prefetch={prefetch}>
