@@ -15,12 +15,12 @@ const Head = props => (
       name="description"
       content={props.description || defaultDescription}
     />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" sizes="192x192" href="/static/favicon.png" />
     <link rel="apple-touch-icon" href="/static/favicon.png" />
     <link rel="icon" href="/static/favicon.png" />
-    <meta name="theme-color" content="#ff0000" />
     <link rel="manifest" href="/static/manifest.json" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ff0000" />
     <meta property="og:url" content={props.url || defaultOGURL} />
     <meta property="og:title" content={props.title || ''} />
     <meta
