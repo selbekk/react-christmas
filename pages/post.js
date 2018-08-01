@@ -7,9 +7,10 @@ import {
 } from '../components/typography';
 import Page from '../components/page';
 import ArticleBody from '../components/article-body';
+import PostNavigation from '../components/post-navigation';
 
 const PostPage = props => {
-  const { notFound, post } = props;
+  const { notFound, post, year, date } = props;
   if (notFound) {
     return (
       <Page title="Post not found">
@@ -29,6 +30,7 @@ const PostPage = props => {
   return (
     <Page>
       <ContentContainer>
+        <PostNavigation year={year} date={date} />
         <PageTitle>{post.title}</PageTitle>
         {post.lead && <LeadParagraph>{post.lead}</LeadParagraph>}
         {/* TODO: Add meta-stuff! */}
@@ -45,8 +47,8 @@ PostPage.getInitialProps = async context => {
   try {
     post = await require(`../content/${year}/${paddedDate}.md`);
     return {
-      year,
-      date,
+      year: Number(year),
+      date: Number(date),
       post,
     };
   } catch (e) {
