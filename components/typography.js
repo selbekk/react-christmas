@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Link from 'next/link';
 
+import * as colors from '../constants/colors';
 import * as fonts from '../constants/fonts';
 
 // Headings
@@ -47,10 +48,13 @@ export const LeadParagraph = styled(Paragraph)`
   font-family: ${fonts.sansSerifFont};
   font-size: 24px;
   font-weight: 300;
+  margin-bottom: 2em;
 `;
 
 // Links
-const StyledLink = styled.a``;
+const StyledLink = styled.a`
+  color: ${colors.primary};
+`;
 export const LinkText = ({ href, prefetch, ...rest }) => (
   <Link href={href} prefetch={prefetch}>
     <StyledLink {...rest} />
