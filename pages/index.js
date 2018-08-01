@@ -16,7 +16,9 @@ const Home = () => (
     <footer>
       <ContentContainer>
         Looking for last year's edition?{' '}
-        <LinkText href="/2017">Go here</LinkText>
+        <LinkText href="/year?year=2017" as="/2017">
+          Go here
+        </LinkText>
       </ContentContainer>
     </footer>
   </Page>

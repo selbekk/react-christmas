@@ -54,10 +54,11 @@ export const LeadParagraph = styled(Paragraph)`
 // Links
 const StyledLink = styled.a`
   color: ${colors.primary};
+  cursor: pointer;
   text-decoration: underline;
 `;
-export const LinkText = ({ href, prefetch, ...rest }) => (
-  <Link href={href} prefetch={prefetch}>
+export const LinkText = ({ href, as, prefetch, ...rest }) => (
+  <Link href={href} as={as} prefetch={prefetch} passHref={true}>
     <StyledLink {...rest} />
   </Link>
 );

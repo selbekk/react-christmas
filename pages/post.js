@@ -41,15 +41,15 @@ const PostPage = props => {
 PostPage.getInitialProps = async context => {
   const { year, date } = context.query;
   let post = null;
+  const paddedDate = date.padStart(2, '0');
   try {
-    post = await require(`../content/${year}/${date}.md`);
+    post = await require(`../content/${year}/${paddedDate}.md`);
     return {
       year,
       date,
       post,
     };
   } catch (e) {
-    console.error('Could not find that post', e);
     return { notFound: true };
   }
 };

@@ -21,6 +21,7 @@ const Leaf = styled.li`
 const Content = styled.a`
   align-items: center;
   text-decoration: none;
+  color: inherit;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -31,12 +32,16 @@ const Content = styled.a`
 
 const daysOfChristmas = new Array(24).fill().map((_, i) => `${i + 1}`);
 
-const ArticleLIst = props => {
+const ArticleList = props => {
   return (
     <Tree>
       {daysOfChristmas.map(day => (
         <Leaf key={day}>
-          <Link href={`${props.year}/${day.padStart(2, '0')}`}>
+          <Link
+            href={`/post?year=${props.year}&date=${day}`}
+            as={`/${props.year}/${day}`}
+            passHref
+          >
             <Content>{day}.</Content>
           </Link>
         </Leaf>
@@ -45,4 +50,4 @@ const ArticleLIst = props => {
   );
 };
 
-export default ArticleLIst;
+export default ArticleList;
