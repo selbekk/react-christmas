@@ -42,7 +42,7 @@ export const Paragraph = styled.p`
   color: rgba(0, 0, 0, 0.85);
   margin: 0 0 1em;
 `;
-export const LeadParagraph = Paragraph.extend`
+export const LeadParagraph = styled(Paragraph)`
   color: rgba(0, 0, 0, 0.7);
   font-family: ${fonts.sansSerifFont};
   font-size: 24px;
