@@ -10,6 +10,7 @@ import {
 import Page from '../components/page';
 import ArticleBody from '../components/article-body';
 import PostNavigation from '../components/post-navigation';
+import RelatedLinks from '../components/related-links';
 
 const PostPage = props => {
   const { notFound, post, year, date } = props;
@@ -58,9 +59,9 @@ const PostPage = props => {
         {post.lead && <LeadParagraph>{post.lead}</LeadParagraph>}
         {/* TODO: Add meta-stuff! */}
         <ArticleBody dangerouslySetInnerHTML={{ __html: post.__content }} />
-        {/* TODO: Add links */}
         {/* TODO: Add author info */}
       </ContentContainer>
+      <RelatedLinks links={post.links} />
     </Page>
   );
 };

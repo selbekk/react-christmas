@@ -6,10 +6,11 @@ import * as colors from '../constants/colors';
 const Tree = styled.ul`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-auto-rows: minmax(150px, auto);
+  grid-auto-rows: minmax(200px, auto);
   grid-gap: 1em;
   list-style: none;
-  margin: 0;
+  margin: 0 auto;
+  max-width: 1000px;
   padding: 0;
 `;
 const Leaf = styled.li`
@@ -28,6 +29,7 @@ const Content = styled.a`
   font-size: 48px;
   height: 100%;
   width: 100%;
+  user-select: none;
 `;
 
 const daysOfChristmas = new Array(24).fill().map((_, i) => `${i + 1}`);
