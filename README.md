@@ -1,6 +1,6 @@
 # react.christmas next.js edition
 
-Starting to look like something. Deployed temporarily to [now.sh](https://create-next-example-app-bqtiqycoiz.now.sh/).
+Starting to look like something. Deployed temporarily to [now.sh](https://react-christmas-klphmkhymu.now.sh)).
 
 ## Development
 
