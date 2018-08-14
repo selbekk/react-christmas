@@ -1,3 +1,5 @@
+import distanceInWordsToNow from 'date-fns/distance_in_words_to_now';
+
 import ContentContainer from '../components/content-container';
 import {
   PageTitle,
@@ -11,6 +13,27 @@ import PostNavigation from '../components/post-navigation';
 
 const PostPage = props => {
   const { notFound, post, year, date } = props;
+  const today = new Date();
+  const releaseDate = new Date(year, 11, date);
+  const tooSoon = today < releaseDate;
+
+  if (tooSoon) {
+    return (
+      <Page title="Post not available yet">
+        <ContentContainer>
+          <PageTitle>Sorry, you have to wait a bit longer</PageTitle>
+          <LeadParagraph>
+            We're happy to see you're so eager - but you have to wait about{' '}
+            {distanceInWordsToNow(releaseDate)}.
+          </LeadParagraph>
+          <Paragraph>
+            <LinkText href="/">Go back</LinkText> to the front page and navigate
+            from there.
+          </Paragraph>
+        </ContentContainer>
+      </Page>
+    );
+  }
   if (notFound) {
     return (
       <Page title="Post not found">
@@ -35,6 +58,8 @@ const PostPage = props => {
         {post.lead && <LeadParagraph>{post.lead}</LeadParagraph>}
         {/* TODO: Add meta-stuff! */}
         <ArticleBody dangerouslySetInnerHTML={{ __html: post.__content }} />
+        {/* TODO: Add links */}
+        {/* TODO: Add author info */}
       </ContentContainer>
     </Page>
   );
@@ -52,7 +77,11 @@ PostPage.getInitialProps = async context => {
       post,
     };
   } catch (e) {
-    return { notFound: true };
+    return {
+      year: Number(year),
+      date: Number(date),
+      notFound: true,
+    };
   }
 };
 export default PostPage;
