@@ -12,6 +12,7 @@ import ArticleBody from '../components/article-body';
 import PostNavigation from '../components/post-navigation';
 import RelatedLinks from '../components/related-links';
 import AuthorInfo from '../components/author-info';
+import BackgroundImage from '../components/background-image';
 
 const PostPage = props => {
   const { notFound, author, post, year, date } = props;
@@ -53,13 +54,16 @@ const PostPage = props => {
     );
   }
   return (
-    <Page>
+    <Page title={post.title}>
+      <BackgroundImage src={post.image}>
+        <ContentContainer>
+          <PageTitle>{post.title}</PageTitle>
+        </ContentContainer>
+      </BackgroundImage>
       <ContentContainer>
         <PostNavigation year={year} date={date} />
-        <PageTitle>{post.title}</PageTitle>
         {post.lead && <LeadParagraph>{post.lead}</LeadParagraph>}
         {author && <AuthorInfo author={author} />}
-        {/* TODO: Add meta-stuff! */}
         <ArticleBody dangerouslySetInnerHTML={{ __html: post.__content }} />
       </ContentContainer>
       <RelatedLinks links={post.links} />
@@ -74,6 +78,9 @@ PostPage.getInitialProps = async context => {
     const post = await require(`../content/${year}/${paddedDate}.md`);
     const authorSlug = post.author.replace(/\s+/g, '-').toLowerCase();
     const author = await require(`../content/authors/${authorSlug}.md`);
+    post.image =
+      post.image ||
+      'https://images.unsplash.com/photo-1512389142860-9c449e58a543?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9a61f93e3d2e1f3f36b8725a5fde5ef4&auto=format&fit=crop&w=2249&q=80';
     return {
       year: Number(year),
       date: Number(date),
