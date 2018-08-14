@@ -1,6 +1,6 @@
 # react.christmas next.js edition
 
-Starting to look like something. Deployed temporarily to [now.sh](https://react-christmas-yyhdtttitb.now.sh)).
+Starting to look like something. Deployed to [now.sh](https://react-christmas.now.sh) while I develop it - will be deployed to [react.christmas](https://react.christmas) soon!
 
 ## Development
 
