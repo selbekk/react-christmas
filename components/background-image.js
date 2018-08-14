@@ -10,7 +10,7 @@ const Container = styled.div`
 
 const Background = styled.div`
   align-items: flex-end;
-  background: #eee url(${props => props.src}) center center no-repeat;
+  background: white url(${props => props.src}) center center no-repeat;
   background-size: cover;
   filter: brightness(0.8);
   display: flex;
