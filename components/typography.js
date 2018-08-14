@@ -11,7 +11,7 @@ export const PageTitle = styled.h1`
   font-size: 48px;
   font-family: ${fonts.sansSerifFont};
   line-height: 1.2;
-  margin: 2em 0 0.5em;
+  margin: 0 0 0.5em;
   ${props =>
     props.centerText &&
     `
