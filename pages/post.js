@@ -11,9 +11,10 @@ import Page from '../components/page';
 import ArticleBody from '../components/article-body';
 import PostNavigation from '../components/post-navigation';
 import RelatedLinks from '../components/related-links';
+import AuthorInfo from '../components/author-info';
 
 const PostPage = props => {
-  const { notFound, post, year, date } = props;
+  const { notFound, author, post, year, date } = props;
   const today = new Date();
   const releaseDate = new Date(year, 11, date);
   const tooSoon = today < releaseDate;
@@ -57,9 +58,9 @@ const PostPage = props => {
         <PostNavigation year={year} date={date} />
         <PageTitle>{post.title}</PageTitle>
         {post.lead && <LeadParagraph>{post.lead}</LeadParagraph>}
+        {author && <AuthorInfo author={author} />}
         {/* TODO: Add meta-stuff! */}
         <ArticleBody dangerouslySetInnerHTML={{ __html: post.__content }} />
-        {/* TODO: Add author info */}
       </ContentContainer>
       <RelatedLinks links={post.links} />
     </Page>
@@ -68,14 +69,16 @@ const PostPage = props => {
 
 PostPage.getInitialProps = async context => {
   const { year, date } = context.query;
-  let post = null;
   const paddedDate = date.padStart(2, '0');
   try {
-    post = await require(`../content/${year}/${paddedDate}.md`);
+    const post = await require(`../content/${year}/${paddedDate}.md`);
+    const authorSlug = post.author.replace(/\s+/g, '-').toLowerCase();
+    const author = await require(`../content/authors/${authorSlug}.md`);
     return {
       year: Number(year),
       date: Number(date),
       post,
+      author,
     };
   } catch (e) {
     return {
