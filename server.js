@@ -14,6 +14,14 @@ const runTheTrap = async () => {
     // gzip it!
     server.use(compression());
 
+    // handle authors
+    server.get('/author/:slug', (req, res) => {
+      const context = {
+        slug: req.params.slug,
+      };
+      app.render(req, res, '/author', context);
+    });
+
     // Handle direct year routes
     server.get('/:year(\\d{4})', (req, res) => {
       const context = {

@@ -15,7 +15,7 @@ import AuthorInfo from '../components/author-info';
 import BackgroundImage from '../components/background-image';
 
 const PostPage = props => {
-  const { notFound, author, post, year, date } = props;
+  const { notFound, author, authorSlug, post, year, date } = props;
   const today = new Date();
   const releaseDate = new Date(year, 11, date);
   const tooSoon = today < releaseDate;
@@ -63,7 +63,7 @@ const PostPage = props => {
       <ContentContainer>
         <PostNavigation year={year} date={date} />
         {post.lead && <LeadParagraph>{post.lead}</LeadParagraph>}
-        {author && <AuthorInfo author={author} />}
+        {author && <AuthorInfo author={author} slug={authorSlug} />}
         <ArticleBody dangerouslySetInnerHTML={{ __html: post.__content }} />
       </ContentContainer>
       <RelatedLinks links={post.links} />
@@ -86,6 +86,7 @@ PostPage.getInitialProps = async context => {
       date: Number(date),
       post,
       author,
+      authorSlug,
     };
   } catch (e) {
     return {
