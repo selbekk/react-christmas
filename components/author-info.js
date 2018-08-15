@@ -7,7 +7,7 @@ const Container = styled.div`
 `;
 
 const AuthorInfo = props => {
-  const { author, slug } = props;
+  const { author, readingTime, slug } = props;
   if (!author) {
     return null;
   }
@@ -15,7 +15,7 @@ const AuthorInfo = props => {
     <Container>
       <Avatar src={author.image} />
       <p>
-        Written by{' '}
+        A {readingTime} written by{' '}
         <LinkText href={`/author/${slug}`}>
           <strong>{author.name}</strong>
         </LinkText>

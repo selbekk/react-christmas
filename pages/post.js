@@ -1,4 +1,5 @@
 import distanceInWordsToNow from 'date-fns/distance_in_words_to_now';
+import calculateReadingTime from 'reading-time';
 
 import ContentContainer from '../components/content-container';
 import {
@@ -16,7 +17,7 @@ import BackgroundImage from '../components/background-image';
 import Center from '../components/center';
 
 const PostPage = props => {
-  const { notFound, author, authorSlug, post, year, date } = props;
+  const { notFound, author, authorSlug, post, year, date, readingTime } = props;
   const today = new Date();
   const releaseDate = new Date(year, 11, date);
   const tooSoon = today < releaseDate;
@@ -70,7 +71,13 @@ const PostPage = props => {
       <ContentContainer>
         <PostNavigation year={year} date={date} />
         {post.lead && <LeadParagraph>{post.lead}</LeadParagraph>}
-        {author && <AuthorInfo author={author} slug={authorSlug} />}
+        {author && (
+          <AuthorInfo
+            author={author}
+            slug={authorSlug}
+            readingTime={readingTime}
+          />
+        )}
         <ArticleBody dangerouslySetInnerHTML={{ __html: post.__content }} />
       </ContentContainer>
       <RelatedLinks links={post.links} />
@@ -94,6 +101,7 @@ PostPage.getInitialProps = async context => {
       post,
       author,
       authorSlug,
+      readingTime: calculateReadingTime(post.__content).text,
     };
   } catch (e) {
     return {
