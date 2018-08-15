@@ -13,6 +13,7 @@ import PostNavigation from '../components/post-navigation';
 import RelatedLinks from '../components/related-links';
 import AuthorInfo from '../components/author-info';
 import BackgroundImage from '../components/background-image';
+import Center from '../components/center';
 
 const PostPage = props => {
   const { notFound, author, authorSlug, post, year, date } = props;
@@ -24,15 +25,17 @@ const PostPage = props => {
     return (
       <Page title="Post not available yet">
         <ContentContainer>
-          <PageTitle>Sorry, you have to wait a bit longer</PageTitle>
-          <LeadParagraph>
-            We're happy to see you're so eager - but you have to wait about{' '}
-            {distanceInWordsToNow(releaseDate)}.
-          </LeadParagraph>
-          <Paragraph>
-            <LinkText href="/">Go back</LinkText> to the front page and navigate
-            from there.
-          </Paragraph>
+          <Center>
+            <PageTitle>Sorry, you have to wait a bit longer</PageTitle>
+            <LeadParagraph>
+              We're happy to see you're so eager - but you have to wait about{' '}
+              {distanceInWordsToNow(releaseDate)}.
+            </LeadParagraph>
+            <Paragraph>
+              <LinkText href="/">Go back</LinkText> to the front page and
+              navigate from there.
+            </Paragraph>
+          </Center>
         </ContentContainer>
       </Page>
     );
@@ -41,14 +44,16 @@ const PostPage = props => {
     return (
       <Page title="Post not found">
         <ContentContainer>
-          <PageTitle>Sorry, couldn't find that post</PageTitle>
-          <LeadParagraph>
-            Looks like you're trying to access a post that isn't available.
-          </LeadParagraph>
-          <Paragraph>
-            <LinkText href="/">Go back</LinkText> to the front page and navigate
-            from there.
-          </Paragraph>
+          <Center>
+            <PageTitle>Sorry, couldn't find that post</PageTitle>
+            <LeadParagraph>
+              Looks like you're trying to access a post that isn't available.
+            </LeadParagraph>
+            <Paragraph>
+              <LinkText href="/">Go back</LinkText> to the front page and
+              navigate from there.
+            </Paragraph>
+          </Center>
         </ContentContainer>
       </Page>
     );
@@ -57,7 +62,9 @@ const PostPage = props => {
     <Page title={post.title}>
       <BackgroundImage src={post.image}>
         <ContentContainer>
-          <PageTitle>{post.title}</PageTitle>
+          <Center>
+            <PageTitle>{post.title}</PageTitle>
+          </Center>
         </ContentContainer>
       </BackgroundImage>
       <ContentContainer>

@@ -11,6 +11,8 @@ import ArticleBody from '../components/article-body';
 import SomeLink from '../components/some-link';
 import GithubIcon from '../components/icons/github';
 import TwitterIcon from '../components/icons/twitter';
+import { monospaceFont } from '../constants/fonts';
+import Center from '../components/center';
 
 class AuthorPage extends React.Component {
   static getInitialProps = async context => {
@@ -34,14 +36,17 @@ class AuthorPage extends React.Component {
       return (
         <Page title="Post not found">
           <ContentContainer>
-            <PageTitle>Sorry, couldn't find that post</PageTitle>
-            <LeadParagraph>
-              Looks like you're trying to access a post that isn't available.
-            </LeadParagraph>
-            <Paragraph>
-              <LinkText href="/">Go back</LinkText> to the front page and
-              navigate from there.
-            </Paragraph>
+            <Center>
+              <PageTitle>Sorry, couldn't find that author</PageTitle>
+              <LeadParagraph>
+                We don't know what happened here - all we can say is that it
+                most likely is <em>your</em> fault.
+              </LeadParagraph>
+              <Paragraph>
+                <LinkText href="/">Go back to the front page</LinkText> and
+                navigate from there.
+              </Paragraph>
+            </Center>
           </ContentContainer>
         </Page>
       );
@@ -49,7 +54,7 @@ class AuthorPage extends React.Component {
     return (
       <Page title={`Author: ${author.name}`}>
         <ContentContainer>
-          <div style={{ textAlign: 'center' }}>
+          <Center>
             <PageTitle>{author.name}</PageTitle>
             {author.image && <Avatar src={author.image} />}
             <LeadParagraph>{author.oneliner}</LeadParagraph>
@@ -66,7 +71,7 @@ class AuthorPage extends React.Component {
                 <TwitterIcon style={{ width: 21 }} /> @{author.twitter}
               </LinkText>
             )}
-          </div>
+          </Center>
           <ArticleBody dangerouslySetInnerHTML={{ __html: author.__content }} />
         </ContentContainer>
       </Page>
