@@ -22,7 +22,7 @@ const LinkText = styled.a`
   display: block;
   font-family: ${fonts.monospaceFont};
   text-decoration: none;
-  padding: 20px;
+  padding: 5px 0 10px;
 `;
 
 const SiteHeader = () => (
@@ -30,7 +30,7 @@ const SiteHeader = () => (
     <SiteTitle>
       <Link prefetch href="/">
         <LinkText>
-          react <ChristmasTree style={{ width: '1em' }} /> christmas
+          react <ChristmasTree style={{ width: '1.5em' }} /> christmas
         </LinkText>
       </Link>
     </SiteTitle>
