@@ -1,9 +1,8 @@
 import normalize from 'styled-normalize';
-import { injectGlobal } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 import * as fonts from '../constants/fonts';
 
-export default () =>
-  injectGlobal`
+const GlobalStyles = createGlobalStyle`
   ${normalize}
 
   html {
@@ -21,3 +20,5 @@ export default () =>
     font-family: ${fonts.serifFont};
   }
 `;
+
+export default GlobalStyles;

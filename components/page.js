@@ -4,13 +4,13 @@ import SiteWrapper from './site-wrapper';
 import SiteHeader from './site-header';
 import SiteContent from './site-content';
 import SiteFooter from './site-footer';
-import globalStyles from '../shared/global-styles';
+import GlobalStyles from '../shared/global-styles';
 
 const Page = props => {
-  globalStyles();
   return (
     <>
       <Head title={props.title} description={props.description} />
+      <GlobalStyles />
       <SiteWrapper>
         <SiteHeader />
         <SiteContent>{props.children}</SiteContent>
