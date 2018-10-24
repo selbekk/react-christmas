@@ -79,6 +79,7 @@ const PostPage = props => {
           />
         )}
         <ArticleBody dangerouslySetInnerHTML={{ __html: post.__content }} />
+        <PostNavigation year={year} date={date} />
       </ContentContainer>
       <RelatedLinks links={post.links} />
     </Page>
