@@ -3,14 +3,14 @@ import NextHead from 'next/head';
 import { string } from 'prop-types';
 
 const defaultDescription =
-  'A nice little Christmas calendar for people who love React';
-const defaultOGURL = 'https://react.christmas';
-const defaultOGImage = 'https://react.christmas/static/og-image.jpg';
+  'A nice little Christmas calendar for people who love Security';
+const defaultOGURL = 'https://security.christmas';
+const defaultOGImage = 'https://security.christmas/static/og-image.jpg';
 
 const Head = props => (
   <NextHead>
     <meta charSet="UTF-8" />
-    <title>{props.title || 'react.christmas'}</title>
+    <title>{props.title || 'security.christmas'}</title>
     <meta
       name="description"
       content={props.description || defaultDescription}
