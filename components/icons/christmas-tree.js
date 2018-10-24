@@ -59,16 +59,20 @@ const ChristmasTree = props => (
 
 const blink = keyframes`
   from {
-    opacity: .5;
+    opacity: .2;
   }
   to {
     opacity: 1;
+    transform: scale(1.15);
   }
 `;
 
 const StyledChristmasTree = styled(ChristmasTree)`
+  circle {
+    transform-origin: center bottom;
+  }
   .yellow-bulbs circle:nth-of-type(2n) {
-    animation: 4s ease 1s alternate infinite ${blink};
+    animation: 1s ease 1s alternate infinite ${blink};
   }
 
   .yellow-bulbs circle:nth-of-type(2n + 1) {
@@ -76,11 +80,11 @@ const StyledChristmasTree = styled(ChristmasTree)`
   }
 
   .white-bulbs circle:nth-of-type(2n) {
-    animation: 5s ease alternate infinite ${blink};
+    animation: 1s ease alternate infinite ${blink};
   }
 
   .white-bulbs circle:nth-of-type(2n + 1) {
-    animation: 3s ease 10s alternate infinite ${blink};
+    animation: 2s ease 2s alternate infinite ${blink};
   }
 `;
 
