@@ -29,7 +29,7 @@ const PostPage = props => {
           <Center>
             <PageTitle>Sorry, you have to wait a bit longer</PageTitle>
             <LeadParagraph>
-              We're happy to see you're so eager - but you have to wait about{' '}
+              We're happy to see you're so eager - but you have to wait{' '}
               {distanceInWordsToNow(releaseDate)}.
             </LeadParagraph>
             <Paragraph>
