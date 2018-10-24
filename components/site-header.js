@@ -15,14 +15,18 @@ const Container = styled.header`
   right: 0;
   z-index: 10;
 `;
-const SiteTitle = styled.h1``;
+const SiteTitle = styled.h1`
+  margin: 0;
+`;
 const LinkText = styled.a`
   color: ${colors.black};
   cursor: pointer;
-  display: block;
+  display: flex;
   font-family: ${fonts.monospaceFont};
   text-decoration: none;
-  padding: 5px 0 10px;
+  padding: 10px 0 20px;
+  align-items: center;
+  justify-content: center;
 `;
 
 const SiteHeader = () => (
