@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import * as colors from '../constants/colors';
 import * as fonts from '../constants/fonts';
 
+import ChristmasTree from './icons/christmas-tree';
+
 const Container = styled.header`
   background-color: ${colors.white};
   text-align: center;
@@ -27,7 +29,9 @@ const SiteHeader = () => (
   <Container>
     <SiteTitle>
       <Link prefetch href="/">
-        <LinkText>react🎄christmas</LinkText>
+        <LinkText>
+          react <ChristmasTree style={{ width: '1em' }} /> christmas
+        </LinkText>
       </Link>
     </SiteTitle>
   </Container>
