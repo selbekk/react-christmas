@@ -1,5 +1,6 @@
 // Tha colors
 export const primary = 'firebrick';
+export const primaryDark = '#ac0c0c';
 export const secondary = 'limegreen';
 
 // Tha monochromes
