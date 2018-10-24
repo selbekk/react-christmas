@@ -1,7 +1,6 @@
 import React from 'react';
 import Page from '../components/page';
 import ArticleList from '../components/article-list';
-import WhatIsThis from '../components/what-is-this';
 import ContentContainer from '../components/content-container';
 import {
   PageTitle,
@@ -47,10 +46,6 @@ const YearPage = props => {
         </ContentContainer>
       )}
       {isValidYear && <ArticleList year={props.year} />}
-
-      <ContentContainer>
-        <WhatIsThis />
-      </ContentContainer>
     </Page>
   );
 };
