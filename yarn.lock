@@ -2126,6 +2126,11 @@ extglob@^2.0.4:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
+extract-domain@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/extract-domain/-/extract-domain-2.0.4.tgz#134a082e493aeb386dd1bd2645b5e44dff309062"
+  integrity sha512-fYKCC+nQ82wGfUPJag2JrEXwpq/RRY1YUGfD9NEL4t+658uL7PpRuU3xkx/XNrVR+poQWVmAGJIgre3XytfrFw==
+
 fast-deep-equal@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/fast-deep-equal/-/fast-deep-equal-2.0.1.tgz#7b05218ddf9667bf7f370bf7fdb2cb15fdd0aa49"

@@ -11,6 +11,7 @@
     "compression": "^1.7.3",
     "date-fns": "^1.29.0",
     "express": "^4.16.3",
+    "extract-domain": "^2.0.4",
     "next": "^7.0.2",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
