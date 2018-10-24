@@ -34,7 +34,7 @@ const SiteHeader = () => (
     <SiteTitle>
       <Link prefetch href="/">
         <LinkText>
-          react <ChristmasTree style={{ width: '1.5em' }} /> christmas
+          security <ChristmasTree style={{ width: '1.5em' }} /> christmas
         </LinkText>
       </Link>
     </SiteTitle>
