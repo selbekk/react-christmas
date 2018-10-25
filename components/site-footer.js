@@ -26,7 +26,7 @@ const SiteFooter = () => {
             All images are from Unsplash. Social media icons are from
             flaticon.com.
             <br />
-            We use a few cookies for tracking yo' ass.{' '}
+            We do not use cookies.{' '}
             <LinkText style={{ color: colors.white }} href="/privacy">
               Read more here
             </LinkText>

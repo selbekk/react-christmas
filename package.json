@@ -1,5 +1,5 @@
 {
-  "name": "react-christmas",
+  "name": "security-christmas",
   "scripts": {
     "dev": "node server.js",
     "build": "next build",

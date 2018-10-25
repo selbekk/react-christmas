@@ -2,7 +2,7 @@ import { SectionTitle, Paragraph, LinkText } from '../components/typography';
 
 const WhatIsThis = () => (
   <>
-    <SectionTitle>What is React.Christmas?</SectionTitle>
+    <SectionTitle>What is Security.Christmas?</SectionTitle>
     <Paragraph>
       This site aims to{' '}
       <strong>educate, entertain and get people interested in Security</strong>.
