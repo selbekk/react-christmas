@@ -6,7 +6,7 @@ import WhatIsThis from '../components/what-is-this';
 import ContentContainer from '../components/content-container';
 
 const Home = () => (
-  <Page title="react.christmas">
+  <Page title="security.christmas">
     <ArticleList year="2018" />
     <ContentContainer>
       <WhatIsThis />
