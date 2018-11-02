@@ -1,38 +1,118 @@
+import Link from 'next/link';
 import styled from 'styled-components';
 import ContentContainer from './content-container';
-import { Paragraph, LinkText } from './typography';
+import { LinkText } from './typography';
 import Center from './center';
+import BekkLogo from './icons/bekk-logo';
 import * as colors from '../constants/colors';
 import * as fonts from '../constants/fonts';
 
 const Container = styled.footer`
   background: ${colors.primary};
   color: ${colors.white};
-  display: flex;
-  justify-content: center;
   font-family: ${fonts.sansSerifFont};
   padding: 20px;
+  width: 100%;
+`;
+
+const InnerContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  font-family: ${fonts.sansSerifFont};
+  justify-content: space-between;
+  padding: 20px 0;
+  margin: 0 auto;
+  max-width: 1000px;
+`;
+
+const Column = styled.div`
+  flex: 1 0 auto;
+  width: 100%;
+
+  @media all and (min-width: 800px) {
+    flex: 0 0 auto;
+    width: calc(33% - 10px);
+  }
+`;
+
+const WhiteLinkText = styled(LinkText)`
+  color: white;
+`;
+
+const Heading = styled.h3`
+  font-size: 18px;
+`;
+
+const Paragraph = styled.p`
+  font-size: 16px;
+  line-height: 1.25;
+`;
+
+const SmallText = styled.small`
+  font-size: 14px;
+`;
+
+const List = styled.ul`
+  list-style: none;
+  margin: 0;
+  padding: 0;
+`;
+
+const ListItem = styled.li`
+  margin-bottom: 0.5em;
 `;
 
 const SiteFooter = () => {
   return (
     <Container>
-      <Center>
-        <p>
-          Made with <span>🎅</span> in Oslo, Norway!
-        </p>
-        <p>
-          <small>
-            All images are from Unsplash. Social media icons are from
-            flaticon.com.
-            <br />
-            We use a few cookies for tracking yo' ass.{' '}
-            <LinkText style={{ color: colors.white }} href="/privacy">
-              Read more here
-            </LinkText>
-          </small>
-        </p>
-      </Center>
+      <InnerContainer>
+        <Column>
+          <Heading>
+            Made with <span>🎅</span> in Oslo, Norway!
+          </Heading>
+          <Paragraph>
+            <SmallText>
+              All images are from Unsplash. Social media icons are from
+              flaticon.com.
+            </SmallText>
+          </Paragraph>
+          <Paragraph>
+            <SmallText>
+              We use a few cookies for tracking yo' ass.{' '}
+              <WhiteLinkText href="/privacy">Read more here</WhiteLinkText>
+            </SmallText>
+          </Paragraph>
+        </Column>
+        <Column>
+          <Heading>Looking for more Christmas?</Heading>
+          <List>
+            <ListItem>
+              <WhiteLinkText href="https://javascript.christmas">
+                javascript.christmas
+              </WhiteLinkText>
+            </ListItem>
+            <ListItem>
+              <WhiteLinkText href="https://elm.christmas">
+                elm.christmas
+              </WhiteLinkText>
+            </ListItem>
+            <ListItem>
+              <WhiteLinkText href="https://security.christmas">
+                security.christmas
+              </WhiteLinkText>
+            </ListItem>
+          </List>
+        </Column>
+
+        <Column>
+          <Heading>Proudly sponsored by</Heading>
+          <Link href="https://www.bekk.no">
+            <a>
+              <BekkLogo style={{ maxWidth: '100px' }} />
+            </a>
+          </Link>
+        </Column>
+      </InnerContainer>
     </Container>
   );
 };

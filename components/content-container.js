@@ -5,7 +5,7 @@ const ContentContainer = styled.div`
   max-width: ${props => (props.size === 'large' ? '1000px' : '700px')};
   padding: 0 12px;
 
-  @media (min-width: 7000px) {
+  @media (min-width: 700px) {
     padding: 0;
   }
 `;
