@@ -9,6 +9,7 @@ import * as fonts from '../constants/fonts';
 
 const Container = styled.footer`
   background: ${colors.primary};
+  border-top: 5px solid ${colors.secondary};
   color: ${colors.white};
   font-family: ${fonts.sansSerifFont};
   padding: 20px;
@@ -18,9 +19,7 @@ const Container = styled.footer`
 const InnerContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  font-family: ${fonts.sansSerifFont};
   justify-content: space-between;
-  padding: 20px 0;
   margin: 0 auto;
   max-width: 1000px;
 `;
@@ -41,6 +40,7 @@ const WhiteLinkText = styled(LinkText)`
 
 const Heading = styled.h3`
   font-size: 18px;
+  font-family: ${fonts.sansSerifFont};
 `;
 
 const Paragraph = styled.p`
@@ -85,6 +85,7 @@ const SiteFooter = () => {
         </Column>
         <Column>
           <Heading>Looking for more Christmas?</Heading>
+          <Paragraph>Check out</Paragraph>
           <List>
             <ListItem>
               <WhiteLinkText href="https://javascript.christmas">
