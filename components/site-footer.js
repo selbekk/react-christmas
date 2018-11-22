@@ -106,7 +106,7 @@ const SiteFooter = () => {
         <Column>
           <Heading>Proudly sponsored by</Heading>
           <Link href="https://www.bekk.no">
-            <a>
+            <a aria-label="Bekk">
               <BekkLogo style={{ maxWidth: '100px' }} />
             </a>
           </Link>
