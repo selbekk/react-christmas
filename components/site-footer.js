@@ -1,8 +1,6 @@
 import Link from 'next/link';
 import styled from 'styled-components';
-import ContentContainer from './content-container';
 import { LinkText } from './typography';
-import Center from './center';
 import BekkLogo from './icons/bekk-logo';
 import * as colors from '../constants/colors';
 import * as fonts from '../constants/fonts';
