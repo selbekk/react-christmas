@@ -4,6 +4,7 @@ import { LinkText } from './typography';
 import BekkLogo from './icons/bekk-logo';
 import * as colors from '../constants/colors';
 import * as fonts from '../constants/fonts';
+import * as breakpoints from '../constants/breakpoints';
 
 const Container = styled.footer`
   background: ${colors.primary};
@@ -26,7 +27,7 @@ const Column = styled.div`
   flex: 1 0 auto;
   width: 100%;
 
-  @media all and (min-width: 800px) {
+  ${breakpoints.mediumUp} {
     flex: 0 0 auto;
     width: calc(33% - 10px);
   }
