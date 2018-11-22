@@ -14,9 +14,7 @@ const IconContainer = styled.span`
 `;
 
 const SomeLink = props => (
-  <>
-    <LinkText href={props.href}>{props.children}</LinkText>
-  </>
+  <LinkText href={props.href}>{props.children}</LinkText>
 );
 
 export default SomeLink;
