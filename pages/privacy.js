@@ -7,7 +7,6 @@ import {
   Paragraph,
   LinkText,
 } from '../components/typography';
-import DocumentWithStyledComponents from './_document';
 
 const PrivacyPage = () => (
   <Page title="Privacy policy">
@@ -17,15 +16,15 @@ const PrivacyPage = () => (
         <LeadParagraph>TL;DR: We use Google Analytics.</LeadParagraph>
       </Center>
       <Paragraph>
-        Privacy is important to me, but I don't really need to track a ton of
-        information about you. I use Google Analytics to track information about
-        where you're from and what kind of device you're using etc - but{' '}
+        Privacy is important to us, but we don't really need to track a ton of
+        information about you. We use Google Analytics to track information
+        about where you're from and what kind of device you're using etc - but{' '}
         <strong>that's it</strong>.
       </Paragraph>
       <Paragraph>
-        If you need to get in touch with me, please do so on{' '}
+        If you need to get in touch with us, please do so on{' '}
         <LinkText href="https://www.twitter.com/selbekk">Twitter</LinkText>, or
-        write me a good ol' fashioned{' '}
+        write us a good ol' fashioned{' '}
         <LinkText href="mailto:kristofer@selbekk.io">email</LinkText>.
       </Paragraph>
       <Paragraph>
