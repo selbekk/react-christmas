@@ -39,7 +39,7 @@ const ClickTarget = styled.a`
 `;
 
 const Domain = styled.div`
-  color: #ccc;
+  color: #999;
   font-size: 14px;
   text-transform: lowercase;
   margin: 0 10px;
