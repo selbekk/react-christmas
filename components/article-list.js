@@ -84,6 +84,7 @@ const ArticleList = props => {
                     ? `Article for the ${day}. day of Christmas`
                     : `Article for December ${day} is not yet available`
                 }
+                aria-disabled={!isAvailable}
               >
                 <span>{day}.</span>
               </Content>
