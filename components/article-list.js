@@ -76,7 +76,15 @@ const ArticleList = props => {
               as={`/${props.year}/${day}`}
               passHref
             >
-              <Content isToday={isToday} isAvailable={isAvailable}>
+              <Content
+                isToday={isToday}
+                isAvailable={isAvailable}
+                aria-label={
+                  isAvailable
+                    ? `Article for the ${day}. day of Christmas`
+                    : `Article for December ${day} is not yet available`
+                }
+              >
                 <span>{day}.</span>
               </Content>
             </Link>
