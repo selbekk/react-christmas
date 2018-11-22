@@ -60,7 +60,7 @@ const PostPage = props => {
     );
   }
   return (
-    <Page title={post.title}>
+    <Page title={post.title} description={post.lead} ogImage={post.image}>
       <BackgroundImage src={post.image}>
         <ContentContainer>
           <Center>
