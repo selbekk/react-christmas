@@ -15,7 +15,7 @@ const YearPage = props => {
   const isWayInTheFuture = year > 2018;
   const isValidYear = !isWayInThePast && !isWayInTheFuture;
   return (
-    <Page title="react.christmas">
+    <Page title={`Posts from ${year} | react.christmas`}>
       <PageTitle centerText>Posts from {year}</PageTitle>
       {isWayInThePast && (
         <ContentContainer>
