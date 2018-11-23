@@ -1,4 +1,6 @@
 {
   "name": "react-christmas",
-  "alias": "react-christmas"
+  "alias": "react-christmas",
+  "version": 2,
+  "builds": [{ "src": "next.config.js", "use": "@now/next" }]
 }
