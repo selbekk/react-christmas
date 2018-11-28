@@ -8,11 +8,12 @@ import {
   LinkText,
   Paragraph,
 } from '../components/typography';
+import siteConfig from '../config';
 
 const YearPage = props => {
   const { year } = props;
-  const isWayInThePast = year < 2018;
-  const isWayInTheFuture = year > 2018;
+  const isWayInThePast = year < siteConfig.firstYearOfContent;
+  const isWayInTheFuture = year > new Date().getFullYear();
   const isValidYear = !isWayInThePast && !isWayInTheFuture;
   return (
     <Page title={`Posts from ${year}`}>
