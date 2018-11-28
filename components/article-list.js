@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 import * as colors from '../constants/colors';
 
@@ -13,8 +13,22 @@ const Tree = styled.ul`
   max-width: 1000px;
   padding: 0;
 `;
+
+const fadeIn = keyframes`
+  0% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+`;
+
 const Leaf = styled.li`
   width: 100%;
+  animation: .5s ${props => Number(props.index) * 0.03}s ease-out forwards ${fadeIn};
+  opacity: 0;
 `;
 const Content = styled.a`
   align-items: center;
@@ -44,11 +58,11 @@ const Content = styled.a`
     }
   `}
 
-  ${props => props.isToday && `filter: saturate(1.4)`} 
+  ${props => props.isToday && `filter: saturate(1.4)`}
   ${props =>
     !props.isAvailable &&
-    `filter: brightness(0.5); 
-    pointer-events: none; 
+    `filter: brightness(0.5);
+    pointer-events: none;
     cursor: normal;
     > span {
       filter: blur(2px);
@@ -70,7 +84,7 @@ const ArticleList = props => {
           today.getMonth() === 11 &&
           today.getDate() === day - 1;
         return (
-          <Leaf key={day}>
+          <Leaf key={day} index={day}>
             <Link
               href={`/post?year=${props.year}&date=${day}`}
               as={`/${props.year}/${day}`}

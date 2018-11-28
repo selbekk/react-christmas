@@ -12,6 +12,7 @@ const Container = styled.footer`
   border-top: 5px solid ${colors.secondary};
   color: ${colors.white};
   font-family: ${fonts.sansSerifFont};
+  margin-top: 15px;
   padding: 20px;
   width: 100%;
 `;
