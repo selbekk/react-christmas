@@ -2,7 +2,6 @@ const express = require('express');
 const helmet = require('helmet');
 const next = require('next');
 const compression = require('compression');
-const helmet = require('helmet')
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
