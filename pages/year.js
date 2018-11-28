@@ -1,7 +1,6 @@
 import React from 'react';
 import Page from '../components/page';
 import ArticleList from '../components/article-list';
-import WhatIsThis from '../components/what-is-this';
 import ContentContainer from '../components/content-container';
 import {
   PageTitle,
@@ -16,7 +15,7 @@ const YearPage = props => {
   const isWayInTheFuture = year > 2018;
   const isValidYear = !isWayInThePast && !isWayInTheFuture;
   return (
-    <Page title="security.christmas">
+    <Page title={`Posts from ${year}`}>
       <PageTitle centerText>Posts from {year}</PageTitle>
       {isWayInThePast && (
         <ContentContainer>
@@ -38,10 +37,6 @@ const YearPage = props => {
         </ContentContainer>
       )}
       {isValidYear && <ArticleList year={props.year} />}
-
-      <ContentContainer>
-        <WhatIsThis />
-      </ContentContainer>
     </Page>
   );
 };

@@ -34,7 +34,7 @@ class AuthorPage extends React.Component {
     const { author, notFound } = this.props;
     if (notFound) {
       return (
-        <Page title="Post not found">
+        <Page title="Author not found">
           <ContentContainer>
             <Center>
               <PageTitle>Sorry, couldn't find that author</PageTitle>
@@ -52,7 +52,11 @@ class AuthorPage extends React.Component {
       );
     }
     return (
-      <Page title={`Author: ${author.name}`}>
+      <Page
+        title={`Author: ${author.name}`}
+        description={author.oneliner}
+        ogImage={author.image}
+      >
         <ContentContainer>
           <Center>
             <PageTitle>{author.name}</PageTitle>

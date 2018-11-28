@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import * as colors from '../constants/colors';
 import * as fonts from '../constants/fonts';
+import siteConfig from '../config';
 
 import ChristmasTree from './icons/christmas-tree';
 
@@ -32,9 +33,9 @@ const LinkText = styled.a`
 const SiteHeader = () => (
   <Container>
     <SiteTitle>
-      <Link prefetch href="/">
+      <Link prefetch href="/" passHref>
         <LinkText>
-          security <ChristmasTree style={{ width: '1.5em' }} /> christmas
+          {siteConfig.name.split('.')[0]} <ChristmasTree style={{ width: '1.5em' }} /> christmas
         </LinkText>
       </Link>
     </SiteTitle>
