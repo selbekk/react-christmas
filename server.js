@@ -12,7 +12,7 @@ const runTheTrap = async () => {
     await app.prepare();
     const server = express();
 
-    //Enable helmet to set security headers
+    // enable helmet to set security headers
     server.use(helmet());
 
     // gzip it!
