@@ -33,6 +33,7 @@ const runTheTrap = async () => {
     server.get('/:year(\\d{4})', (req, res) => {
       const context = {
         year: req.params.year,
+        mode: req.query.mode,
       };
       app.render(req, res, '/year', context);
     });
