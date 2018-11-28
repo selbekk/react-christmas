@@ -1,4 +1,5 @@
 const express = require('express');
+const helmet = require('helmet');
 const next = require('next');
 const compression = require('compression');
 
@@ -10,6 +11,9 @@ const runTheTrap = async () => {
   try {
     await app.prepare();
     const server = express();
+
+    //Enable helmet to set security headers
+    server.use(helmet());
 
     // gzip it!
     server.use(compression());
