@@ -16,7 +16,7 @@ const PostPage = props => {
     const { notFound, author, authorSlug, post, year, date, readingTime } = props;
     const today = new Date();
     const releaseDate = new Date(year, 11, date);
-    const tooSoon = today < releaseDate;
+    const tooSoon = process.env.NODE_ENV !== "development" && today < releaseDate;
 
     if (tooSoon) {
         return (
