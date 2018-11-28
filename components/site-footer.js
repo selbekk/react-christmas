@@ -5,6 +5,7 @@ import BekkLogo from './icons/bekk-logo';
 import * as colors from '../constants/colors';
 import * as fonts from '../constants/fonts';
 import * as breakpoints from '../constants/breakpoints';
+import siteConfig from '../config';
 
 const Container = styled.footer`
   background: ${colors.primary};
@@ -82,27 +83,21 @@ const SiteFooter = () => {
             </SmallText>
           </Paragraph>
         </Column>
+        {siteConfig.otherChristmasCalendars.length > 0 && (
         <Column>
           <Heading>Looking for more Christmas?</Heading>
           <Paragraph>Check out</Paragraph>
           <List>
-            <ListItem>
-              <WhiteLinkText href="https://javascript.christmas">
-                javascript.christmas
-              </WhiteLinkText>
-            </ListItem>
-            <ListItem>
-              <WhiteLinkText href="https://elm.christmas">
-                elm.christmas
-              </WhiteLinkText>
-            </ListItem>
-            <ListItem>
-              <WhiteLinkText href="https://security.christmas">
-                security.christmas
-              </WhiteLinkText>
-            </ListItem>
+            {siteConfig.otherChristmasCalendars.map(calendar => (
+              <ListItem key={calendar}>
+                <WhiteLinkText href={`https://${calendar}`}>
+                  {calendar}
+                </WhiteLinkText>
+              </ListItem>
+            ))}
           </List>
         </Column>
+        )}
 
         <Column>
           <Heading>Proudly sponsored by</Heading>

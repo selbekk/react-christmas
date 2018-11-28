@@ -9,6 +9,8 @@ const ContentContainer = styled.div`
   ${breakpoints.mediumUp} {
     padding: 0;
   }
+
+  ${props => props.center && `text-align: center;`}
 `;
 
 export default ContentContainer;

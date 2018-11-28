@@ -1,7 +1,7 @@
 import React from 'react';
 import NextHead from 'next/head';
 import { string } from 'prop-types';
-import siteConfig from '../constants/config';
+import siteConfig from '../config';
 
 const Head = props => (
   <NextHead>
