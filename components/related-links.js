@@ -55,7 +55,7 @@ const Description = styled.p`
 
 const RelatedLinks = props => {
   const { links } = props;
-  if (!links.length) {
+  if (!links || !links.length) {
     return null;
   }
   return (

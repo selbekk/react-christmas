@@ -11,7 +11,7 @@ import {
 
 const YearPage = props => {
   const { year } = props;
-  const isWayInThePast = year < 2017;
+  const isWayInThePast = year < 2018;
   const isWayInTheFuture = year > 2018;
   const isValidYear = !isWayInThePast && !isWayInTheFuture;
   return (
@@ -20,23 +20,14 @@ const YearPage = props => {
       {isWayInThePast && (
         <ContentContainer>
           <LeadParagraph>
-            Woah there pilgrim! ✋ We only got started in 2017, so that's all
-            the posts we have. 🤷‍
+            ✋ Sorry, we started this in 2018. 🤷‍
           </LeadParagraph>
-          <Paragraph>
-            If you want, you can go check out{' '}
-            <LinkText href="/year?year=2017" as="/2017">
-              2017
-            </LinkText>{' '}
-            if you want - it was a pretty cool year! 😎
-          </Paragraph>
         </ContentContainer>
       )}
       {isWayInTheFuture && (
         <ContentContainer>
           <LeadParagraph>
-            Hold your cyber monkes from space there compadre! 👽🐵 You can't
-            visit the future! We haven't gotten that far yet. 😞
+            Hi Bender from the future! We haven't gotten that far yet. 😞
           </LeadParagraph>
           <Paragraph>
             If you want, you can check out the{' '}
