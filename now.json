@@ -1,6 +1,6 @@
 {
   "name": "security.christmas",
-  "alias": "security.christmas"
+  "alias": "security.christmas",
   "version": 2,
   "builds": [{ "src": "next.config.js", "use": "@now/next" }]
 }
