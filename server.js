@@ -42,6 +42,7 @@ const runTheTrap = async () => {
       const context = {
         year: req.params.year,
         date: req.params.date.padStart(2, '0'),
+        mode: req.query.mode,
       };
       app.render(req, res, '/post', context);
     });
