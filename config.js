@@ -13,5 +13,5 @@ module.exports = {
     'elm.christmas',
   ],
   handleLegacyLinks: true,
-  googleAnalyticsTrackingId: 'UA-110431089-1'
+  googleAnalyticsTrackingId: 'UA-110431089-4'
 };
