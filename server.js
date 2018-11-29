@@ -21,6 +21,7 @@ const runTheTrap = async () => {
 
     // Pass static assets
     server.use('/static', express.static('static'));
+    server.use('/.well-known', express.static('.well-known'));
 
     // handle authors
     server.get('/author/:slug', (req, res) => {
