@@ -1,6 +1,6 @@
 {
   "name": "react-christmas",
-  "licence": "MIT",
+  "license": "MIT",
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
