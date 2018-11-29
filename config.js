@@ -2,7 +2,7 @@
 // If you want to make this page your own - change the domain name, text and
 // what not here.
 
-export default {
+module.exports = {
   name: 'security.christmas',
   domain: 'https://security.christmas',
   ogDescription: 'A nice little Christmas calendar for people who love Security',
@@ -11,5 +11,7 @@ export default {
     'javascript.christmas',
     'react.christmas',
     'elm.christmas',
-  ]
+  ],
+  handleLegacyLinks: true,
+  googleAnalyticsTrackingId: 'UA-110431089-4'
 };

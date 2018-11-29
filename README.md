@@ -6,7 +6,7 @@ To run a development server, run `yarn dev`.
 
 ## Deployment
 
-Deploy with `now`
+Deploy with `yarn deploy`.
 
 ## Create your own!
 
@@ -66,4 +66,4 @@ add `?mode=hacker` to the URL. That will let you access all articles.
 
 ## Questions?
 
-Please reach out via Twitter or GitHub if you have any questions :)
+Please reach out via [Twitter](https://www.twitter.com/selbekk) or [GitHub](https://www.github.com/selbekk/react-christmas/issues) if you have any questions :)

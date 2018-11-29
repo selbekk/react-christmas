@@ -79,7 +79,7 @@ const SiteFooter = () => {
           </Paragraph>
           <Paragraph>
             <SmallText>
-                We do not use cookies.{' '}
+                We use a few cookies for tracking yo' ass.{' '}
               <WhiteLinkText href="/privacy">Read more here</WhiteLinkText>
             </SmallText>
           </Paragraph>

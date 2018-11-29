@@ -4,6 +4,7 @@ import SiteWrapper from './site-wrapper';
 import SiteHeader from './site-header';
 import SiteContent from './site-content';
 import SiteFooter from './site-footer';
+import PageTracking from './page-tracking';
 import GlobalStyles from '../shared/global-styles';
 
 const Page = props => {
@@ -11,11 +12,13 @@ const Page = props => {
     <>
       <Head title={props.title} description={props.description} />
       <GlobalStyles />
-      <SiteWrapper>
-        <SiteHeader />
-        <SiteContent>{props.children}</SiteContent>
-        <SiteFooter />
-      </SiteWrapper>
+      <PageTracking>
+        <SiteWrapper>
+          <SiteHeader />
+          <SiteContent>{props.children}</SiteContent>
+          <SiteFooter />
+        </SiteWrapper>
+      </PageTracking>
     </>
   );
 };
