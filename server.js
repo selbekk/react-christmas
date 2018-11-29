@@ -2,6 +2,7 @@ const express = require('express');
 const helmet = require('helmet');
 const next = require('next');
 const compression = require('compression');
+const siteConfig = require('./config');
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
@@ -47,6 +48,14 @@ const runTheTrap = async () => {
       };
       app.render(req, res, '/post', context);
     });
+
+    // Handle 2017's routes
+    // One year in, and we already have legacy shit to deal with
+    if (siteConfig.handleLegacyLinks) {
+      server.get('/:date(\\d{1,2})', (req, res) => {
+        res.redirect(`/2017/${req.params.date}`);
+      });
+    }
 
     // Handle all basic routes
     server.get('*', (...args) => handle(...args));

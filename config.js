@@ -11,5 +11,6 @@ export default {
     'javascript.christmas',
     'security.christmas',
     'elm.christmas',
-  ]
+  ],
+  handleLegacyLinks: true,
 };
