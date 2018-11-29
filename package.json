@@ -25,5 +25,8 @@
   },
   "devDependencies": {
     "markdown-with-front-matter-loader": "^0.1.0"
+  },
+  "resolutions": {
+    "ajv": "6.5.5"
   }
 }
