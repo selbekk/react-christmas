@@ -17,8 +17,8 @@ const PrivacyPage = () => (
                 <LeadParagraph>TL;DR: We use Google Analytics.</LeadParagraph>
             </Center>
             <Paragraph>
-                Privacy is important to me, but I don't really need to track a ton of
-                information about you. I use Google Analytics to track information about
+                Privacy is important to us, and we don't really need to track a ton of
+                information about you. We use Google Analytics to track information about
                 where you're from and what kind of device you're using etc - but{' '}
                 <strong>that's it</strong>.
             </Paragraph>
