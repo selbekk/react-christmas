@@ -2,7 +2,7 @@
 // If you want to make this page your own - change the domain name, text and
 // what not here.
 
-export default {
+module.exports = {
   name: 'react.christmas',
   domain: 'https://react.christmas',
   ogDescription: 'A nice little Christmas calendar for people who love React',
@@ -13,4 +13,5 @@ export default {
     'elm.christmas',
   ],
   handleLegacyLinks: true,
+  googleAnalyticsTrackingId: 'UA-110431089-1'
 };
