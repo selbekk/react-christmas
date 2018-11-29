@@ -1,5 +1,6 @@
 import React from 'react';
 import NextHead from 'next/head';
+import { withRouter } from 'next/router';
 import { string } from 'prop-types';
 import siteConfig from '../config';
 
@@ -17,21 +18,21 @@ const Head = props => (
     <link rel="manifest" href="/static/manifest.json" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#ff0000" />
-    <meta property="og:url" content={props.url || siteConfig.url} />
-    <meta property="og:title" content={props.title || ''} />
+    <meta property="og:url" content={props.url || siteConfig.domain + props.router.asPath} />
+    <meta property="og:title" content={props.title || siteConfig.name} />
     <meta
       property="og:description"
       content={props.description || siteConfig.ogDescription}
     />
-    <meta name="twitter:site" content={props.url || siteConfig.url} />
+    <meta name="twitter:site" content={props.url || siteConfig.domain} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:image"
-      content={props.ogImage || `${siteConfig.url}/static/og-image.jpg`}
+      content={props.ogImage || `${siteConfig.domain}/static/og-image.jpg`}
     />
     <meta
       property="og:image"
-      content={props.ogImage || `${siteConfig.url}/static/og-image.jpg`}
+      content={props.ogImage || `${siteConfig.domain}/static/og-image.jpg`}
     />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -45,4 +46,4 @@ Head.propTypes = {
   ogImage: string,
 };
 
-export default Head;
+export default withRouter(Head);
