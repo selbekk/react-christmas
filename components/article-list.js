@@ -28,8 +28,7 @@ const fadeIn = keyframes`
 
 const Leaf = styled.li`
   width: 100%;
-  animation: 0.5s ${props => Number(props.index) * 0.03}s ease-out forwards
-    ${fadeIn};
+  animation: 0.5s ${props => Number(props.index) * 0.03}s ease-out forwards ${fadeIn};
   opacity: 0;
 `;
 const Content = styled.a`
@@ -89,7 +88,7 @@ const ArticleList = props => {
         return (
           <Leaf key={day} index={day}>
             <Link
-              href={`/post?year=${props.year}&date=${day}`}
+              href={`/post?year=${props.year}&date=${day}${hackerMode ? '&mode=hacker' : ''}`}
               as={`/${props.year}/${day}${hackerMode ? '?mode=hacker' : ''}`}
               passHref
             >
