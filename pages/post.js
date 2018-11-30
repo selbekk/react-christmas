@@ -73,6 +73,7 @@ const PostPage = props => {
   }
   return (
     <Page title={post.title} description={post.lead} ogImage={post.image}>
+      <div />
       <FadeSlideIn>
         <BackgroundImage src={post.image}>
           <ContentContainer>
