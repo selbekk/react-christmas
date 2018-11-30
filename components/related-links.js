@@ -77,4 +77,9 @@ const RelatedLinks = props => {
     </ContentContainer>
   );
 };
+
+RelatedLinks.defaultProps = {
+  links: []
+};
+
 export default RelatedLinks;
