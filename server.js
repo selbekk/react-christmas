@@ -2,6 +2,7 @@ const express = require('express');
 const helmet = require('helmet');
 const next = require('next');
 const compression = require('compression');
+const siteConfig = require('./config');
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
@@ -12,11 +13,14 @@ const runTheTrap = async () => {
     await app.prepare();
     const server = express();
 
-    //Enable helmet to set security headers
+    // enable helmet to set security headers
     server.use(helmet());
 
     // gzip it!
     server.use(compression());
+
+    // Pass static assets
+    server.use('/static', express.static('static'));
 
     // handle authors
     server.get('/author/:slug', (req, res) => {
@@ -30,6 +34,7 @@ const runTheTrap = async () => {
     server.get('/:year(\\d{4})', (req, res) => {
       const context = {
         year: req.params.year,
+        mode: req.query.mode,
       };
       app.render(req, res, '/year', context);
     });
@@ -39,9 +44,18 @@ const runTheTrap = async () => {
       const context = {
         year: req.params.year,
         date: req.params.date.padStart(2, '0'),
+        mode: req.query.mode,
       };
       app.render(req, res, '/post', context);
     });
+
+    // Handle 2017's routes
+    // One year in, and we already have legacy shit to deal with
+    if (siteConfig.handleLegacyLinks) {
+      server.get('/:date(\\d{1,2})', (req, res) => {
+        res.redirect(`/2017/${req.params.date}`);
+      });
+    }
 
     // Handle all basic routes
     server.get('*', (...args) => handle(...args));
