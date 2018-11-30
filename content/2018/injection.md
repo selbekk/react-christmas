@@ -2,6 +2,10 @@
 title: Injections
 lead: Did you know that code could be injected into your application by an attacker, which could retrieve data or do something else that you did not anticipate?
 author: Stian Fredrikstad
+links:
+  - title: OWASP
+    link: https://www.owasp.org/index.php/SQL_Injection_Prevention_Cheat_Sheet
+    body: SQL Injection Prevention Cheat Sheet
 ---
 
 Code can be injected in many different contexts. 
@@ -34,4 +38,22 @@ SELECT * FROM users WHERE username = 'bob' AND 1 = 1;--' AND passowrd = '1234';
 ```
 
 Now we wrote `bob' AND 1 = 1;` into the username field. 
-This will not throw an error, because it is perfectly valid SQL, but it will find the user `bob` and skip the password check due to `--` which is a comment in many SQL languages.
+This will not throw an error, because it is perfectly valid SQL, and it will find the user `bob` and skip the password check due to `--`, which is a comment in many SQL languages.
+
+By injecting this SQL, we can log in as bob without knowing his password.
+
+This is happening when we concatenate SQL queries with user input, which make it possible to use special characters to break out of the context.
+In this instance it is the character `'`, but this depends on the context we get user input.
+
+This can be done secure by using parameterized queries, and an example of the same query would then be
+
+```
+String query = "SELECT * FROM users WHERE username = ? AND password = ?";  
+PreparedStatement pstmt = connection.prepareStatement( query );
+pstmt.setString( 1, "bob");
+pstmt.setString( 2, "1234"); 
+ResultSet result = pstmt.executeQuery( );
+```
+
+The lesson of this post is to always be aware that an attacker will try to write malicious input.
+And you should always take care of special characters in your language, and never concatenate user input into places where it can run code.
