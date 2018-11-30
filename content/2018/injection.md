@@ -45,7 +45,7 @@ By injecting this SQL, we can log in as bob without knowing his password.
 This is happening when we concatenate SQL queries with user input, which make it possible to use special characters to break out of the context.
 In this instance it is the character `'`, but this depends on the context we get user input.
 
-This can be done secure by using parameterized queries, and an example of the same query would then be
+This can be done secure by using parameterized queries, and an example of the same query in Java would then be
 
 ```
 String query = "SELECT * FROM users WHERE username = ? AND password = ?";  
