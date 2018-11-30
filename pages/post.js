@@ -7,7 +7,7 @@ import {
   PageTitle,
   LeadParagraph,
   Paragraph,
-  LinkText,
+  LinkText
 } from '../components/typography';
 import Page from '../components/page';
 import ArticleBody from '../components/article-body';
@@ -18,6 +18,10 @@ import BackgroundImage from '../components/background-image';
 import Center from '../components/center';
 import FadeSlideIn from '../components/fade-slide-in';
 
+const utcDate = date => {
+  return new Date(date.getTime() + date.getTimezoneOffset() * 60000);
+};
+
 const PostPage = props => {
   const {
     notFound,
@@ -27,11 +31,11 @@ const PostPage = props => {
     year,
     date,
     readingTime,
-    router,
+    router
   } = props;
   const today = new Date();
   const hackerMode = router.query.mode === 'hacker';
-  const releaseDate = new Date(year, 11, date);
+  const releaseDate = utcDate(new Date(year, 11, date));
   const tooSoon = today < releaseDate && !hackerMode;
 
   if (tooSoon) {
@@ -118,13 +122,13 @@ PostPage.getInitialProps = async context => {
       post,
       author,
       authorSlug,
-      readingTime: calculateReadingTime(post.__content).text,
+      readingTime: calculateReadingTime(post.__content).text
     };
   } catch (e) {
     return {
       year: Number(year),
       date: Number(date),
-      notFound: true,
+      notFound: true
     };
   }
 };

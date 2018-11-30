@@ -74,13 +74,16 @@ const Content = styled.a`
 
 const daysOfChristmas = new Array(24).fill().map((_, i) => `${i + 1}`);
 
+const utcDate = (date = new Date()) => {
+  return new Date(date.getTime() + date.getTimezoneOffset() * 60000);
+};
 const ArticleList = props => {
-  const today = new Date();
+  const today = utcDate();
   const hackerMode = props.router.query.mode === 'hacker';
   return (
     <Tree>
       {daysOfChristmas.map(day => {
-        const releaseDate = new Date(Number(props.year), 11, day);
+        const releaseDate = utcDate(new Date(Number(props.year), 11, day));
         const isAvailable = today > releaseDate || hackerMode;
         const isToday =
           today.getFullYear() === Number(props.year) &&
