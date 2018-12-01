@@ -87,7 +87,7 @@ const SiteFooter = () => {
         {siteConfig.otherChristmasCalendars.length > 0 && (
         <Column>
           <Heading>Looking for more Christmas?</Heading>
-          <Paragraph>Check out</Paragraph>
+          <Paragraph>Check out:</Paragraph>
           <List>
             {siteConfig.otherChristmasCalendars.map(calendar => (
               <ListItem key={calendar}>
