@@ -16,7 +16,7 @@ links:
       body: Auth0 documentation on their "Password reset"-feature
 ---
 
-We've all used the "Forgot password"-feature somewhere on the internet. Some were positive and quick with great user experience (UX), while others were... well, not so much. Maybe you received your password back in *plain text*, maybe the procedure required you to remember your *first pet's name* or the *street you grew up in*. Implementing an unsecure "Forgot password"-feature might lead to the security vulnerability **Sensitive Data Exposure** which will harm you and your users.
+We've all used the "Forgot password"-feature somewhere on the internet. Some were positive and quick with great user experience (UX), while others were... well, not so much. Maybe you received your password back in *plain text*, maybe the procedure required you to remember your *first pet's name* or the *street you grew up in*. Implementing an insecure "Forgot password"-feature might lead to the security vulnerability **Sensitive Data Exposure** which will harm you and your users.
 
 So let's look at a few suggestions on how make a great and secure "Forgot password"-feature!
 
