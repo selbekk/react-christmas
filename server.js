@@ -16,12 +16,23 @@ const runTheTrap = async () => {
     server.use(helmet({
       contentSecurityPolicy: {
         directives: {
-          defaultSrc: ["'self'"],
-          scriptSrc: ["'self'", "'unsafe-eval'", "'unsafe-inline'", "https://www.google-analytics.com", "https://cdn.polyfill.io"],
-          styleSrc: ["'self'", "'unsafe-inline'"],
-          imgSrc: ["'self'", "https://www.google-analytics.com/collect", "https://www.google-analytics.com/r/collect"]
-        }
-          upgradeInsecureRequests: true
+          defaultSrc: [
+            "'self'"],
+          scriptSrc: [
+            "'self'", 
+            "'unsafe-eval'", 
+            "'unsafe-inline'", 
+            "https://www.google-analytics.com", 
+            "https://cdn.polyfill.io"],
+          styleSrc: [
+            "'self'", 
+            "'unsafe-inline'"],
+          imgSrc: [
+            "'self'", 
+            "https://www.google-analytics.com/collect", 
+            "https://www.google-analytics.com/r/collect"]
+        },
+        upgradeInsecureRequests: true
       }
     }));
 
