@@ -21,6 +21,7 @@ const runTheTrap = async () => {
           styleSrc: ["'self'", "'unsafe-inline'"],
           imgSrc: ["'self'", "https://www.google-analytics.com/collect", "https://www.google-analytics.com/r/collect"]
         }
+          upgradeInsecureRequests: true
       }
     }));
 
