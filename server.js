@@ -30,7 +30,10 @@ const runTheTrap = async () => {
           imgSrc: [
             "'self'", 
             "https://www.google-analytics.com/collect", 
-            "https://www.google-analytics.com/r/collect"]
+            "https://www.google-analytics.com/r/collect",
+            "https://res.cloudinary.com",
+            "https://images.unsplash.com"
+          ]
         },
         upgradeInsecureRequests: true
       }
