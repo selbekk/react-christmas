@@ -24,9 +24,9 @@ So let's look at a few suggestions on how make a great and secure "Forgot passwo
 
 When a user forgets their password, they want you to help them with logging in. They don't want you to help them to remember what it was in the first place.
 
-Present the user with a "Reset password"-feature that **resets their password**. Clicking on that link can send them an e-mail/SMS with a *unique* & *time-limited* link to a page where a new password can be typed in.
+Present the user with a "Reset password"-feature that **resets** their password. Clicking on that link can send them an e-mail/SMS with a **unique** & **time-limited** link to a page where a new password can be typed in.
 
-Don't **ever** *retrieve* or *recover* the password! By retrieving it, the user knows *you know* how to retrieve it - not good!
+Don't **ever** *retrieve* or *recover* the user's password! By retrieving or recovering their original password, the user knows *you know* their password! Not good!
 
 ## Your Ashley Madison affair was never a secret
 
