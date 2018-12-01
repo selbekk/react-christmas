@@ -7,7 +7,6 @@ import {
     Paragraph,
     LinkText,
 } from '../components/typography';
-import DocumentWithStyledComponents from './_document';
 
 const PrivacyPage = () => (
     <Page title="Privacy policy">
