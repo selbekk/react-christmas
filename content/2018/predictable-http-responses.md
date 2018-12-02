@@ -10,10 +10,6 @@ links:
   - title: Swiping on Tinder? Beware, Someone Might be Watching Your Swipes and Matches
     link: https://www.thesslstore.com/blog/swiping-tinder-beware-someone-might-watching/
     body: On how Tinder were having HTTP-problems (by not using HTTPS)
-    
-  - title: Public key infrastructure
-    link: https://en.wikipedia.org/wiki/Public_key_infrastructure
-    body: Suggested further reading about public key infrastructure
 ---
 
 Many of us tend to think that if we just slap on end-to-end encryption with a SSL-/TLS-certificate and use HTTPS on our website, then that makes our website secure. It is true that this enables a secure encrypted connection between the client and the server so that no one can view the TCP-packet's data passing in between. It's a good security infrastructure to start off with, and [Let's Encrypt](https://letsencrypt.org/) will even give you this for free!
