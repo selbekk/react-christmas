@@ -25,8 +25,8 @@ const utcDate = date => {
 const PostPage = props => {
   const {
     notFound,
-    author,
-    authorSlug,
+    authors,
+    authorSlugs,
     post,
     year,
     date,
@@ -91,12 +91,8 @@ const PostPage = props => {
         <ContentContainer>
           <PostNavigation year={year} date={date} />
           {post.lead && <LeadParagraph>{post.lead}</LeadParagraph>}
-          {author && (
-            <AuthorInfo
-              author={author}
-              slug={authorSlug}
-              readingTime={readingTime}
-            />
+          {authors && (
+            <AuthorInfo authors={authors} readingTime={readingTime} />
           )}
           <ArticleBody dangerouslySetInnerHTML={{ __html: post.__content }} />
           <PostNavigation year={year} date={date} />
@@ -112,8 +108,19 @@ PostPage.getInitialProps = async context => {
   const paddedDate = date.padStart(2, '0');
   try {
     const post = await require(`../content/${year}/${paddedDate}.md`);
-    const authorSlug = post.author.replace(/\s+/g, '-').toLowerCase();
-    const author = await require(`../content/authors/${authorSlug}.md`);
+    const authorSlugs = post.author.split(',').map(name =>
+      name
+        .trim()
+        .replace(/\s+/g, '-')
+        .toLowerCase()
+    );
+
+    const authors = await Promise.all(
+      authorSlugs.map(slug => require(`../content/authors/${slug}.md`))
+    );
+    // Not the prettiest way to do this, i know
+    authors.forEach((author, index) => (author.slug = authorSlugs[index]));
+
     post.image =
       post.image ||
       'https://images.unsplash.com/photo-1512389142860-9c449e58a543?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9a61f93e3d2e1f3f36b8725a5fde5ef4&auto=format&fit=crop&w=2249&q=80';
@@ -121,8 +128,7 @@ PostPage.getInitialProps = async context => {
       year: Number(year),
       date: Number(date),
       post,
-      author,
-      authorSlug,
+      authors,
       readingTime: calculateReadingTime(post.__content).text
     };
   } catch (e) {
