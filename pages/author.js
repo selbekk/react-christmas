@@ -4,14 +4,13 @@ import {
   PageTitle,
   Paragraph,
   LeadParagraph,
-  LinkText,
+  LinkText
 } from '../components/typography';
 import Avatar from '../components/avatar';
+import AvatarContainer from '../components/avatar-container';
 import ArticleBody from '../components/article-body';
-import SomeLink from '../components/some-link';
 import GithubIcon from '../components/icons/github';
 import TwitterIcon from '../components/icons/twitter';
-import { monospaceFont } from '../constants/fonts';
 import Center from '../components/center';
 
 class AuthorPage extends React.Component {
@@ -21,12 +20,12 @@ class AuthorPage extends React.Component {
       const author = await require(`../content/authors/${slug}.md`);
       return {
         author,
-        notFound: false,
+        notFound: false
       };
     } catch (e) {
       return {
         author: null,
-        notFound: true,
+        notFound: true
       };
     }
   };
@@ -60,7 +59,11 @@ class AuthorPage extends React.Component {
         <ContentContainer>
           <Center>
             <PageTitle>{author.name}</PageTitle>
-            {author.image && <Avatar src={author.image} />}
+            {author.image && (
+              <AvatarContainer>
+                <Avatar src={author.image} />
+              </AvatarContainer>
+            )}
             <LeadParagraph>{author.oneliner}</LeadParagraph>
             {author.github && (
               <LinkText
