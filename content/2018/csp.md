@@ -2,6 +2,7 @@
 title: Content Security Policy
 lead: Use Content Security Policy (CSP) headers to prevent loading of untrusted resources and mitigate cross-site scripting (XSS) attacks 
 author: Henrik Walker Moe
+image: https://images.unsplash.com/photo-1524624969736-b53186755368?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4b088f1e2fadf4cb4ec6a58b696ec337&auto=format&fit=crop&w=1834&q=80
 links:
     - title: How to Prevent Cross-Site Scripting Attacks
       link: https://resources.infosecinstitute.com/how-to-prevent-cross-site-scripting-attacks/#gref
