@@ -41,7 +41,7 @@ When an "attacker" wanted to know if your e-mail address was in use, the attacke
 
 So by observing the two "Forgot password" behavior patterns, the attacker could infer that the presence of an error message meant that you *didn't have an account*, and getting to the receipt page meant that **you did**.
 
-Troy Hunt, who revealed this flaw, states that the lesson for the end-user is:
+Troy Hunt, who [revealed this flaw in a blog post](https://www.troyhunt.com/your-affairs-were-never-discrete-ashley/), states that the lesson for the end-user is:
 
 > *always* assume the presence of your account is discoverable
 
