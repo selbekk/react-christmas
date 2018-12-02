@@ -1,7 +1,6 @@
 const express = require('express');
 const next = require('next');
 const compression = require('compression');
-const siteConfig = require('./config');
 const helmet = require('helmet');
 
 const dev = process.env.NODE_ENV !== 'production';
@@ -14,7 +13,31 @@ const runTheTrap = async () => {
     const server = express();
 
     // enable helmet to set security headers
-    server.use(helmet());
+    server.use(helmet({
+      contentSecurityPolicy: {
+        directives: {
+          defaultSrc: [
+            "'self'"],
+          scriptSrc: [
+            "'self'", 
+            "'unsafe-eval'", 
+            "'unsafe-inline'", 
+            "https://www.google-analytics.com", 
+            "https://cdn.polyfill.io"],
+          styleSrc: [
+            "'self'", 
+            "'unsafe-inline'"],
+          imgSrc: [
+            "'self'", 
+            "https://www.google-analytics.com/collect", 
+            "https://www.google-analytics.com/r/collect",
+            "https://res.cloudinary.com",
+            "https://images.unsplash.com"
+          ]
+        },
+        upgradeInsecureRequests: true
+      }
+    }));
 
     // gzip it!
     server.use(compression());
