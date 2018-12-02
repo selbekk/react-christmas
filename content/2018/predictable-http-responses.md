@@ -1,6 +1,6 @@
 ---
 title: Predictable HTTP-responses
-lead: If your API has sensitive endpoints which returns the different HTTP-responses given user action A or B, then this information is enough to infer information which can be exploited. Learning from Tinder, lets investigate why having non-deterministic HTTP-responses are important and make our most business-critical API-endpoints a bit more secure.
+lead: If your API has sensitive endpoints which returns different HTTP-responses given user action A or B, then this information is enough to infer user information which can be exploited. Learning from Tinder, let's investigate why having non-deterministic HTTP-responses are important and try to make our most business-critical API-endpoints more secure.
 author: Henrik Walker Moe
 links:
   - title: What is HTTPS?
@@ -16,7 +16,7 @@ Many of us tend to think that if we just slap on end-to-end encryption with a SS
 
 But what happens if you have an app that uses API-endpoints that undermine this encryption? An attacker can still infer sensitive user information by *analyzing the size* of the **TCP-packets** in the HTTP-responses.
 
-Lets look at an [example from Tinder](https://www.theregister.co.uk/2018/01/23/tinder_security_vulnerabilities/) and see why we should, in some cases, prevent deterministic HTTP-responses.
+Let's look at an [example from Tinder](https://www.theregister.co.uk/2018/01/23/tinder_security_vulnerabilities/) and see why we should, in some cases, prevent deterministic HTTP-responses.
 
 ## Got Love For Sale
 
