@@ -2,6 +2,7 @@
 title: Predictable HTTP-responses
 lead: If your API has sensitive endpoints which returns different HTTP-responses given user action A or B, then this information is enough to infer user information which can be exploited. Learning from Tinder, let's investigate why having non-deterministic HTTP-responses are important and try to make our most business-critical API-endpoints more secure.
 author: Henrik Walker Moe
+image: https://images.unsplash.com/photo-1500565534308-0db60f7116f3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4c1e2768047626dac2afd31930527e6c&auto=format&fit=crop&w=1950&q=80
 links:
   - title: What is HTTPS?
     link: https://www.instantssl.com/ssl-certificate-products/https.html
