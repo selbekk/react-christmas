@@ -1,7 +1,8 @@
 ---
-title: Forgot password
+title: Forgot password - your chance to shine, or fail
 lead: Make an effort on User Experience and security awareness when implementing "Forgot password", and avoid exposing sensitive user information
 author: Henrik Walker Moe
+image: https://images.unsplash.com/photo-1520366793288-b135592be271?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=128e8f55690aaf42416cd44a84a88cc3&auto=format&fit=crop&w=1950&q=80
 links:
     - title: Data breach aside, your Ashley Madison affair was never a secret
       link: http://fortune.com/2015/07/20/data-breach-ashley-madison-affair/
