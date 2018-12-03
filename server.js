@@ -4,6 +4,10 @@ const next = require('next');
 const compression = require('compression');
 const siteConfig = require('./config');
 
+const utcDate = date => {
+  return new Date(date.getTime() + date.getTimezoneOffset() * 60000);
+};
+
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
@@ -56,6 +60,21 @@ const runTheTrap = async () => {
         res.redirect(`/2017/${req.params.date}`);
       });
     }
+
+    // Handle today route
+    server.get('/today', (req, res) => {
+      let todayDate = utcDate(new Date());
+      const lastDate = utcDate(new Date(2018, 11, 24));
+      if (todayDate > lastDate) {
+        todayDate = lastDate;
+      }
+      const context = {
+        year: todayDate.getFullYear(),
+        date: todayDate.getDate().toString().padStart(2, '0'),
+        mode: req.query.mode,
+      };
+      app.render(req, res, '/post', context);
+    })
 
     // Handle all basic routes
     server.get('*', (...args) => handle(...args));
