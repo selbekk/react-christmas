@@ -8,6 +8,10 @@ const frontMatter = require('front-matter');
 const marked = require('marked');
 const siteConfig = require('./config');
 
+const utcDate = date => {
+  return new Date(date.getTime() + date.getTimezoneOffset() * 60000);
+};
+
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
@@ -121,22 +125,18 @@ const runTheTrap = async () => {
 
     // Handle today route
     server.get('/today', (req, res) => {
-      let todayDate = new Date(Date.UTC(year, 11, date));
-      const lastDate = new Date(Date.UTC(2018, 11, 24));
+      let todayDate = utcDate(new Date());
+      const lastDate = utcDate(new Date(2018, 11, 24));
       if (todayDate > lastDate) {
         todayDate = lastDate;
       }
-
-      const year = todayDate.getFullYear();
-      const date = todayDate
-        .getDate()
-        .toString()
-        .padStart(2, '0');
       const context = {
-        year,
-        date,
-        mode: req.query.mode,
-        article: cache[year][date]
+        year: todayDate.getFullYear(),
+        date: todayDate
+          .getDate()
+          .toString()
+          .padStart(2, '0'),
+        mode: req.query.mode
       };
       app.render(req, res, '/post', context);
     });
