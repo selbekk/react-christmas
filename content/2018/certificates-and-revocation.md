@@ -15,7 +15,7 @@ links:
     body: It's clear that someone is downloading CRLs because Cloudflare are spending half a million dollars a month to serve CRLs.
 
 ---
-As a follow-up to Tia Feirings article on certificates we present an article on how to manage the certificates when they are issued.
+As a follow-up to Tia Firings [article](https://security.christmas/2018/2) on certificates we present an article on how to manage the certificates when they are issued.
 
 Managing certificates and keys is a difficult task with many pitfalls. Without proper lifecycle management it will quickly scale to something that is unmanageable. An old saying is that **_If a certificate got issued, it will have to be rotated_**. Cisco has stated that they use on average more than four hours per certificate , just maintaining and rotating it. This is on top of the fact that manual management is more prone to human error, which in turn results in security and operational risk.
 
