@@ -1,27 +1,30 @@
 
 ---
-title: Revocation of certificates
-lead: 
-
-
-
-
-
-lead: Most developers will sooner or later have to deal with certificates. But what is a certificate, really? It's got something to do with authentication, right..? In this post we will try to explain what a certificate actually is!
-author: Tia Firing
+title: Revoking of certificates
+lead: Managing certificates, and rotating them in due time can quickly get out of hand.
+author: Didrik Sæther
 links:
-  - title: Public-key cryptography
-    link: https://en.wikipedia.org/wiki/Public-key_cryptography
-    body: An explanation of Public-key cryptography
-  - title: TLS Handshake Protocol
-    link: https://docs.microsoft.com/en-us/windows/desktop/secauthn/tls-handshake-protocol
-    body: An explanation of the TLS Handshake Protocol
-  - title: Public key infrastructure
-    link: https://en.wikipedia.org/wiki/Public_key_infrastructure
-    body: Suggested further reading about public key infrastructure
+  - title: No, don't enable revocation checking
+    link: https://www.imperialviolet.org/2014/04/19/revchecking.html
+    body: Revocation checking is a complex topic and there's a fair amount of misinformation around. In short, it doesn't work ...
+  - title: SSL certificate revocation and how it is broken in practice
+    link: https://medium.com/@alexeysamoshkin/how-ssl-certificate-revocation-is-broken-in-practice-af3b63b9cb3
+    body: Explore certificate revocation solutions: CRL, OCSP, OCSP stapling, must-staple, CRLSets.
+  - title: Revocation still doesn't work
+    link: https://www.imperialviolet.org/2014/04/29/revocationagain.html
+    body: It's clear that someone is downloading CRLs because Cloudflare are spending half a million dollars a month to serve CRLs.
+
 ---
-Usually we come across certificates when we want our application to communicate with some new API that we haven't used before. As a responsible and security aware developer you of course use HTTPS for all communication, and the first time you try to connect to this new API you may get an error: "Certificate not trusted".  
-A certificate is one of the parts of a public key infrastructure (PKI). Public key cryptography, like RSA, allows two parties to set up an encrypted connection without having to share a secret encryption key in advance. In public key cryptography all communicating parties will have a public key and a private key. If Alice wants to send an encrypted message to Bob, Alice will encrypt the message using Bob's public key. This message can now be decrypted only if you have Bob's private key (and as the private key should never be shared this means only Bob should be able to decrypt the message).
-But how can Alice know that a public key belongs to Bob, and not to someone else who wants her to think that they are Bob? Enter certificates! A certificate is something that contains Bob's public key and says that "this is Bob's public key". But, to make this claim trustworthy, we need some trusted third party that can guarantee that this actually is Bob's public key. This is what a certificate authority (CA), like Buypass, Let's Encrypt and DigiCert, is meant to be, and their job is to verify that the public key actually belongs to the claimed owner, and then issue the certificate that says so. If we trust the CA that has issued the certificate, then we can trust that this actually is Bob's public key and that it really is Bob we are talking to if he is able to decrypt messages that are encrypted with his public key.
-Public key cryptography is unfortunately very resource consuming. TLS (or HTTPS, which simply means HTTP encrypted with TLS/SSL) use public key cryptography only during the initial handshake for agreeing on a secret symmetrical encryption key and for authenticating who they are talking to. The authentication in the handshake is based on the parties being able to decrypt messages that was encrypted with their public key, not in their ability to present valid certificates (the certificates are public information).
-The solution to the "Certificate not trusted" problem mentioned initially is, as you may already know, to add the CA certificate that has issued the certificate presented by the API to your application's truststore, if this is a CA that you trust.
+As a follow-up to Tia Feirings article on certificates we present an article on how to manage the certificates when they are issued.
+
+Managing certificates and keys is a difficult task with many pitfalls. Without proper lifecycle management it will quickly scale to something that is unmanageable. An old saying is that **_If a certificate got issued, it will have to be rotated_**. Cisco has stated that they use on average more than four hours per certificate , just maintaining and rotating it. This is on top of the fact that manual management is more prone to human error, which in turn results in security and operational risk.
+
+So why do we need to rotate certificates? Some of the reasons can be that the certificate is nearing its expiration date, or that the private key that signed the certificate has been compromised, and has to be revoked.
+Previous practices for revoking a certificate involved using a certificate revocation list (CRL) to hold a list of all revoked certificates. The nature of this list is to grow in size, and what do developers do when things grow? We cache them! So now users are making security decisions based on stale data.
+
+There has been done attempts at fixing revocation. We have _OCSP_, _OCSP Stapling_, and _OCSP must-staple_. All of which are prone to MITM-attacks.
+
+As early as in 1998 elimination of certificate revocation was proposed. Instead we should use short lived certificates, and if we have to do revocation, use _OCSP must-staple_. This is because expiration is revocation in it self. So what is a short lived certificate? A certificate has an expiration date, the same way as the milk in your fridge has one. Today certificates live for years, but why should they? Often are certificate problems related to a mismatch between the certificate expiration date and the clients clock. Everyone knows that fresh milk tastes better!
+
+
+The solution is to automate the certificate rotation of certificates, and with it, we get short lived certificates.
