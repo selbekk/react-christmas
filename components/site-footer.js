@@ -80,7 +80,7 @@ const SiteFooter = () => {
           <Paragraph>
             <SmallText>
                 We use a few cookies for tracking yo' ass.{' '}
-              <WhiteLinkText href="/privacy">Read more here</WhiteLinkText>
+              <WhiteLinkText href="/privacy">Read our privacy policy</WhiteLinkText>
             </SmallText>
           </Paragraph>
         </Column>
