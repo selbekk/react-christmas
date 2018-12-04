@@ -11,7 +11,7 @@ const Avatar = styled.div`
   background: #eee url(${props => props.src}) center center no-repeat;
   background-size: cover;
   display: block;
-  margin: 0 auto;
+  margin: 0 10px;
   border-radius: 50%;
   width: 100px;
   height: 100px;

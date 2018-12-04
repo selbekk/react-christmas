@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import styled from 'styled-components';
+import extractDomain from 'extract-domain';
 import { SectionTitle } from './typography';
 import ContentContainer from './content-container';
 import * as colors from '../constants/colors';
@@ -37,6 +38,13 @@ const ClickTarget = styled.a`
   }
 `;
 
+const Domain = styled.div`
+  color: #666;
+  font-size: 14px;
+  text-transform: lowercase;
+  margin: 0 10px;
+`;
+
 const Description = styled.p`
   font-family: ${fonts.serifFont};
   font-size: 16px;
@@ -59,6 +67,7 @@ const RelatedLinks = props => {
             <Link href={link.link} passHref={true}>
               <ClickTarget>
                 <Title>{link.title}</Title>
+                <Domain>{extractDomain(link.link)}</Domain>
                 <Description>{link.body}</Description>
               </ClickTarget>
             </Link>
@@ -68,4 +77,9 @@ const RelatedLinks = props => {
     </ContentContainer>
   );
 };
+
+RelatedLinks.defaultProps = {
+  links: []
+};
+
 export default RelatedLinks;
