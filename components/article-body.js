@@ -54,6 +54,10 @@ const ArticleBody = styled.article`
   a {
     color: ${colors.primary};
   }
+  ul, ol {
+    font-size: 21px;
+    line-height: 1.58;
+  }
 `;
 
 export default ArticleBody;

@@ -67,6 +67,13 @@ const blink = keyframes`
   }
 `;
 
+const swing = keyframes`
+  0% { transform: rotate(0deg); }
+  30% { transform: rotate(-30deg) scale(1.1); }
+  60% { transform: rotate(30deg) scale(1.3); }
+  100% { transform: rotate(0deg) scale(1.5); }
+`;
+
 const StyledChristmasTree = styled(ChristmasTree)`
   circle {
     transform-origin: center bottom;
@@ -85,6 +92,12 @@ const StyledChristmasTree = styled(ChristmasTree)`
 
   .white-bulbs circle:nth-of-type(2n + 1) {
     animation: 2s ease 2s alternate infinite ${blink};
+  }
+
+  transition: all .1s ease;
+
+  &:hover {
+    animation: 1s ease-out alternate infinite ${swing};
   }
 `;
 

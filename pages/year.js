@@ -1,7 +1,6 @@
 import React from 'react';
 import Page from '../components/page';
 import ArticleList from '../components/article-list';
-import WhatIsThis from '../components/what-is-this';
 import ContentContainer from '../components/content-container';
 import {
   PageTitle,
@@ -9,14 +8,15 @@ import {
   LinkText,
   Paragraph,
 } from '../components/typography';
+import siteConfig from '../config';
 
 const YearPage = props => {
   const { year } = props;
-  const isWayInThePast = year < 2018;
-  const isWayInTheFuture = year > 2018;
+  const isWayInThePast = year < siteConfig.firstYearOfContent;
+  const isWayInTheFuture = year > new Date().getFullYear();
   const isValidYear = !isWayInThePast && !isWayInTheFuture;
   return (
-    <Page title="react.christmas">
+    <Page title={`Posts from ${year}`}>
       <PageTitle centerText>Posts from {year}</PageTitle>
       {isWayInThePast && (
         <ContentContainer>
@@ -38,10 +38,6 @@ const YearPage = props => {
         </ContentContainer>
       )}
       {isValidYear && <ArticleList year={props.year} />}
-
-      <ContentContainer>
-        <WhatIsThis />
-      </ContentContainer>
     </Page>
   );
 };
