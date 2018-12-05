@@ -76,7 +76,7 @@ const Content = styled.a`
 const daysOfChristmas = new Array(24).fill().map((_, i) => `${i + 1}`);
 
 const ArticleList = props => {
-  const today = utcDate();
+  const today = utcDate(new Date());
   const hackerMode = props.router.query.mode === 'hacker';
   return (
     <Tree>
