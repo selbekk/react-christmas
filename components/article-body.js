@@ -42,6 +42,9 @@ const ArticleBody = styled.article`
     padding: 3px 4px;
     margin: 0 2px;
   }
+  p img {
+    width: 100%;
+  }
   pre {
     background: rgba(0, 0, 0, 0.05);
     padding: 1em;
@@ -54,7 +57,8 @@ const ArticleBody = styled.article`
   a {
     color: ${colors.primary};
   }
-  ul, ol {
+  ul,
+  ol {
     font-size: 21px;
     line-height: 1.58;
   }
