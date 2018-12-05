@@ -17,10 +17,7 @@ import AuthorInfo from '../components/author-info';
 import BackgroundImage from '../components/background-image';
 import Center from '../components/center';
 import FadeSlideIn from '../components/fade-slide-in';
-
-const utcDate = date => {
-  return new Date(date.getTime() + date.getTimezoneOffset() * 60000);
-};
+import { utcDate } from '../utils/date-utils';
 
 const PostPage = props => {
   const {

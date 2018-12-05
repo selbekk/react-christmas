@@ -3,10 +3,7 @@ const helmet = require('helmet');
 const next = require('next');
 const compression = require('compression');
 const siteConfig = require('./config');
-
-const utcDate = date => {
-  return new Date(date.getTime() + date.getTimezoneOffset() * 60000);
-};
+const { utcDate } = require('./utils/date-utils');
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
@@ -29,7 +26,7 @@ const runTheTrap = async () => {
     // handle authors
     server.get('/author/:slug', (req, res) => {
       const context = {
-        slug: req.params.slug,
+        slug: req.params.slug
       };
       app.render(req, res, '/author', context);
     });
@@ -38,7 +35,7 @@ const runTheTrap = async () => {
     server.get('/:year(\\d{4})', (req, res) => {
       const context = {
         year: req.params.year,
-        mode: req.query.mode,
+        mode: req.query.mode
       };
       app.render(req, res, '/year', context);
     });
@@ -48,7 +45,7 @@ const runTheTrap = async () => {
       const context = {
         year: req.params.year,
         date: req.params.date.padStart(2, '0'),
-        mode: req.query.mode,
+        mode: req.query.mode
       };
       app.render(req, res, '/post', context);
     });
@@ -70,11 +67,14 @@ const runTheTrap = async () => {
       }
       const context = {
         year: todayDate.getFullYear(),
-        date: todayDate.getDate().toString().padStart(2, '0'),
-        mode: req.query.mode,
+        date: todayDate
+          .getDate()
+          .toString()
+          .padStart(2, '0'),
+        mode: req.query.mode
       };
       app.render(req, res, '/post', context);
-    })
+    });
 
     // Handle all basic routes
     server.get('*', (...args) => handle(...args));
