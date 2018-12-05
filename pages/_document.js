@@ -21,13 +21,13 @@ class DocumentWithStyledComponents extends Document {
             rel="stylesheet"
             href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css"
           />
-          <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js" />
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/elm.min.js" />
-          <script>hljs.initHighlightingOnLoad();</script>
         </Head>
         <body>
           <Main />
           <NextScript />
+          <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/elm.min.js"></script>
+          <script>hljs.initHighlightingOnLoad();</script>
         </body>
       </html>
     );
