@@ -1,25 +1,39 @@
 import styled from 'styled-components';
 import Avatar from './avatar';
+import AvatarContainer from './avatar-container';
 import { LinkText } from './typography';
 
 const Container = styled.div`
   text-align: center;
 `;
 
+const AuthorText = styled.p`
+  line-height: 1.5;
+`;
+
 const AuthorInfo = props => {
-  const { author, readingTime, slug } = props;
-  if (!author) {
+  const { authors, readingTime } = props;
+  if (!authors || !authors.length) {
     return null;
   }
   return (
     <Container>
-      <Avatar src={author.image} />
-      <p>
-        A {readingTime} written by{' '}
-        <LinkText href={`/author/${slug}`}>
-          <strong>{author.name}</strong>
-        </LinkText>
-      </p>
+      <AvatarContainer>
+        {authors.map(author => (
+          <Avatar key={author.name} src={author.image} alt={author.name} />
+        ))}
+      </AvatarContainer>
+      <AuthorText>
+        A {readingTime} written by <br />
+        {authors.map((author, index) => (
+          <>
+            <LinkText href={`/author/${author.slug}`}>
+              <strong>{author.name}</strong>
+            </LinkText>
+            {index < authors.length - 1 && ' and '}
+          </>
+        ))}
+      </AuthorText>
     </Container>
   );
 };

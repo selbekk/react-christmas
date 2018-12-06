@@ -34,6 +34,10 @@ const runTheTrap = async () => {
             "https://res.cloudinary.com",
             "https://images.unsplash.com",
             "https://imgs.xkcd.com"
+          ],
+          connectSrc: [
+            "'self'",
+            "https://www.google-analytics.com/j/collect", 
           ]
         },
         upgradeInsecureRequests: true

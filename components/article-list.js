@@ -28,7 +28,8 @@ const fadeIn = keyframes`
 
 const Leaf = styled.li`
   width: 100%;
-  animation: 0.5s ${props => Number(props.index) * 0.03}s ease-out forwards ${fadeIn};
+  animation: 0.5s ${props => Number(props.index) * 0.03}s ease-out forwards
+    ${fadeIn};
   opacity: 0;
 `;
 const Content = styled.a`
@@ -73,22 +74,27 @@ const Content = styled.a`
 
 const daysOfChristmas = new Array(24).fill().map((_, i) => `${i + 1}`);
 
+const utcDate = (date = new Date()) => {
+  return new Date(date.getTime() + date.getTimezoneOffset() * 60000);
+};
 const ArticleList = props => {
-  const today = new Date();
+  const today = utcDate();
   const hackerMode = props.router.query.mode === 'hacker';
   return (
     <Tree>
       {daysOfChristmas.map(day => {
-        const releaseDate = new Date(props.year, 11, day);
+        const releaseDate = utcDate(new Date(Number(props.year), 11, day));
         const isAvailable = today > releaseDate || hackerMode;
         const isToday =
-          today.getFullYear() === props.year &&
+          today.getFullYear() === Number(props.year) &&
           today.getMonth() === 11 &&
-          today.getDate() === day - 1;
+          today.getDate() === day;
         return (
           <Leaf key={day} index={day}>
             <Link
-              href={`/post?year=${props.year}&date=${day}${hackerMode ? '&mode=hacker' : ''}`}
+              href={`/post?year=${props.year}&date=${day}${
+                hackerMode ? '&mode=hacker' : ''
+              }`}
               as={`/${props.year}/${day}${hackerMode ? '?mode=hacker' : ''}`}
               passHref
             >
