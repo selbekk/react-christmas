@@ -20,16 +20,7 @@ import FadeSlideIn from '../components/fade-slide-in';
 import { utcDate } from '../utils/date-utils';
 
 const PostPage = props => {
-  const {
-    notFound,
-    authors,
-    authorSlugs,
-    post,
-    year,
-    date,
-    readingTime,
-    router
-  } = props;
+  const { notFound, authors, post, year, date, readingTime, router } = props;
   const today = new Date();
   const hackerMode = router.query.mode === 'hacker';
   const releaseDate = utcDate(new Date(year, 11, date));
