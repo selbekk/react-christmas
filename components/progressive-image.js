@@ -2,24 +2,41 @@ import React, { Component } from 'react';
 
 class ProgressiveImage extends Component {
   state = {
-    loaded: false
+    loaded: false,
+    source: ''
   };
   componentDidMount() {
-    if (this.props.highResSrc) {
-      // Load the high res version in the background
-      const highResImage = new Image();
-      highResImage.addEventListener('load', () =>
-        this.setState({ loaded: true })
-      );
-      highResImage.src = this.props.highResSrc;
+    this.loadImages();
+  }
+  componentDidUpdate(prevProps) {
+    if (
+      prevProps.source !== this.props.source ||
+      prevProps.placeholderSource !== this.props.placeholderSource
+    ) {
+      this.loadImages();
     }
   }
-  render() {
-    const { children, highResSrc, src, ...rest } = this.props;
+  loadImages = () => {
+    const lowResImage = new Image();
+    lowResImage.onload = () => {
+      this.setState({
+        loaded: 'low-res',
+        source: this.props.placeholderSource
+      });
+    };
+    lowResImage.src = this.props.placeholderSource;
 
-    const { loaded } = this.state;
-    const loadedSrc = loaded ? highResSrc : src;
-    return children({ loaded, src: loadedSrc });
+    if (this.props.source) {
+      // Load the high res version in the background
+      const highResImage = new Image();
+      highResImage.onload = () => {
+        this.setState({ loaded: 'high-res', source: this.props.source });
+      };
+      highResImage.src = this.props.source;
+    }
+  };
+  render() {
+    return this.props.children(this.state);
   }
 }
 
