@@ -12,14 +12,21 @@ const Container = styled.div`
 
 const Background = styled.div`
   align-items: flex-end;
-  background: white url(${props => props.src}) center center no-repeat;
+  background: white url(${props => props.source}) center center no-repeat;
   background-size: cover;
-  filter: ${props => (props.loaded ? 'brightness(0.8)' : 'none')};
+  filter: ${props =>
+    props.loaded === 'high-res'
+      ? 'brightness(0.8)'
+      : props.loaded === 'low-res'
+      ? ' brightness(0.8) blur(5px)'
+      : 'none'};
+  transform: ${props => props.loaded === 'low-res' ? 'scale(1.05)': 'none'};
   display: flex;
   position: absolute;
   width: 100%;
   height: 100%;
-  transition: all 0.1s ease-out;
+  transition: all .2s ease-out;
+  opacity: ${props => (props.loaded ? 1 : 0)};
   z-index: 1;
 `;
 
@@ -39,27 +46,31 @@ const Content = styled.div`
 
 class BackgroundImage extends Component {
   state = {
-    width: 500,
-    quality: 1
+    width: 1500
   };
 
   componentDidMount() {
-    this.setState({ width: window.innerWidth, quality: 80 });
+    this.setState({ width: Math.max(window.innerWidth, 1500) });
   }
 
   render() {
     const { quality, width } = this.state;
+    const { children, src } = this.props;
 
-    const baseUrl = this.props.src.substring(0, this.props.src.indexOf('?'));
-    const lowResSrc = `${baseUrl}?q=${quality}&w=${width}`;
-    const highResSrc = `${baseUrl}?q=${quality}&w=${width}`;
+    const isUnsplash = src.includes('unsplash.com');
+    const baseUrl = src.substring(0, src.indexOf('?'));
+    const lowResSrc = `${baseUrl}?q=1&w=100`;
+    const highResSrc = `${baseUrl}?q=80&w=${width}`;
 
     return (
       <Container>
-        <ProgressiveImage src={lowResSrc} highResSrc={highResSrc}>
-          {imageProps => <Background {...imageProps} />}
-        </ProgressiveImage>
-        <Content>{this.props.children}</Content>
+        {isUnsplash && (
+          <ProgressiveImage placeholderSource={lowResSrc} source={highResSrc}>
+            {imageProps => <Background {...imageProps} />}
+          </ProgressiveImage>
+        )}
+        {!isUnsplash && <Background source={src} loaded={true} />}
+        <Content>{children}</Content>
       </Container>
     );
   }
