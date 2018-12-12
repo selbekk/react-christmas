@@ -17,8 +17,14 @@ class ProgressiveImage extends Component {
     }
   }
   loadImages = () => {
+    this.setState({ loaded: false, source: '' });
     const lowResImage = new Image();
     lowResImage.onload = () => {
+      // if the high res version is loaded already for some reason (cache?),
+      // ignore the result of the low-res load event
+      if (this.state.loaded === 'high-res') {
+        return;
+      }
       this.setState({
         loaded: 'low-res',
         source: this.props.placeholderSource
