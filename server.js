@@ -33,7 +33,8 @@ const runTheTrap = async () => {
             "https://www.google-analytics.com/r/collect",
             "https://res.cloudinary.com",
             "https://images.unsplash.com",
-            "https://imgs.xkcd.com"
+            "https://imgs.xkcd.com", 
+            "https://flic.kr/p" 
           ],
           connectSrc: [
             "'self'",
