@@ -1,7 +1,7 @@
 ---
 title: Time to clean up your social logins
 lead: As the end of the year closes in, there are no shortage of tips on how to get your home ready for the festive season. We think you should take a time out, and consider which application should still have access to your social accounts.
-author: Lars-Erik Wollan
+author: Lars Erik Wollan
 links:
   - title: Social login on Wikipedia
     link: https://en.wikipedia.org/wiki/Social_login
