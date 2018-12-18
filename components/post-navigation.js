@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { LinkText } from './typography';
 import ContentContainer from './content-container';
-import { utcDate } from '../utils/date-utils';
 
 const FlexContainer = styled(ContentContainer)`
   display: flex;
@@ -11,8 +10,9 @@ const FlexContainer = styled(ContentContainer)`
 const PostNavigation = props => {
   const { date, year } = props;
   const hasPreviousPost = date > 1;
+  const now = new Date();
   const hasNextPost =
-    date < 24 && utcDate() > utcDate(new Date(year, 11, date));
+    date < 24 && now > new Date(Date.UTC(year, 11, date + 1, 0, 0, 0));
   return (
     <FlexContainer>
       {hasPreviousPost && (

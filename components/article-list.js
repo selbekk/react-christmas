@@ -3,7 +3,6 @@ import { withRouter } from 'next/router';
 import styled, { keyframes } from 'styled-components';
 
 import * as colors from '../constants/colors';
-import { utcDate } from '../utils/date-utils';
 
 const Tree = styled.ul`
   display: grid;
@@ -76,12 +75,12 @@ const Content = styled.a`
 const daysOfChristmas = new Array(24).fill().map((_, i) => `${i + 1}`);
 
 const ArticleList = props => {
-  const today = utcDate(new Date());
+  const today = new Date();
   const hackerMode = props.router.query.mode === 'hacker';
   return (
     <Tree>
       {daysOfChristmas.map(day => {
-        const releaseDate = utcDate(new Date(Number(props.year), 11, day));
+        const releaseDate = new Date(Date.UTC(props.year, 11, day, 0, 0, 0));
         const isAvailable = today > releaseDate || hackerMode;
         const isToday =
           today.getFullYear() === Number(props.year) &&
