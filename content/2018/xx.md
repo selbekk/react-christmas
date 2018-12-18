@@ -26,8 +26,8 @@ A common security principle has been to enforce password updates periodically. T
 # Two-factor authentication
 Although you are using a strong passphrase, your credentials can still be compromised. Using the same passphrase on different sites increases your risk in the event of such compromise. A recommended way to lower the risk is to enable "two-factor authentication" (2FA). 
 
-2FA means that the user provides two pieces of evidence for authentication, typically a password/passphrase (first factor) and a code (second factor) received in a different channel. In the event of a compromised password/passphrase, your account is still safe as the attacker does not have access to your code. The code is typically sent to the user during login as SMS or in an application installed on the users phone. Using SMS is practical and easy, but it is not secure. For this reason NIST recommends users to avoid it, and rather use channels like secure applications whenever this is possible.
+2FA means that the user provides two pieces of evidence for authentication, typically a password/passphrase (first factor) and a code (second factor) received in a different channel. In the event of a compromised password/passphrase, your account is still safe as the attacker does not have access to your code. 
 
-All major service providers like Google, Microsoft, Apple, Facebook, and many more, have support for 2FA.
+All major service providers like Google, Microsoft, Apple, Facebook, and many more, have support for 2FA. For deeper understanding of 2FA, read Hans Kristian Henriksens [article](https://security.christmas/2018/6).
 
   
