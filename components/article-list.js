@@ -85,7 +85,7 @@ const ArticleList = props => {
         const isToday =
           today.getFullYear() === Number(props.year) &&
           today.getMonth() === 11 &&
-          today.getDate() === day;
+          today.getDate() === Number(day);
         return (
           <Leaf key={day} index={day}>
             <Link
