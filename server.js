@@ -3,7 +3,6 @@ const helmet = require('helmet');
 const next = require('next');
 const compression = require('compression');
 const siteConfig = require('./config');
-const { utcDate } = require('./utils/date-utils');
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
@@ -60,8 +59,8 @@ const runTheTrap = async () => {
 
     // Handle today route
     server.get('/today', (req, res) => {
-      let todayDate = utcDate(new Date());
-      const lastDate = utcDate(new Date(2018, 11, 24));
+      let todayDate = new Date(Date.UTC(year, 11, date));
+      const lastDate = new Date(Date.UTC(2018, 11, 24));
       if (todayDate > lastDate) {
         todayDate = lastDate;
       }
@@ -84,7 +83,7 @@ const runTheTrap = async () => {
       if (err) {
         throw err;
       }
-      console.log('Listening on port 3000');
+      console.log('Listening on http://localhost:3000');
     });
   } catch (err) {
     console.error(err);
