@@ -10,7 +10,9 @@ const FlexContainer = styled(ContentContainer)`
 const PostNavigation = props => {
   const { date, year } = props;
   const hasPreviousPost = date > 1;
-  const hasNextPost = date < 24 && new Date() > new Date(year, 11, date);
+  const now = new Date();
+  const hasNextPost =
+    date < 24 && now > new Date(Date.UTC(year, 11, date + 1, 0, 0, 0));
   return (
     <FlexContainer>
       {hasPreviousPost && (

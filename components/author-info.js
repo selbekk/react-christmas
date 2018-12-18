@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import styled from 'styled-components';
 import Avatar from './avatar';
 import AvatarContainer from './avatar-container';
@@ -26,12 +27,12 @@ const AuthorInfo = props => {
       <AuthorText>
         A {readingTime} written by <br />
         {authors.map((author, index) => (
-          <>
+          <Fragment key={author.name}>
             <LinkText href={`/author/${author.slug}`}>
               <strong>{author.name}</strong>
             </LinkText>
             {index < authors.length - 1 && ' and '}
-          </>
+          </Fragment>
         ))}
       </AuthorText>
     </Container>
