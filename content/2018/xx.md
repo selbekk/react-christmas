@@ -13,9 +13,9 @@ With this in mind, how can we reduce the risks concerning passwords ?
 
 
 # Passphrases instead of passwords
-Passwords should be avoided for several reasons. First, many people tend to choose (if possible) simple dictionary words that are easily cracked by openly available hacker tools. Secondly, the usual requirements for passwords are numbers, capital/non-capital and special characters, making the passwords unmemorable for humans. This may lead to passwords being written on a paper or a post-it, which again leads to less secure passwords.     
+Passwords should be avoided for several reasons. Many people tend to choose (if possible) simple dictionary words that are easily cracked by openly available hacker tools. Secondly, the usual requirements for passwords are numbers, capital/non-capital and special characters, making the passwords unmemorable for humans. This may lead to passwords being written on a paper or a post-it, which again leads to less secure passwords.     
 
-A better solution is to use a longer passphrase. A passphrase is longer than a password and can be a sentence with spaces in between words, like for instance "Correct horse battery staple". The main reason for using passphrases is that it's easy to remember while still being hard to guess or crack.  The longer passphrase may also satisfy requirements like punctuations and capital/non-capital letters as those appear natural in a sentence. Leading Operating Systems like Windows, Mac and Linux all support longer passphrases.
+A better solution is to use a passphrase. A passphrase is longer than a password and can be a sentence with spaces in between words, like for instance "Correct horse battery staple". The main reason for using passphrases is that it's easy to remember while still being hard to guess or crack.  The longer passphrase may also satisfy requirements like punctuations and capital/non-capital letters as those appear natural in a sentence. Leading Operating Systems like Windows, Mac and Linux all support longer passphrases.
     
 
 # Avoid frequent password changes
