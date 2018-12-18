@@ -18,24 +18,11 @@ import BackgroundImage from '../components/background-image';
 import Center from '../components/center';
 import FadeSlideIn from '../components/fade-slide-in';
 
-const utcDate = date => {
-  return new Date(date.getTime() + date.getTimezoneOffset() * 60000);
-};
-
 const PostPage = props => {
-  const {
-    notFound,
-    authors,
-    authorSlugs,
-    post,
-    year,
-    date,
-    readingTime,
-    router
-  } = props;
+  const { notFound, authors, post, year, date, readingTime, router } = props;
   const today = new Date();
   const hackerMode = router.query.mode === 'hacker';
-  const releaseDate = utcDate(new Date(year, 11, date));
+  const releaseDate = new Date(Date.UTC(year, 11, date, 0, 0, 0));
   const tooSoon = today < releaseDate && !hackerMode;
 
   if (tooSoon) {
