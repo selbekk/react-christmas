@@ -6,7 +6,7 @@ import {
   PageTitle,
   LeadParagraph,
   LinkText,
-  Paragraph,
+  Paragraph
 } from '../components/typography';
 import siteConfig from '../config';
 
@@ -26,8 +26,11 @@ const YearPage = props => {
           </LeadParagraph>
           <Paragraph>
             If you want, you can go check out{' '}
-            <LinkText href="/year?year=2017" as="/2017">
-              2017
+            <LinkText
+              href={`/year?year=${siteConfig.firstYearOfContent}`}
+              as={`/${siteConfig.firstYearOfContent}`}
+            >
+              {siteConfig.firstYearOfContent}
             </LinkText>{' '}
             if you want - it was a pretty cool year! 😎
           </Paragraph>
@@ -51,8 +54,8 @@ const YearPage = props => {
   );
 };
 
-YearPage.getInitialProps = context => ({
-  year: Number(context.query.year),
+YearPage.getInitialProps = async context => ({
+  year: Number(context.query.year)
 });
 
 export default YearPage;
