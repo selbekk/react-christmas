@@ -101,7 +101,10 @@ const runTheTrap = async () => {
             .toLowerCase()
             .replace(/\s+/g, '-')
         )
-        .map(authorSlug => cache.authors[authorSlug]);
+        .map(authorSlug => ({
+          ...cache.authors[authorSlug],
+          slug: authorSlug
+        }));
       return res.json({
         ...article,
         author: authors

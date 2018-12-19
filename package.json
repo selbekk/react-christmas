@@ -16,6 +16,7 @@
     "front-matter": "^3.0.1",
     "helmet": "^3.15.0",
     "isomorphic-unfetch": "^3.0.0",
+    "marked": "^0.5.2",
     "next": "^7.0.2",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
