@@ -1,3 +1,4 @@
+import fetch from 'isomorphic-unfetch';
 import Page from '../components/page';
 import ContentContainer from '../components/content-container';
 import {
@@ -15,12 +16,14 @@ import Center from '../components/center';
 
 class AuthorPage extends React.Component {
   static getInitialProps = async context => {
-    const { slug } = context.query;
+    const { req, query } = context;
     try {
-      const author = await require(`../content/authors/${slug}.md`);
+      const baseUrl = req ? `${req.protocol}://${req.get('Host')}` : '';
+      const response = await fetch(`${baseUrl}/api/author/${query.slug}`);
+      const author = await response.json();
       return {
         author,
-        notFound: false
+        notFound: !author
       };
     } catch (e) {
       return {
@@ -79,7 +82,7 @@ class AuthorPage extends React.Component {
               </LinkText>
             )}
           </Center>
-          <ArticleBody dangerouslySetInnerHTML={{ __html: author.__content }} />
+          <ArticleBody dangerouslySetInnerHTML={{ __html: author.body }} />
         </ContentContainer>
       </Page>
     );
