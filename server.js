@@ -35,7 +35,9 @@ const runTheTrap = async () => {
             "https://res.cloudinary.com",
             "https://images.unsplash.com",
             "https://imgs.xkcd.com",
-            "https://c1.staticflickr.com"
+            "https://c1.staticflickr.com",
+            "https://farm9.staticflickr.com",
+            "https://image.slidesharecdn.com"
           ],
           connectSrc: [
             "'self'",
