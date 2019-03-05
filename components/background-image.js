@@ -20,12 +20,12 @@ const Background = styled.div`
       : props.loaded === 'low-res'
       ? ' brightness(0.8) blur(5px)'
       : 'none'};
-  transform: ${props => props.loaded === 'low-res' ? 'scale(1.05)': 'none'};
+  transform: ${props => (props.loaded === 'low-res' ? 'scale(1.05)' : 'none')};
   display: flex;
   position: absolute;
   width: 100%;
   height: 100%;
-  transition: all .2s ease-out;
+  transition: all 0.2s ease-out;
   opacity: ${props => (props.loaded ? 1 : 0)};
   z-index: 1;
 `;
