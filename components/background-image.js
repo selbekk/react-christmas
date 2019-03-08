@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import debounce from 'debounce';
 import styled from 'styled-components';
 import { PageTitle } from './typography';
-import ProgressiveImage from './progressive-image';
+import useProgressiveImage from '../hooks/useProgressiveImage';
 import * as colors from '../constants/colors';
 
 const Container = styled.div`
@@ -71,16 +71,15 @@ const BackgroundImage = props => {
 
   const isUnsplash = src.includes('unsplash.com');
   const baseUrl = src.substring(0, src.indexOf('?'));
-  const lowResSrc = `${baseUrl}?q=1&w=100`;
-  const highResSrc = `${baseUrl}?q=80&w=${width}`;
+
+  const progressiveImage = useProgressiveImage({
+    source: `${baseUrl}?q=80&w=${width}`,
+    placeholderSource: `${baseUrl}?q=1&w=100`
+  });
 
   return (
     <Container>
-      {isUnsplash && (
-        <ProgressiveImage placeholderSource={lowResSrc} source={highResSrc}>
-          {imageProps => <Background {...imageProps} />}
-        </ProgressiveImage>
-      )}
+      {isUnsplash && <Background {...progressiveImage} />}
       {!isUnsplash && <Background source={src} loaded={true} />}
       <Content>{children}</Content>
     </Container>
