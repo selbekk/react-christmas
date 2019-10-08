@@ -94,7 +94,6 @@ const ArticleList = props => {
               }`}
               as={`/${props.year}/${day}${hackerMode ? '?mode=hacker' : ''}`}
               passHref
-              prefetch={isToday}
             >
               <Content
                 isToday={isToday}

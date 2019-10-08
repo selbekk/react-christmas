@@ -57,8 +57,8 @@ const StyledLink = styled.a`
   cursor: pointer;
   text-decoration: underline;
 `;
-export const LinkText = ({ href, as, prefetch, ...rest }) => (
-  <Link href={href} as={as} prefetch={prefetch} passHref={true}>
+export const LinkText = ({ href, as, ...rest }) => (
+  <Link href={href} as={as} passHref={true}>
     <StyledLink {...rest} />
   </Link>
 );
