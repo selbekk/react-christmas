@@ -1,14 +1,14 @@
 import React from 'react';
-import Page from '../components/page';
-import ArticleList from '../components/article-list';
-import ContentContainer from '../components/content-container';
+import Page from '~/components/page';
+import ArticleList from '~/components/article-list';
+import ContentContainer from '~/components/content-container';
 import {
   PageTitle,
   LeadParagraph,
   LinkText,
   Paragraph
-} from '../components/typography';
-import siteConfig from '../config';
+} from '~/components/typography';
+import siteConfig from '~/config';
 
 const YearPage = props => {
   const { year } = props;

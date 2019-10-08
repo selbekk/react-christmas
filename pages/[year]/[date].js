@@ -3,21 +3,21 @@ import calculateReadingTime from 'reading-time';
 import { withRouter } from 'next/router';
 import fetch from 'isomorphic-unfetch';
 
-import ContentContainer from '../components/content-container';
+import ContentContainer from '~/components/content-container';
 import {
   PageTitle,
   LeadParagraph,
   Paragraph,
   LinkText
-} from '../components/typography';
-import Page from '../components/page';
-import ArticleBody from '../components/article-body';
-import PostNavigation from '../components/post-navigation';
-import RelatedLinks from '../components/related-links';
-import AuthorInfo from '../components/author-info';
-import BackgroundImage from '../components/background-image';
-import Center from '../components/center';
-import FadeSlideIn from '../components/fade-slide-in';
+} from '~/components/typography';
+import Page from '~/components/page';
+import ArticleBody from '~/components/article-body';
+import PostNavigation from '~/components/post-navigation';
+import RelatedLinks from '~/components/related-links';
+import AuthorInfo from '~/components/author-info';
+import BackgroundImage from '~/components/background-image';
+import Center from '~/components/center';
+import FadeSlideIn from '~/components/fade-slide-in';
 
 const PostPage = props => {
   const { notFound, post, year, date, readingTime, router } = props;

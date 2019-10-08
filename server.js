@@ -60,27 +60,6 @@ const runTheTrap = async () => {
       return hit ? res.json(hit) : res.sendStatus(404);
     });
 
-    // Handle direct year routes
-    server.get('/:year(\\d{4})', (req, res) => {
-      const context = {
-        year: req.params.year,
-        mode: req.query.mode
-      };
-      app.render(req, res, '/year', context);
-    });
-
-    // Handle post routes
-    server.get('/:year(\\d{4})/:date(\\d{1,2})', (req, res) => {
-      const year = req.params.year;
-      const date = req.params.date.padStart(2, '0');
-
-      const context = {
-        year,
-        date,
-        mode: req.query.mode
-      };
-      app.render(req, res, '/post', context);
-    });
     server.get('/api/:year(\\d{4})/:date(\\d{1,2})', (req, res) => {
       const year = req.params.year;
       const date = req.params.date.padStart(2, '0');
