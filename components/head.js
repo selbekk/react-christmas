@@ -12,13 +12,16 @@ const Head = props => (
       name="description"
       content={props.description || siteConfig.ogDescription}
     />
-    <link rel="icon" sizes="192x192" href="/static/favicon.png" />
-    <link rel="apple-touch-icon" href="/static/favicon.png" />
-    <link rel="icon" href="/static/favicon.png" />
-    <link rel="manifest" href="/static/manifest.json" />
+    <link rel="icon" sizes="192x192" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <link rel="icon" href="/favicon.png" />
+    <link rel="manifest" href="/manifest.json" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#ff0000" />
-    <meta property="og:url" content={props.url || siteConfig.domain + props.router.asPath} />
+    <meta
+      property="og:url"
+      content={props.url || siteConfig.domain + props.router.asPath}
+    />
     <meta property="og:title" content={props.title || siteConfig.name} />
     <meta
       property="og:description"
@@ -28,11 +31,11 @@ const Head = props => (
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:image"
-      content={props.ogImage || `${siteConfig.domain}/static/og-image.jpg`}
+      content={props.ogImage || `${siteConfig.domain}/og-image.jpg`}
     />
     <meta
       property="og:image"
-      content={props.ogImage || `${siteConfig.domain}/static/og-image.jpg`}
+      content={props.ogImage || `${siteConfig.domain}/og-image.jpg`}
     />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -43,7 +46,7 @@ Head.propTypes = {
   title: string,
   description: string,
   url: string,
-  ogImage: string,
+  ogImage: string
 };
 
 export default withRouter(Head);

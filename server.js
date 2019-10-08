@@ -54,9 +54,6 @@ const runTheTrap = async () => {
     // gzip it!
     server.use(compression());
 
-    // Pass static assets
-    server.use('/static', express.static('static'));
-
     // handle authors
     server.get('/author/:slug', (req, res) => {
       const context = {
