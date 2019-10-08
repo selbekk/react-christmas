@@ -27,7 +27,9 @@
     "styled-components": "^4.0.2",
     "styled-normalize": "^8.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "babel-plugin-root-import": "^6.4.1"
+  },
   "resolutions": {
     "ajv": "6.5.5"
   }
