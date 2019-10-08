@@ -1,18 +1,18 @@
 import fetch from 'isomorphic-unfetch';
-import Page from '../../components/page';
-import ContentContainer from '../../components/content-container';
+import Page from '~/components/page';
+import ContentContainer from '~/components/content-container';
 import {
   PageTitle,
   Paragraph,
   LeadParagraph,
   LinkText
-} from '../../components/typography';
-import Avatar from '../../components/avatar';
-import AvatarContainer from '../../components/avatar-container';
-import ArticleBody from '../../components/article-body';
-import GithubIcon from '../../components/icons/github';
-import TwitterIcon from '../../components/icons/twitter';
-import Center from '../../components/center';
+} from '~/components/typography';
+import Avatar from '~/components/avatar';
+import AvatarContainer from '~/components/avatar-container';
+import ArticleBody from '~/components/article-body';
+import GithubIcon from '~/components/icons/github';
+import TwitterIcon from '~/components/icons/twitter';
+import Center from '~/components/center';
 
 function AuthorNotFound() {
   return (
