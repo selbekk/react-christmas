@@ -51,12 +51,6 @@ const runTheTrap = async () => {
     server.use(compression());
 
     // handle authors
-    server.get('/author/:slug', (req, res) => {
-      const context = {
-        slug: req.params.slug
-      };
-      app.render(req, res, '/author', context);
-    });
     server.get('/api/author/:slug', (req, res) => {
       const hit = cache.authors[req.params.slug];
       return hit ? res.json(hit) : res.sendStatus(404);
