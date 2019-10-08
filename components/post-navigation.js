@@ -19,7 +19,6 @@ const PostNavigation = props => {
         <LinkText
           href={`/post?year=${year}&date=${date - 1}`}
           as={`/${year}/${date - 1}`}
-          prefetch
         >
           &larr;Previous post
         </LinkText>
@@ -29,7 +28,6 @@ const PostNavigation = props => {
         <LinkText
           href={`/post?year=${year}&date=${date + 1}`}
           as={`/${year}/${date + 1}`}
-          prefetch
         >
           Next post &rarr;
         </LinkText>

@@ -33,9 +33,10 @@ const LinkText = styled.a`
 const SiteHeader = () => (
   <Container>
     <SiteTitle>
-      <Link prefetch href="/" passHref>
+      <Link href="/" passHref>
         <LinkText>
-          {siteConfig.name.split('.')[0]} <ChristmasTree style={{ width: '1.5em' }} /> christmas
+          {siteConfig.name.split('.')[0]}{' '}
+          <ChristmasTree style={{ width: '1.5em' }} /> christmas
         </LinkText>
       </Link>
     </SiteTitle>
