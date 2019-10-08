@@ -89,9 +89,7 @@ const ArticleList = props => {
         return (
           <Leaf key={day} index={day}>
             <Link
-              href={`/post?year=${props.year}&date=${day}${
-                hackerMode ? '&mode=hacker' : ''
-              }`}
+              href={`/[year]/[date]${hackerMode ? '?mode=hacker' : ''}`}
               as={`/${props.year}/${day}${hackerMode ? '?mode=hacker' : ''}`}
               passHref
             >
