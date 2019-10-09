@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import styled from 'styled-components';
-import { LinkText } from './typography';
+import { LinkText, ExternalLink } from './typography';
 import BekkLogo from './icons/bekk-logo';
 import * as colors from '../constants/colors';
 import * as fonts from '../constants/fonts';
@@ -36,6 +36,10 @@ const Column = styled.div`
 `;
 
 const WhiteLinkText = styled(LinkText)`
+  color: white;
+`;
+
+const WhiteExternalLink = styled(ExternalLink)`
   color: white;
 `;
 
@@ -85,28 +89,26 @@ const SiteFooter = () => {
           </Paragraph>
         </Column>
         {siteConfig.otherChristmasCalendars.length > 0 && (
-        <Column>
-          <Heading>Looking for more Christmas?</Heading>
-          <Paragraph>Check out</Paragraph>
-          <List>
-            {siteConfig.otherChristmasCalendars.map(calendar => (
-              <ListItem key={calendar}>
-                <WhiteLinkText href={`https://${calendar}`}>
-                  {calendar}
-                </WhiteLinkText>
-              </ListItem>
-            ))}
-          </List>
-        </Column>
+          <Column>
+            <Heading>Looking for more Christmas?</Heading>
+            <Paragraph>Check out</Paragraph>
+            <List>
+              {siteConfig.otherChristmasCalendars.map(calendar => (
+                <ListItem key={calendar}>
+                  <WhiteExternalLink href={`https://${calendar}`}>
+                    {calendar}
+                  </WhiteExternalLink>
+                </ListItem>
+              ))}
+            </List>
+          </Column>
         )}
 
         <Column>
           <Heading>Proudly made by</Heading>
-          <Link href="https://www.bekk.no">
-            <a aria-label="Bekk">
-              <BekkLogo style={{ maxWidth: '100px' }} />
-            </a>
-          </Link>
+          <WhiteExternalLink href="https://www.bekk.no" aria-label="Bekk">
+            <BekkLogo style={{ maxWidth: '100px' }} />
+          </WhiteExternalLink>
         </Column>
       </InnerContainer>
     </Container>

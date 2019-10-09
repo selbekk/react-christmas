@@ -62,3 +62,7 @@ export const LinkText = ({ href, as, ...rest }) => (
     <StyledLink {...rest} />
   </Link>
 );
+
+export const ExternalLink = props => (
+  <StyledLink rel="noopener noreferrer" {...props} />
+);

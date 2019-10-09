@@ -16,19 +16,13 @@ const PostNavigation = props => {
   return (
     <FlexContainer>
       {hasPreviousPost && (
-        <LinkText
-          href={`/post?year=${year}&date=${date - 1}`}
-          as={`/${year}/${date - 1}`}
-        >
+        <LinkText href="/[year]/[date]" as={`/${year}/${date - 1}`}>
           &larr;Previous post
         </LinkText>
       )}
       {!hasPreviousPost && <span />}
       {hasNextPost && (
-        <LinkText
-          href={`/post?year=${year}&date=${date + 1}`}
-          as={`/${year}/${date + 1}`}
-        >
+        <LinkText href="/[year]/[date]" as={`/${year}/${date + 1}`}>
           Next post &rarr;
         </LinkText>
       )}
