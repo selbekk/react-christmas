@@ -1,4 +1,5 @@
 import React from 'react';
+import Router from 'next/router';
 import Page from '~/components/page';
 import ArticleList from '~/components/article-list';
 import ContentContainer from '~/components/content-container';
@@ -54,8 +55,23 @@ const YearPage = props => {
   );
 };
 
-YearPage.getInitialProps = async context => ({
-  year: Number(context.query.year)
-});
+YearPage.getInitialProps = async ({ query, res }) => {
+  if (/^\d{1,2}$/.test(query.year)) {
+    // legacy links from 2017
+    // in this case, `query.year` is the day
+    const redirectUrl = `/2017/${query.year}`;
+    if (res) {
+      res.writeHead(302, {
+        Location: redirectUrl
+      });
+      res.end();
+    } else {
+      Router.push(redirectUrl);
+    }
+  }
+  return {
+    year: Number(query.year)
+  };
+};
 
 export default YearPage;

@@ -1,7 +1,6 @@
 import distanceInWordsToNow from 'date-fns/distance_in_words_to_now';
 import calculateReadingTime from 'reading-time';
 import { withRouter } from 'next/router';
-import fetch from 'isomorphic-unfetch';
 
 import ContentContainer from '~/components/content-container';
 import {
@@ -67,7 +66,12 @@ const PostPage = props => {
     <Page title={post.title} description={post.lead} ogImage={post.image}>
       <div />
       <FadeSlideIn>
-        <BackgroundImage src={post.image}>
+        <BackgroundImage
+          src={
+            post.image ||
+            'https://images.unsplash.com/photo-1512389142860-9c449e58a543?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9a61f93e3d2e1f3f36b8725a5fde5ef4&auto=format&fit=crop&w=2249&q=80'
+          }
+        >
           <ContentContainer>
             <Center>
               <PageTitle>{post.title}</PageTitle>
@@ -82,7 +86,7 @@ const PostPage = props => {
           {post.author && (
             <AuthorInfo authors={post.author} readingTime={readingTime} />
           )}
-          <ArticleBody dangerouslySetInnerHTML={{ __html: post.body }} />
+          <ArticleBody dangerouslySetInnerHTML={{ __html: post.html }} />
           <PostNavigation year={year} date={date} />
         </ContentContainer>
       </FadeSlideIn>
@@ -91,25 +95,53 @@ const PostPage = props => {
   );
 };
 
-PostPage.getInitialProps = async context => {
-  const { req, query } = context;
+function slugify(string) {
+  return string
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, '-');
+}
 
-  const paddedDate = query.date.padStart(2, '0');
+async function getAuthors(authorString) {
   try {
-    const baseUrl = req ? `${req.protocol}://${req.get('Host')}` : '';
-    const response = await fetch(`${baseUrl}/api/${query.year}/${paddedDate}`);
-    const post = await response.json();
+    const authorSlugs = authorString.split(',').map(slugify);
 
-    post.image =
-      post.image ||
-      'https://images.unsplash.com/photo-1512389142860-9c449e58a543?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9a61f93e3d2e1f3f36b8725a5fde5ef4&auto=format&fit=crop&w=2249&q=80';
+    const authorModules = await Promise.all(
+      authorSlugs.map(slug => import(`../../content/authors/${slug}.md`))
+    );
+
+    return authorModules.map(module => ({
+      ...module.default.attributes,
+      slug: slugify(module.default.attributes.name)
+    }));
+  } catch (e) {
+    return null;
+  }
+}
+
+PostPage.getInitialProps = async context => {
+  const { query } = context;
+  const paddedDate = query.date.padStart(2, '0');
+
+  try {
+    const {
+      default: { attributes, html }
+    } = await import(`../../content/${query.year}/${paddedDate}.md`);
+
+    const authorInfo = await getAuthors(attributes.author);
+    const post = {
+      html,
+      ...attributes,
+      author: authorInfo
+    };
     return {
+      post,
       year: Number(query.year),
       date: Number(query.date),
-      post,
-      readingTime: calculateReadingTime(post.body).text
+      readingTime: calculateReadingTime(post.html).text
     };
   } catch (e) {
+    console.error('such error', e);
     return {
       year: Number(query.year),
       date: Number(query.date),
