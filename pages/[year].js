@@ -27,10 +27,7 @@ const YearPage = props => {
           </LeadParagraph>
           <Paragraph>
             If you want, you can go check out{' '}
-            <LinkText
-              href={`/year?year=${siteConfig.firstYearOfContent}`}
-              as={`/${siteConfig.firstYearOfContent}`}
-            >
+            <LinkText href="/[year]" as={`/${siteConfig.firstYearOfContent}`}>
               {siteConfig.firstYearOfContent}
             </LinkText>{' '}
             if you want - it was a pretty cool year! 😎

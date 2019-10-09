@@ -28,7 +28,7 @@ const AuthorInfo = props => {
         A {readingTime} written by <br />
         {authors.map((author, index) => (
           <Fragment key={author.name}>
-            <LinkText href={`/author/${author.slug}`}>
+            <LinkText href="/author/[slug]" as={`/author/${author.slug}`}>
               <strong>{author.name}</strong>
             </LinkText>
             {index < authors.length - 1 && ' and '}

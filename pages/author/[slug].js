@@ -1,6 +1,7 @@
 import Page from '~/components/page';
 import ContentContainer from '~/components/content-container';
 import {
+  ExternalLink,
   PageTitle,
   Paragraph,
   LeadParagraph,
@@ -54,17 +55,17 @@ function AuthorPage(props) {
           )}
           <LeadParagraph>{author.oneliner}</LeadParagraph>
           {author.github && (
-            <LinkText
+            <ExternalLink
               href={`https://www.github.com/${author.github}`}
               style={{ marginRight: 20 }}
             >
               <GithubIcon width="21" /> @{author.github}
-            </LinkText>
+            </ExternalLink>
           )}
           {author.twitter && (
-            <LinkText href={`https://www.twitter.com/${author.twitter}`}>
+            <ExternalLink href={`https://www.twitter.com/${author.twitter}`}>
               <TwitterIcon style={{ width: 21 }} /> @{author.twitter}
-            </LinkText>
+            </ExternalLink>
           )}
         </Center>
         <ArticleBody dangerouslySetInnerHTML={{ __html: author.html }} />

@@ -5,7 +5,7 @@ import {
   PageTitle,
   LeadParagraph,
   Paragraph,
-  LinkText,
+  ExternalLink
 } from '../components/typography';
 
 const PrivacyPage = () => (
@@ -23,9 +23,11 @@ const PrivacyPage = () => (
       </Paragraph>
       <Paragraph>
         If you need to get in touch with us, please do so on{' '}
-        <LinkText href="https://www.twitter.com/selbekk">Twitter</LinkText>, or
-        write us a good ol' fashioned{' '}
-        <LinkText href="mailto:kristofer@selbekk.io">email</LinkText>.
+        <ExternalLink href="https://www.twitter.com/selbekk">
+          Twitter
+        </ExternalLink>
+        , or write us a good ol' fashioned{' '}
+        <ExternalLink href="mailto:kristofer@selbekk.io">email</ExternalLink>.
       </Paragraph>
       <Paragraph>
         Not sure what else to write here. Hope you enjoy your day! 👋
