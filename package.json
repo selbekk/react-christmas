@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.5.1",
-    "date-fns": "^1.29.0",
+    "date-fns": "^2.4.1",
     "debounce": "^1.2.0",
     "extract-domain": "^2.0.4",
     "marked": "^0.5.2",
@@ -25,8 +25,5 @@
   "devDependencies": {
     "babel-plugin-root-import": "^6.4.1",
     "frontmatter-markdown-loader": "^2.1.0"
-  },
-  "resolutions": {
-    "ajv": "6.5.5"
   }
 }

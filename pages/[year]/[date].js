@@ -1,4 +1,4 @@
-import distanceInWordsToNow from 'date-fns/distance_in_words_to_now';
+import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 import calculateReadingTime from 'reading-time';
 import { withRouter } from 'next/router';
 
@@ -33,7 +33,7 @@ const PostPage = props => {
             <PageTitle>Sorry, you have to wait a bit longer</PageTitle>
             <LeadParagraph>
               We're happy to see you're so eager - but you have to wait{' '}
-              {distanceInWordsToNow(releaseDate)}.
+              {formatDistanceToNow(releaseDate)}.
             </LeadParagraph>
             <Paragraph>
               <LinkText href="/">Go back</LinkText> to the front page and
