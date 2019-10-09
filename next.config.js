@@ -4,6 +4,10 @@ module.exports = {
     config.node = {
       fs: 'empty'
     };
+    config.module.rules.push({
+      test: /.md$/,
+      use: 'frontmatter-markdown-loader'
+    });
     return config;
   },
   poweredByHeader: false

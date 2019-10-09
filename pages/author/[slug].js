@@ -1,4 +1,3 @@
-import fetch from 'isomorphic-unfetch';
 import Page from '~/components/page';
 import ContentContainer from '~/components/content-container';
 import {
@@ -68,20 +67,24 @@ function AuthorPage(props) {
             </LinkText>
           )}
         </Center>
-        <ArticleBody dangerouslySetInnerHTML={{ __html: author.body }} />
+        <ArticleBody dangerouslySetInnerHTML={{ __html: author.html }} />
       </ContentContainer>
     </Page>
   );
 }
 AuthorPage.getInitialProps = async context => {
-  const { req, query } = context;
+  const { query } = context;
   try {
-    const baseUrl = req ? `${req.protocol}://${req.get('Host')}` : '';
-    const response = await fetch(`${baseUrl}/api/author/${query.slug}`);
-    const author = await response.json();
+    const {
+      default: { html, attributes }
+    } = await import(`../../content/authors/${query.slug}.md`);
+    const author = {
+      html,
+      ...attributes
+    };
     return {
       author,
-      notFound: !author
+      notFound: false
     };
   } catch (e) {
     return {

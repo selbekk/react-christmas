@@ -2,21 +2,16 @@
   "name": "react-christmas",
   "license": "MIT",
   "scripts": {
-    "dev": "node server.js",
+    "dev": "next",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js",
+    "start": "NODE_ENV=production next start",
     "deploy": "npm run build && now && now alias"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.5.1",
-    "compression": "^1.7.3",
     "date-fns": "^1.29.0",
     "debounce": "^1.2.0",
-    "express": "^4.16.3",
     "extract-domain": "^2.0.4",
-    "front-matter": "^3.0.1",
-    "helmet": "^3.15.0",
-    "isomorphic-unfetch": "^3.0.0",
     "marked": "^0.5.2",
     "next": "^9.1.1",
     "prop-types": "^15.6.2",
@@ -28,7 +23,8 @@
     "styled-normalize": "^8.0.0"
   },
   "devDependencies": {
-    "babel-plugin-root-import": "^6.4.1"
+    "babel-plugin-root-import": "^6.4.1",
+    "frontmatter-markdown-loader": "^2.1.0"
   },
   "resolutions": {
     "ajv": "6.5.5"
