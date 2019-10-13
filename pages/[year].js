@@ -54,8 +54,8 @@ const YearPage = props => {
 
 YearPage.getInitialProps = async ({ query, res }) => {
   if (/^\d{1,2}$/.test(query.year)) {
-    // legacy links from 2017
-    // in this case, `query.year` is the day
+    // this handles legacy links from 2017, which was just /1 or /12 etc.
+    // In this case, `query.year` is the day, and the year is 2017
     const redirectUrl = `/2017/${query.year}`;
     if (res) {
       res.writeHead(302, {
